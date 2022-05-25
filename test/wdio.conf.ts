@@ -1,6 +1,13 @@
 import type { Options } from '@wdio/types'
+import { wdioTestRunner } from '@axe-core/watcher'
 
-export const config: Options.Testrunner = {
+const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
+
+if (!AXE_WATCHER_API_KEY) {
+    throw new Error('AXE_WATCHER_API_KEY is not defined')
+}
+
+const orgConfig: Options.Testrunner = {
     //
     // ====================
     // Runner Configuration
@@ -91,6 +98,7 @@ export const config: Options.Testrunner = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
+
     }],
     //
     // ===================
@@ -99,7 +107,7 @@ export const config: Options.Testrunner = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'warn',
     //
     // Set specific log levels per logger
     // loggers:
@@ -320,3 +328,8 @@ export const config: Options.Testrunner = {
     // onReload: function(oldSessionId, newSessionId) {
     // }
 }
+
+export const config = wdioTestRunner({
+    apiKey: AXE_WATCHER_API_KEY,
+    serverURL: AXE_SERVER_URL
+}, orgConfig)
