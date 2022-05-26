@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types'
-import { wdioTestRunner } from '@axe-core/watcher'
+import { wdioTestRunner } from '@deque/watcher'
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
