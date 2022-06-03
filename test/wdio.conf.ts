@@ -1,11 +1,14 @@
 import type { Options } from '@wdio/types'
 import { wdioTestRunner } from '@deque/watcher'
+import { v4 } from 'uuid'
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
 if (!AXE_WATCHER_API_KEY) {
     throw new Error('AXE_WATCHER_API_KEY is not defined')
 }
+
+const AXE_WATCHER_SESSION_ID = v4()
 
 const orgConfig: Options.Testrunner = {
     //
@@ -331,5 +334,6 @@ const orgConfig: Options.Testrunner = {
 
 export const config = wdioTestRunner({
     apiKey: AXE_WATCHER_API_KEY,
+    sessionId: AXE_WATCHER_SESSION_ID,
     serverURL: AXE_SERVER_URL
 }, orgConfig)

@@ -18,6 +18,7 @@
         "wdio": "wdio run test/wdio.conf.ts"
     },
     "dependencies": {
-        "@wdio/types": "^7.19.5"
+        "@wdio/types": "^7.19.5",
+        "uuid": "^8.3.2"
     }
 }
