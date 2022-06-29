@@ -1,14 +1,14 @@
-import type { Options } from '@wdio/types';
-import { wdioTestRunner } from '@deque/watcher';
-import { v4 } from 'uuid';
+import type { Options } from '@wdio/types'
+import { wdioTestRunner } from '@deque/watcher'
+import { v4 } from 'uuid'
 
-const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env;
+const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
 if (!AXE_WATCHER_API_KEY) {
-  throw new Error('AXE_WATCHER_API_KEY is not defined');
+  throw new Error('AXE_WATCHER_API_KEY is not defined')
 }
 
-const AXE_WATCHER_SESSION_ID = v4();
+const AXE_WATCHER_SESSION_ID = v4()
 
 const orgConfig: Options.Testrunner = {
   //
@@ -325,7 +325,7 @@ const orgConfig: Options.Testrunner = {
    */
   // onReload: function(oldSessionId, newSessionId) {
   // }
-};
+}
 
 export const config = wdioTestRunner(
   {
@@ -334,4 +334,4 @@ export const config = wdioTestRunner(
     serverURL: AXE_SERVER_URL
   },
   orgConfig
-);
+)

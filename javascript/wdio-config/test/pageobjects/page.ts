@@ -4,6 +4,6 @@ export default class Page {
    * @param path path of the sub page (e.g. /path/to/page.html)
    */
   public open(url: string, path: string) {
-    return browser.url(`${url}/${path}`);
+    return browser.url(`${url}/${path}`)
   }
 }

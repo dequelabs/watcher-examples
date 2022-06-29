@@ -1,4 +1,4 @@
-import Page from './page';
+import Page from './page'
 
 export default class HerokuPage extends Page {
   /**
@@ -6,6 +6,6 @@ export default class HerokuPage extends Page {
    * @param path path of the sub page (e.g. /path/to/page.html)
    */
   public open(path: string) {
-    return super.open('https://the-internet.herokuapp.com', path);
+    return super.open('https://the-internet.herokuapp.com', path)
   }
 }
