@@ -1,0 +1,21 @@
+{
+  "name": "axe-watcher-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dequelabs/axe-watcher-example",
+  "author": "michael-siek <michaelsiek094@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "fmt": "prettier --write \"**/*.{js,ts,tsx,json,md,css,html}\"",
+    "prepare": "husky install",
+    "lint": "eslint --fix",
+    "lint-staged": "yarn lint && yarn fmt"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
+  }
+}

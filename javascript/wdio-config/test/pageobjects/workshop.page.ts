@@ -1,7 +1,7 @@
-import Page from './page';
+import Page from './page'
 
 export default class WorkshopPage extends Page {
-     public open () {
-        return super.open('https://broken-workshop.dequelabs.com', '');
-    }
+  public open() {
+    return super.open('https://broken-workshop.dequelabs.com', '')
+  }
 }
