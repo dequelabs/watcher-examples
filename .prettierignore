@@ -1,8 +1,5 @@
 node_modules
 dist
+output
 coverage
 .nyc_output
-.DS_Store
-.vscode
-.idea
-*.log

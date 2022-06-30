@@ -1,24 +1,21 @@
 {
-    "name": "webdriverio-tests",
-    "version": "0.1.0",
-    "private": true,
-    "devDependencies": {
-        "@deque/watcher": "^0.0.1-next.b47e533e",
-        "@wdio/cli": "^7.19.7",
-        "@wdio/local-runner": "^7.19.7",
-        "@wdio/mocha-framework": "^7.19.7",
-        "@wdio/spec-reporter": "^7.19.7",
-        "chromedriver": "^101.0.0",
-        "ts-node": "^10.7.0",
-        "typescript": "^4.6.4",
-        "wdio-chromedriver-service": "^7.3.2",
-        "wdio-wait-for": "^2.2.6"
-    },
-    "scripts": {
-        "wdio": "wdio run test/wdio.conf.ts"
-    },
-    "dependencies": {
-        "@wdio/types": "^7.19.5",
-        "uuid": "^8.3.2"
-    }
+  "name": "axe-watcher-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dequelabs/axe-watcher-example",
+  "author": "michael-siek <michaelsiek094@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "fmt": "prettier --write \"**/*.{js,ts,tsx,json,md,css,html}\"",
+    "prepare": "husky install",
+    "lint": "eslint --fix",
+    "lint-staged": "yarn lint && yarn fmt"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
+  }
 }
