@@ -1,5 +1,6 @@
 import 'mocha'
 import playwright from 'playwright'
+import { expect } from '@playwright/test';
 import { playwrightConfig } from '@deque/watcher'
 import { v4 } from 'uuid'
 
@@ -42,5 +43,14 @@ describe('My Login Application', () => {
 
   it('should login with valid credentials', async () => {
     await page.goto('https://the-internet.herokuapp.com/login')
+    await page.locator('#username').type("tomsmith")
+    await page.locator('#password').type("SuperSecretPassword!")
+
+    await page.locator('button[type="submit"]').click()
+    
+    await expect(page.locator('#flash')).toBeTruthy();
+    await expect(page.locator('#flash')).toContainText(
+      'You logged into a secure area!'
+    );
   })
 })

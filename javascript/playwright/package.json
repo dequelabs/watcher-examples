@@ -8,9 +8,10 @@
   },
   "devDependencies": {
     "@deque/watcher": "^0.0.1-next.ae12e0dc",
+    "@playwright/test": "^1.23.3",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^18.0.0",
+    "@types/node": "^18.0.3",
     "@types/uuid": "^8.3.4",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
@@ -18,5 +19,6 @@
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4",
     "uuid": "^8.3.2"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
