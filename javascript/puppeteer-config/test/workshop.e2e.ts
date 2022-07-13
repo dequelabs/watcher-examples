@@ -23,7 +23,7 @@ describe('My Login Application', () => {
         browser = await Puppeteer.launch(puppeteerConfig({
             axe: {
                 apiKey: AXE_WATCHER_API_KEY,
-                browserId: AXE_WATCHER_SESSION_ID,
+                sessionId: AXE_WATCHER_SESSION_ID,
                 serverURL: AXE_SERVER_URL
             }
         }))
@@ -32,7 +32,7 @@ describe('My Login Application', () => {
     })
     
     after(async () => {
-        // await browser.close()
+        await browser.close()
     })
     
     it('login with valid credentials', async () => {
