@@ -47,12 +47,12 @@ describe('My Login Application', () => {
 
   it('should login with valid credentials', async () => {
     await page.goto('https://the-internet.herokuapp.com/login')
-    await delay(500);
+    await delay(500)
 
     await page.locator('#username').type('tomsmith')
     await page.locator('#password').type('SuperSecretPassword!')
     await page.locator('button[type="submit"]').click()
-    await delay(500);
+    await delay(500)
 
     await expect(page.locator('#flash')).toBeTruthy()
     await expect(page.locator('#flash')).toContainText(
@@ -68,13 +68,13 @@ describe('My Login Application', () => {
       // Stop automatic axe analysis
       await axeController.stop()
       await axeController.analyze()
-      await delay(500);
+      await delay(500)
 
       await page.locator('#username').type('tomsmith')
       await page.locator('#password').type('SuperSecretPassword!')
       await page.locator('button[type="submit"]').click()
-      await delay(500);
-      
+      await delay(500)
+
       await axeController.stop()
       await axeController.analyze()
 
