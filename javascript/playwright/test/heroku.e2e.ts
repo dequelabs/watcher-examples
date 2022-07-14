@@ -1,8 +1,12 @@
 import 'mocha'
 import playwright from 'playwright'
-import { expect } from '@playwright/test';
-import { playwrightConfig } from '@deque/watcher'
+import { expect } from '@playwright/test'
+import { playwrightConfig, PlaywrightManualController } from '@deque/watcher'
 import { v4 } from 'uuid'
+
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 describe('My Login Application', () => {
   let page: playwright.Page
@@ -43,14 +47,39 @@ describe('My Login Application', () => {
 
   it('should login with valid credentials', async () => {
     await page.goto('https://the-internet.herokuapp.com/login')
-    await page.locator('#username').type("tomsmith")
-    await page.locator('#password').type("SuperSecretPassword!")
+    await delay(500);
 
+    await page.locator('#username').type('tomsmith')
+    await page.locator('#password').type('SuperSecretPassword!')
     await page.locator('button[type="submit"]').click()
-    
-    await expect(page.locator('#flash')).toBeTruthy();
+    await delay(500);
+
+    await expect(page.locator('#flash')).toBeTruthy()
     await expect(page.locator('#flash')).toContainText(
       'You logged into a secure area!'
-    );
+    )
+  })
+
+  describe('Manual Mode', function () {
+    it('should login with valid credentials', async () => {
+      await page.goto('https://the-internet.herokuapp.com/login')
+      const axeController = new PlaywrightManualController(page)
+
+      // Stop automatic axe analysis
+      await axeController.stop()
+      await axeController.analyze()
+      await delay(500);
+
+      await page.locator('#username').type('tomsmith')
+      await page.locator('#password').type('SuperSecretPassword!')
+      await page.locator('button[type="submit"]').click()
+      await delay(500);
+      
+      await axeController.stop()
+      await axeController.analyze()
+
+      // Restart automatic axe analysis
+      await axeController.stop()
+    })
   })
 })
