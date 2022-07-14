@@ -7,7 +7,7 @@
     "test": "mocha --timeout 60000 -r ts-node/register 'test/**.e2e.ts'"
   },
   "devDependencies": {
-    "@deque/watcher": "^0.0.1-canary.c0a0cba",
+    "@deque/watcher": "^0.0.1-next.1a0f8ed0",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.0.3",
     "@types/selenium-webdriver": "^4.1.1",

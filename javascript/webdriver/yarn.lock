@@ -9,10 +9,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@deque/watcher@^0.0.1-canary.c0a0cba":
-  version "0.0.1-canary.c0a0cba"
-  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-canary.c0a0cba.tgz#db0f973930b2aed731978bded5021a0a7e342dd0"
-  integrity sha512-Xmp9wPX009vCs9rnhc6uIEO5knJ+9/pJHRyD1ky+x6NhbTk6KfyA0SoRFhZgUQfxl6u51XkZDh2yT0/+PJxj6g==
+"@deque/watcher@^0.0.1-next.1a0f8ed0":
+  version "0.0.1-next.1a0f8ed0"
+  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-next.1a0f8ed0.tgz#65e2ee3e0c42c5bf97452e0923c92e3a9bd7c5a1"
+  integrity sha512-GePuW+JLWnS+zKHmax4SInmzCreu/48dcJnB1pJGcyYzQMKFRHXP+aoKckm2pZbbKOI1Ek4IiP4r8dbC/64K2g==
 
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.1.0"

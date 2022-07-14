@@ -23,7 +23,7 @@ describe('My Login Application', () => {
       webdriverConfig({
         axe: {
           apiKey: AXE_WATCHER_API_KEY,
-          browserId: AXE_WATCHER_SESSION_ID,
+          sessionId: AXE_WATCHER_SESSION_ID,
           serverURL: AXE_SERVER_URL
         }
       })
@@ -31,7 +31,7 @@ describe('My Login Application', () => {
   })
 
   after(async () => {
-    await driver.quit()
+    // await driver.quit()
   })
 
   it('should login with valid credentials', async () => {
