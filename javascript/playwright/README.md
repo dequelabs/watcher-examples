@@ -1,7 +1,7 @@
 # axe DevTools Watcher Playwright Example
 
 Using axe DevTools Watcher Playwright, you can integrate axe DevTools Watcher into your existing testing environment. 
-This example project demonstrates how axe DevTools Playwright is used to detect accessibility issues.
+This example project demonstrates how axe DevTools Watcher works with Playwright to detect accessibility issues.
 
 ## Prerequisites
 - yarn (1.22.x)
@@ -20,7 +20,7 @@ cd javascript/playwright
 
 ## Install Dependencies
 
-Install the dependencies including **axe DevTools Playwright** and **DevTools Reporter** for the project.
+Install the dependencies including **axe DevTools Watcher** for the project.
 
 > **_NOTE:_**
 >You need a valid license to use our APIs. For more information, see [Install from Deque’s Agora](https://docs.deque.com/devtools-html/4.0.0/en/node-pl-install-agora) page. After configuring the access to Deque's private registry, you can install the dependencies for this project.
