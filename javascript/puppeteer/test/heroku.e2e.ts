@@ -70,7 +70,7 @@ describe('My Login Application', () => {
 
       await axeController.stop()
       await axeController.analyze()
-      
+
       // Restart automatic axe analysis
       await axeController.stop()
     })
