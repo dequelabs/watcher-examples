@@ -41,16 +41,19 @@ describe('My Login Application', () => {
     await browser.close()
   })
 
-  it('login with valid credentials', async () => {
-    await page.goto('https://the-internet.herokuapp.com/login')
-    await delay(500)
+  describe('Automatic Analysis', function () {
+    it('should login with valid credentials', async () => {
+      await page.goto('https://the-internet.herokuapp.com/login')
+      await delay(500)
 
-    await page.type('#username', 'tomsmith')
-    await page.type('#password', 'SuperSecretPassword!')
-    await page.click('button[type="submit"]')
-    await delay(500)
+      await page.type('#username', 'tomsmith')
+      await page.type('#password', 'SuperSecretPassword!')
+      await page.click('button[type="submit"]')
+      await delay(500)
 
-    expect(page.$('#flash')).to.be.exist
+      // Assert that 'You logged into a secure area!' element exists
+      expect(page.$('#flash')).to.be.exist
+    })
   })
 
   describe('Manual Mode', function () {
@@ -73,6 +76,9 @@ describe('My Login Application', () => {
 
       // Restart automatic axe analysis
       await axeController.stop()
+
+      // Assert that 'You logged into a secure area!' element exists
+      expect(page.$('#flash')).to.be.exist
     })
   })
 })
