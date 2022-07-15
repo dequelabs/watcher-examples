@@ -45,19 +45,22 @@ describe('My Login Application', () => {
     await browser.close()
   })
 
-  it('should login with valid credentials', async () => {
-    await page.goto('https://the-internet.herokuapp.com/login')
-    await delay(500)
+  describe('Automatic Analysis', function () {
+    it('should login with valid credentials', async () => {
+      await page.goto('https://the-internet.herokuapp.com/login')
+      await delay(500)
 
-    await page.locator('#username').type('tomsmith')
-    await page.locator('#password').type('SuperSecretPassword!')
-    await page.locator('button[type="submit"]').click()
-    await delay(500)
+      await page.locator('#username').type('tomsmith')
+      await page.locator('#password').type('SuperSecretPassword!')
+      await page.locator('button[type="submit"]').click()
+      await delay(500)
 
-    await expect(page.locator('#flash')).toBeTruthy()
-    await expect(page.locator('#flash')).toContainText(
-      'You logged into a secure area!'
-    )
+      // Assert 'You logged into a secure area!' exists and contains correct text
+      await expect(page.locator('#flash')).toBeTruthy()
+      await expect(page.locator('#flash')).toContainText(
+        'You logged into a secure area!'
+      )
+    })
   })
 
   describe('Manual Mode', function () {
@@ -80,6 +83,12 @@ describe('My Login Application', () => {
 
       // Restart automatic axe analysis
       await axeController.stop()
+
+      // Assert 'You logged into a secure area!' exists and contains correct text
+      await expect(page.locator('#flash')).toBeTruthy()
+      await expect(page.locator('#flash')).toContainText(
+        'You logged into a secure area!'
+      )
     })
   })
 })
