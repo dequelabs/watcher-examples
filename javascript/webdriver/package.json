@@ -8,10 +8,12 @@
   },
   "devDependencies": {
     "@deque/watcher": "^0.0.1-next.1a0f8ed0",
+    "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.0.3",
     "@types/selenium-webdriver": "^4.1.1",
     "@types/uuid": "^8.3.4",
+    "chai": "^4.3.6",
     "mocha": "^10.0.0",
     "selenium-webdriver": "^4.3.1",
     "ts-node": "^10.8.2",

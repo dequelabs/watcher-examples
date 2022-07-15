@@ -1,6 +1,6 @@
 import 'mocha'
-import { Builder, By, WebDriver } from 'selenium-webdriver'
-import { Driver } from 'selenium-webdriver/chrome'
+import { assert } from 'chai'
+import { Builder, By } from 'selenium-webdriver'
 import { webdriverConfig, WebdriverManualController } from '@deque/watcher'
 import { v4 } from 'uuid'
 
@@ -41,16 +41,25 @@ describe('My Login Application', () => {
     await driver.quit()
   })
 
-  it('should login with valid credentials', async () => {
-    await driver.get('https://the-internet.herokuapp.com/login')
-    await delay(500)
+  describe('Automatic Analysis', function () {
+    it('should login with valid credentials', async () => {
+      await driver.get('https://the-internet.herokuapp.com/login')
+      await delay(500)
 
-    await driver.findElement(By.css('#username')).sendKeys('tomsmith')
-    await driver
-      .findElement(By.css('#password'))
-      .sendKeys('SuperSecretPassword!')
-    await driver.findElement(By.css('button[type="submit"]')).click()
-    await delay(500)
+      await driver.findElement(By.css('#username')).sendKeys('tomsmith')
+      await driver
+        .findElement(By.css('#password'))
+        .sendKeys('SuperSecretPassword!')
+      await driver.findElement(By.css('button[type="submit"]')).click()
+      await delay(500)
+
+      // "You logged into a secure area!" element
+      const isLoggedIn = await driver
+        .findElement(By.css('#flash'))
+        .isDisplayed()
+
+      assert.isTrue(isLoggedIn)
+    })
   })
 
   describe('Manual Mode', function () {
@@ -75,6 +84,13 @@ describe('My Login Application', () => {
 
       // Restart automatic axe analysis
       await axeController.stop()
+
+      // "You logged into a secure area!" element
+      const isLoggedIn = await driver
+        .findElement(By.css('#flash'))
+        .isDisplayed()
+
+      assert.isTrue(isLoggedIn)
     })
   })
 })
