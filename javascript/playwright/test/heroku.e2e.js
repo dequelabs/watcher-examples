@@ -6,10 +6,7 @@ const {
   PlaywrightManualController
 } = require('@deque/watcher')
 
-const {
-  AXE_SERVER_URL = 'https://axe.deque.com',
-  AXE_WATCHER_API_KEY = 'foobar'
-} = process.env
+const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
 if (!AXE_WATCHER_API_KEY) {
   throw new Error('AXE_WATCHER_API_KEY is not defined')
