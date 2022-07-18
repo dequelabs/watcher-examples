@@ -4,7 +4,7 @@ Using axe DevTools Watcher Playwright, you can integrate axe DevTools Watcher in
 This example project demonstrates how axe DevTools Watcher works with Playwright to detect accessibility issues.
 
 ## Prerequisites
-- yarn (1.22.x)
+- npm
 - NodeJS (6.10 or higher)
 
 ## Clone Project
@@ -28,7 +28,7 @@ Install the dependencies including **axe DevTools Watcher** for the project.
 The following command installs all the required dependencies to run this example project.
 
 ```sh
-yarn
+npm install
 ```
 
 ## Test Configuration
@@ -38,12 +38,12 @@ environmental variables named `AXE_SERVER_URL` and `AXE_WATCHER_API_KEY`, respec
 
 ## Run Tests
 
-The **_tests_** directory contains the example test file **`heroku.e2e.ts`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
+The **test** directory contains the example test file **`heroku.e2e.js`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
 
 The following command runs the test file in the **_tests_** directory.
 
 ```sh
-yarn test
+npm test
 ```
 
 ## Test Results
