@@ -5,15 +5,14 @@ This example project demonstrates how axe DevTools Watcher works with Playwright
 
 ## Prerequisites
 
-- npm
-- NodeJS (6.10 or higher)
+- Node.js (6.10 or higher)
 
 ## Clone Project
 
 Follow these steps to clone and navigate to the directory:
 
 1. Clone this repo from GitHub.
-2. Open the project in your favorite editor.
+2. Open the project in your favourite editor.
 3. Navigate from the root of the repo to this example with the following command:
 
 ```sh
