@@ -5,7 +5,7 @@ This example project demonstrates how axe DevTools Watcher works with Puppeteer 
 
 ## Prerequisites
 
-- NodeJS (6.10 or higher)
+- Node.js (6.10 or higher)
 
 ## Clone Project
 
@@ -39,7 +39,7 @@ environmental variables named `AXE_SERVER_URL` and `AXE_WATCHER_API_KEY`, respec
 
 ## Run Tests
 
-The **_tests_** directory contains the example test file **`heroku.e2e.ts`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
+The **test** directory contains the example test file **`heroku.e2e.js`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
 
 The following command runs the test file in the **_tests_** directory.
 
