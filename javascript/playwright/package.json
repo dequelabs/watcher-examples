@@ -2,6 +2,7 @@
   "name": "playwright",
   "version": "0.1.0",
   "license": "MPL-2",
+  "private": true,
   "scripts": {
     "test": "mocha --timeout 10000"
   },
