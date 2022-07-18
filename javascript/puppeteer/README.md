@@ -5,7 +5,6 @@ This example project demonstrates how axe DevTools Watcher works with Puppeteer 
 
 ## Prerequisites
 
-- yarn (1.22.x)
 - NodeJS (6.10 or higher)
 
 ## Clone Project
@@ -13,7 +12,7 @@ This example project demonstrates how axe DevTools Watcher works with Puppeteer 
 Follow these steps to clone and navigate to the directory:
 
 1. Clone this repo from GitHub.
-2. Open the project in your favourite editor.
+2. Open the project in your favorite editor.
 3. Navigate from the root of the repo to this example with the following command:
 
 ```sh
@@ -30,7 +29,7 @@ Install the dependencies including **axe DevTools Watcher** for the project.
 The following command installs all the required dependencies to run this example project.
 
 ```sh
-yarn
+npm install
 ```
 
 ## Test Configuration
@@ -45,7 +44,7 @@ The **_tests_** directory contains the example test file **`heroku.e2e.ts`** tha
 The following command runs the test file in the **_tests_** directory.
 
 ```sh
-yarn test
+npm test
 ```
 
 ## Test Results

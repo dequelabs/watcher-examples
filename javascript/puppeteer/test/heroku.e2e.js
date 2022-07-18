@@ -1,34 +1,23 @@
-import 'mocha'
-import { expect } from 'chai'
-import Puppeteer from 'puppeteer'
-import { puppeteerConfig, PuppeteerManualController } from '@deque/watcher'
-import { v4 } from 'uuid'
+const Puppeteer = require('puppeteer')
+const { expect } = require('chai')
 
-function delay(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+const { puppeteerConfig, PuppeteerManualController } = require('@deque/watcher')
+
+const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
+
+if (!AXE_WATCHER_API_KEY) {
+  throw new Error('AXE_WATCHER_API_KEY is not defined')
 }
 
 describe('My Login Application', () => {
-  let browser: Puppeteer.Browser
-  let page: Puppeteer.Page
-
-  const {
-    AXE_SERVER_URL = 'http://localhost:3000',
-    AXE_WATCHER_API_KEY = 'foobar'
-  } = process.env
-
-  if (!AXE_WATCHER_API_KEY) {
-    throw new Error('AXE_WATCHER_API_KEY is not defined')
-  }
-
-  const AXE_WATCHER_SESSION_ID = v4()
+  let browser
+  let page
 
   before(async () => {
     browser = await Puppeteer.launch(
       puppeteerConfig({
         axe: {
           apiKey: AXE_WATCHER_API_KEY,
-          sessionId: AXE_WATCHER_SESSION_ID,
           serverURL: AXE_SERVER_URL
         }
       })
@@ -44,12 +33,11 @@ describe('My Login Application', () => {
   describe('Automatic Analysis', function () {
     it('should login with valid credentials', async () => {
       await page.goto('https://the-internet.herokuapp.com/login')
-      await delay(500)
 
       await page.type('#username', 'tomsmith')
       await page.type('#password', 'SuperSecretPassword!')
       await page.click('button[type="submit"]')
-      await delay(500)
+      await page.waitForSelector('#flash')
 
       // Assert that 'You logged into a secure area!' element exists
       expect(page.$('#flash')).to.be.exist
@@ -60,7 +48,6 @@ describe('My Login Application', () => {
     it('should login with valid credentials', async () => {
       await page.goto('https://the-internet.herokuapp.com/login')
       const axeController = new PuppeteerManualController(page)
-      await delay(500)
 
       // Stop automatic axe analysis
       await axeController.stop()
@@ -69,13 +56,12 @@ describe('My Login Application', () => {
       await page.type('#username', 'tomsmith')
       await page.type('#password', 'SuperSecretPassword!')
       await page.click('button[type="submit"]')
-      await delay(500)
+      await page.waitForSelector('#flash')
 
-      await axeController.stop()
       await axeController.analyze()
 
       // Restart automatic axe analysis
-      await axeController.stop()
+      await axeController.start()
 
       // Assert that 'You logged into a secure area!' element exists
       expect(page.$('#flash')).to.be.exist
