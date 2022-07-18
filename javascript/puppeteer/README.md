@@ -39,9 +39,9 @@ environmental variables named `AXE_SERVER_URL` and `AXE_WATCHER_API_KEY`, respec
 
 ## Run Tests
 
-The **test** directory contains the example test file **`heroku.e2e.js`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
+The **_test_** directory contains the example test file **`heroku.e2e.js`** that analyzes the page `https://the-internet.herokuapp.com/login` for accessibility issues.
 
-The following command runs the test file in the **_tests_** directory.
+The following command runs the test file in the **_test_** directory.
 
 ```sh
 npm test
