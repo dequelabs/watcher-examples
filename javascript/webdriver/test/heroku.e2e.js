@@ -1,26 +1,16 @@
-import 'mocha'
-import { assert } from 'chai'
-import { Builder, By } from 'selenium-webdriver'
-import { webdriverConfig, WebdriverManualController } from '@deque/watcher'
-import { v4 } from 'uuid'
+const { assert } = require('chai')
+const { Builder, By, until } = require('selenium-webdriver')
 
-function delay(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+const { webdriverConfig, WebdriverManualController } = require('@deque/watcher')
+
+const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
+
+if (!AXE_WATCHER_API_KEY) {
+  throw new Error('AXE_WATCHER_API_KEY is not defined')
 }
 
 describe('My Login Application', () => {
-  let driver: any
-
-  const {
-    AXE_SERVER_URL = 'http://localhost:3000',
-    AXE_WATCHER_API_KEY = 'foobar'
-  } = process.env
-
-  if (!AXE_WATCHER_API_KEY) {
-    throw new Error('AXE_WATCHER_API_KEY is not defined')
-  }
-
-  const AXE_WATCHER_SESSION_ID = v4()
+  let driver
 
   before(async () => {
     driver = await new Builder()
@@ -29,7 +19,6 @@ describe('My Login Application', () => {
         webdriverConfig({
           axe: {
             apiKey: AXE_WATCHER_API_KEY,
-            sessionId: AXE_WATCHER_SESSION_ID,
             serverURL: AXE_SERVER_URL
           }
         })
@@ -44,14 +33,13 @@ describe('My Login Application', () => {
   describe('Automatic Analysis', function () {
     it('should login with valid credentials', async () => {
       await driver.get('https://the-internet.herokuapp.com/login')
-      await delay(500)
 
       await driver.findElement(By.css('#username')).sendKeys('tomsmith')
       await driver
         .findElement(By.css('#password'))
         .sendKeys('SuperSecretPassword!')
       await driver.findElement(By.css('button[type="submit"]')).click()
-      await delay(500)
+      await driver.wait(until.elementLocated(By.css('#flash')), 1000)
 
       // "You logged into a secure area!" element
       const isLoggedIn = await driver
@@ -66,7 +54,6 @@ describe('My Login Application', () => {
     it('should login with valid credentials', async () => {
       await driver.get('https://the-internet.herokuapp.com/login')
       const axeController = new WebdriverManualController(driver)
-      await delay(500)
 
       // Stop automatic axe analysis
       await axeController.stop()
@@ -77,13 +64,12 @@ describe('My Login Application', () => {
         .findElement(By.css('#password'))
         .sendKeys('SuperSecretPassword!')
       await driver.findElement(By.css('button[type="submit"]')).click()
-      await delay(500)
+      await driver.wait(until.elementLocated(By.css('#flash')), 1000)
 
-      await axeController.stop()
       await axeController.analyze()
 
       // Restart automatic axe analysis
-      await axeController.stop()
+      await axeController.start()
 
       // "You logged into a secure area!" element
       const isLoggedIn = await driver
