@@ -1,0 +1,16 @@
+{
+  "name": "axe-watcher-playwright-example",
+  "version": "0.1.0",
+  "license": "MPL-2",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 5000"
+  },
+  "devDependencies": {
+    "@deque/watcher": "^0.0.1-next.ae12e0dc",
+    "@playwright/test": "^1.23.3",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "playwright": "^1.23.1"
+  }
+}
