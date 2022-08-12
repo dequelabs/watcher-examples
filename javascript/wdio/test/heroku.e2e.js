@@ -13,7 +13,14 @@ describe('My Login Application', () => {
   let browser
 
   before(async () => {
-    browser = await remote(wdioConfig({ axe: { apiKey: 'asdf' } }))
+    browser = await remote(
+      wdioConfig({
+        axe: {
+          apiKey: AXE_WATCHER_API_KEY,
+          serverURL: AXE_SERVER_URL
+        }
+      })
+    )
   })
 
   after(async () => {
