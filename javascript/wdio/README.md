@@ -5,7 +5,7 @@ This example project demonstrates how axe DevTools Watcher works with WebdriverI
 
 ## Prerequisites
 
-- Node.js (LTS)
+- Node.js (12 or higher)
 
 ## Clone Project
 
