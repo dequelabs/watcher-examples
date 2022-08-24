@@ -2,7 +2,8 @@ import type { Options } from '@wdio/types'
 import { wdioTestRunner } from '@deque/watcher'
 import { v4 } from 'uuid'
 
-const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
+const { AXE_SERVER_URL = 'localhost:3000', AXE_WATCHER_API_KEY = 'foobar' } =
+  process.env
 
 if (!AXE_WATCHER_API_KEY) {
   throw new Error('AXE_WATCHER_API_KEY is not defined')
