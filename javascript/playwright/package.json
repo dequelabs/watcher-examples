@@ -7,7 +7,7 @@
     "test": "mocha --timeout 5000"
   },
   "devDependencies": {
-    "@deque/watcher": "^0.0.1-next.3ea8f454",
+    "@deque/watcher": "latest",
     "@playwright/test": "^1.23.3",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
