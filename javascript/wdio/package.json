@@ -6,7 +6,7 @@
     "test": "mocha --timeout 5000"
   },
   "devDependencies": {
-    "@deque/watcher": "0.0.1-next.ae12e0dc",
+    "@deque/watcher": "latest",
     "@wdio/cli": "^7.19.7",
     "@wdio/local-runner": "^7.19.7",
     "@wdio/mocha-framework": "^7.19.7",
