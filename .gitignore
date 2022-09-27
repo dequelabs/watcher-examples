@@ -8,3 +8,4 @@ coverage
 *.log
 *-lock.json
 .yarn
+.env

@@ -1,10 +1,13 @@
 const { chromium } = require('playwright')
 const { expect } = require('@playwright/test')
-
 const {
   playwrightConfig,
   PlaywrightManualController
 } = require('@deque/watcher')
+const path = require('path')
+require('dotenv').config({
+  path: path.join(__dirname, '..', '..', '..', '.env')
+})
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 

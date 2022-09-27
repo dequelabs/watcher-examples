@@ -9,6 +9,7 @@
   "devDependencies": {
     "@deque/watcher": "latest",
     "chai": "^4.3.6",
+    "dotenv": "^16.0.2",
     "mocha": "^10.0.0",
     "selenium-webdriver": "^4.3.1"
   }

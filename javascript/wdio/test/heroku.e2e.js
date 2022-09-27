@@ -1,5 +1,9 @@
 const { remote } = require('webdriverio')
 const { expect } = require('chai')
+const path = require('path')
+require('dotenv').config({
+  path: path.join(__dirname, '..', '..', '..', '.env')
+})
 
 const { wdioConfig, WdioManualController } = require('@deque/watcher')
 
