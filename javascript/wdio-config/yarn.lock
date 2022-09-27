@@ -30,10 +30,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@deque/watcher@0.0.1-next.ae12e0dc":
-  version "0.0.1-next.ae12e0dc"
-  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-next.ae12e0dc.tgz#503de629fe4d7dcaa93d46164a9c89f5d4d73477"
-  integrity sha512-3EsQzUehwIrOLVJHJWXq+rhu/UbfLgWozIB76GMH3bhqwDsCdgSs0fyMvsDSSyukGkVjdvIxoNdyTXRnhfVAfA==
+"@deque/watcher@latest":
+  version "0.0.1-canary.c0a0cba"
+  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-canary.c0a0cba.tgz#db0f973930b2aed731978bded5021a0a7e342dd0"
+  integrity sha512-Xmp9wPX009vCs9rnhc6uIEO5knJ+9/pJHRyD1ky+x6NhbTk6KfyA0SoRFhZgUQfxl6u51XkZDh2yT0/+PJxj6g==
 
 "@jest/expect-utils@^28.1.3":
   version "28.1.3"

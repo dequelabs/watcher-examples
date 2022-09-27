@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@deque/watcher@^0.0.1-next.ae12e0dc":
-  version "0.0.1-next.f0d7db49"
-  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-next.f0d7db49.tgz#7042ffcdc5f374a72ba112148bd266ddac7fc1dd"
-  integrity sha512-IqdCgDVQl3BlmLJUVxfbezUgLF94KEfnLUJc1RqWKqLYagqaJYFTFE1GJF9JaNJvg3HOZbhkbng3BygK1G4flQ==
+"@deque/watcher@latest":
+  version "0.0.1-canary.c0a0cba"
+  resolved "https://agora.dequecloud.com:443/artifactory/api/npm/dequelabs/@deque/watcher/-/@deque/watcher-0.0.1-canary.c0a0cba.tgz#db0f973930b2aed731978bded5021a0a7e342dd0"
+  integrity sha512-Xmp9wPX009vCs9rnhc6uIEO5knJ+9/pJHRyD1ky+x6NhbTk6KfyA0SoRFhZgUQfxl6u51XkZDh2yT0/+PJxj6g==
 
 "@playwright/test@^1.23.3":
   version "1.26.1"
