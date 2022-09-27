@@ -1,5 +1,9 @@
 const Puppeteer = require('puppeteer')
 const { expect } = require('chai')
+const path = require('path')
+require('dotenv').config({
+  path: path.join(__dirname, '..', '..', '..', '.env')
+})
 
 const { puppeteerConfig, PuppeteerManualController } = require('@deque/watcher')
 
