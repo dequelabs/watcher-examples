@@ -26,7 +26,8 @@ describe('My Login Application', () => {
         axe: {
           apiKey: AXE_WATCHER_API_KEY,
           serverURL: AXE_SERVER_URL
-        }
+        },
+        args: ['--disable-features=DialMediaRouteProvider']
       })
     )
 
