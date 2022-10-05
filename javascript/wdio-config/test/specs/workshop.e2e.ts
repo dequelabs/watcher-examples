@@ -1,5 +1,5 @@
 import HomeWorkshopPage from '../pageobjects/home.workshop.page'
-import { WdioManualController } from '@deque/watcher'
+import { WdioManualController } from '@axe-core/watcher'
 
 const { DEBUG } = process.env
 

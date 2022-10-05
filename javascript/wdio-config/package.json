@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@deque/watcher": "latest",
+    "@axe-core/watcher": "^0.0.1-next.47b61783",
     "@wdio/cli": "^7.19.7",
     "@wdio/local-runner": "^7.19.7",
     "@wdio/mocha-framework": "^7.19.7",
@@ -16,7 +16,7 @@
     "wdio-wait-for": "^2.2.6"
   },
   "scripts": {
-    "wdio": "wdio run test/wdio.conf.ts"
+    "test": "wdio run test/wdio.conf.ts"
   },
   "dependencies": {
     "@wdio/types": "^7.19.5",

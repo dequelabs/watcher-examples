@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types'
-import { wdioTestRunner } from '@deque/watcher'
+import { wdioTestRunner } from '@axe-core/watcher'
 import { v4 } from 'uuid'
 const path = require('path')
 require('dotenv').config({
