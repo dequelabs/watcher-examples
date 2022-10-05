@@ -1,11 +1,14 @@
-const Puppeteer = require('puppeteer')
+const puppeteer = require('puppeteer')
 const { expect } = require('chai')
 const path = require('path')
 require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
 })
 
-const { puppeteerConfig, PuppeteerManualController } = require('@deque/watcher')
+const {
+  puppeteerConfig,
+  PuppeteerManualController
+} = require('@axe-core/watcher')
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
@@ -18,7 +21,7 @@ describe('My Login Application', () => {
   let page
 
   before(async () => {
-    browser = await Puppeteer.launch(
+    browser = await puppeteer.launch(
       puppeteerConfig({
         axe: {
           apiKey: AXE_WATCHER_API_KEY,

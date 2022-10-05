@@ -5,7 +5,7 @@ require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
 })
 
-const { wdioConfig, WdioManualController } = require('@deque/watcher')
+const { wdioConfig, WdioManualController } = require('@axe-core/watcher')
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 

@@ -1,7 +1,10 @@
 const { assert } = require('chai')
 const { Builder, By, until } = require('selenium-webdriver')
-
-const { webdriverConfig, WebdriverManualController } = require('@deque/watcher')
+const { webdriverConfig, WebdriverManualController } = require('@axe-core/watcher')
+const path = require('path')
+require('dotenv').config({
+  path: path.join(__dirname, '..', '..', '..', '.env')
+})
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 

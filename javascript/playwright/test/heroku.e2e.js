@@ -3,7 +3,7 @@ const { expect } = require('@playwright/test')
 const {
   playwrightConfig,
   PlaywrightManualController
-} = require('@deque/watcher')
+} = require('@axe-core/watcher')
 const path = require('path')
 require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
