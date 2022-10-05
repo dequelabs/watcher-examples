@@ -1,6 +1,9 @@
 const { assert } = require('chai')
 const { Builder, By, until } = require('selenium-webdriver')
-const { webdriverConfig, WebdriverManualController } = require('@axe-core/watcher')
+const {
+  webdriverConfig,
+  WebdriverManualController
+} = require('@axe-core/watcher')
 const path = require('path')
 require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
