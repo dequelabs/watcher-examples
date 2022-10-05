@@ -9,3 +9,5 @@ coverage
 *-lock.json
 .yarn
 .env
+yarn.lock
+
