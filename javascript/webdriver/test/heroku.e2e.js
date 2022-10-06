@@ -17,6 +17,7 @@ if (!AXE_WATCHER_API_KEY) {
 
 describe('My Login Application', () => {
   let driver
+  let manualController
 
   before(async () => {
     driver = await new Builder()
@@ -30,6 +31,9 @@ describe('My Login Application', () => {
         })
       )
       .build()
+
+    // initialize the axe Watcher manual controller
+    manualController = new WebdriverManualController(driver)
   })
 
   after(async () => {
@@ -58,12 +62,12 @@ describe('My Login Application', () => {
 
   describe('Manual Mode', function () {
     it('should login with valid credentials', async () => {
-      await driver.get('https://the-internet.herokuapp.com/login')
-      const axeController = new WebdriverManualController(driver)
-
       // Stop automatic axe analysis
-      await axeController.stop()
-      await axeController.analyze()
+      await manualController.stop()
+
+      await driver.get('https://the-internet.herokuapp.com/login')
+
+      await manualController.analyze()
 
       await driver.findElement(By.css('#username')).sendKeys('tomsmith')
       await driver
@@ -72,10 +76,10 @@ describe('My Login Application', () => {
       await driver.findElement(By.css('button[type="submit"]')).click()
       await driver.wait(until.elementLocated(By.css('#flash')), 1000)
 
-      await axeController.analyze()
+      await manualController.analyze()
 
       // Restart automatic axe analysis
-      await axeController.start()
+      await manualController.start()
 
       // "You logged into a secure area!" element
       const isLoggedIn = await driver

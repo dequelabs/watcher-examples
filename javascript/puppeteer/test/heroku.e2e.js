@@ -19,6 +19,7 @@ if (!AXE_WATCHER_API_KEY) {
 describe('My Login Application', () => {
   let browser
   let page
+  let manualController
 
   before(async () => {
     browser = await puppeteer.launch(
@@ -32,6 +33,9 @@ describe('My Login Application', () => {
     )
 
     page = await browser.newPage()
+
+    // initialize the axe Watcher manual controller
+    manualController = new PuppeteerManualController(page)
   })
 
   after(async () => {
@@ -54,22 +58,22 @@ describe('My Login Application', () => {
 
   describe('Manual Mode', function () {
     it('should login with valid credentials', async () => {
-      await page.goto('https://the-internet.herokuapp.com/login')
-      const axeController = new PuppeteerManualController(page)
-
       // Stop automatic axe analysis
-      await axeController.stop()
-      await axeController.analyze()
+      await manualController.stop()
+
+      await page.goto('https://the-internet.herokuapp.com/login')
+
+      await manualController.analyze()
 
       await page.type('#username', 'tomsmith')
       await page.type('#password', 'SuperSecretPassword!')
       await page.click('button[type="submit"]')
       await page.waitForSelector('#flash')
 
-      await axeController.analyze()
+      await manualController.analyze()
 
       // Restart automatic axe analysis
-      await axeController.start()
+      await manualController.start()
 
       // Assert that 'You logged into a secure area!' element exists
       expect(page.$('#flash')).to.be.exist
