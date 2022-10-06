@@ -18,6 +18,7 @@ if (!AXE_WATCHER_API_KEY) {
 describe('My Login Application', () => {
   let page
   let browser
+  let manualController
 
   before(async () => {
     browser = await chromium.launchPersistentContext(
@@ -35,6 +36,9 @@ describe('My Login Application', () => {
     )
 
     page = await browser.newPage()
+
+    // initialize the axe Watcher manual controller
+    manualController = new PlaywrightManualController(page)
   })
 
   after(async () => {
@@ -51,7 +55,7 @@ describe('My Login Application', () => {
       await page.locator('#flash').waitFor()
 
       // Assert 'You logged into a secure area!' exists and contains correct text
-      await expect(page.locator('#flash')).toBeTruthy()
+      expect(page.locator('#flash')).toBeTruthy()
       await expect(page.locator('#flash')).toContainText(
         'You logged into a secure area!'
       )
@@ -60,25 +64,25 @@ describe('My Login Application', () => {
 
   describe('Manual Mode', function () {
     it('should login with valid credentials', async () => {
-      await page.goto('https://the-internet.herokuapp.com/login')
-      const axeController = new PlaywrightManualController(page)
-
       // Stop automatic axe analysis
-      await axeController.stop()
-      await axeController.analyze()
+      await manualController.stop()
+
+      await page.goto('https://the-internet.herokuapp.com/login')
+
+      await manualController.analyze()
 
       await page.locator('#username').type('tomsmith')
       await page.locator('#password').type('SuperSecretPassword!')
       await page.locator('button[type="submit"]').click()
       await page.locator('#flash').waitFor()
 
-      await axeController.analyze()
+      await manualController.analyze()
 
       // Restart automatic axe analysis
-      await axeController.start()
+      await manualController.start()
 
       // Assert 'You logged into a secure area!' exists and contains correct text
-      await expect(page.locator('#flash')).toBeTruthy()
+      expect(page.locator('#flash')).toBeTruthy()
       await expect(page.locator('#flash')).toContainText(
         'You logged into a secure area!'
       )

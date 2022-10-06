@@ -41,13 +41,20 @@ describe('Recipe Application', () => {
   })
 
   it('should display the home page (manual mode)', async () => {
-    const axe = new WdioManualController(browser)
-    await axe.stop()
+    // initialize the axe Watcher manual controller
+    const manualController = new WdioManualController(browser)
+
+    // Stop automatic axe analysis
+    await manualController.stop()
+
     await HomeWorkshopPage.open()
-    await sleepTwenty()
     await expect(HomeWorkshopPage.card).toHaveTextContaining('Chocolate Cake')
-    await axe.analyze()
+
+    await manualController.analyze()
+
     expect(await HomeWorkshopPage.cards).toHaveLength(8)
-    await axe.start()
+
+    // Restart automatic axe analysis
+    await manualController.start()
   })
 })
