@@ -10,6 +10,7 @@ describe('Recipe Application', () => {
   })
 
   afterEach(async () => {
+    // ensure that all the axe Watcher test results are flushed out
     await controller.flush()
   })
 

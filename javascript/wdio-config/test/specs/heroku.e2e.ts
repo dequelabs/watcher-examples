@@ -6,6 +6,7 @@ describe('My Login application', () => {
   afterEach(async () => {
     // initialize the axe Watcher controller
     const controller = new WdioController(browser)
+    // ensure that all the axe Watcher test results are flushed out
     await controller.flush()
   })
 
