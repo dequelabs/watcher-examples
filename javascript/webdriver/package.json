@@ -4,12 +4,12 @@
   "license": "MPL-2",
   "private": true,
   "scripts": {
-    "test": "mocha --timeout 5000"
+    "test": "mocha --timeout 20000"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^0.0.1-next.47b61783",
+    "@axe-core/watcher": "^0.0.1-next.2daa1159",
     "chai": "^4.3.6",
-    "chromedriver": "^106.0.1",
+    "chromedriver": "latest",
     "dotenv": "^16.0.2",
     "mocha": "^10.0.0",
     "selenium-webdriver": "^4.3.1"

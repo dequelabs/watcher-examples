@@ -5,10 +5,7 @@ require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
 })
 
-const {
-  puppeteerConfig,
-  PuppeteerManualController
-} = require('@axe-core/watcher')
+const { puppeteerConfig, PuppeteerController } = require('@axe-core/watcher')
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
@@ -19,7 +16,7 @@ if (!AXE_WATCHER_API_KEY) {
 describe('My Login Application', () => {
   let browser
   let page
-  let manualController
+  let controller
 
   before(async () => {
     browser = await puppeteer.launch(
@@ -34,8 +31,13 @@ describe('My Login Application', () => {
 
     page = await browser.newPage()
 
-    // initialize the axe Watcher manual controller
-    manualController = new PuppeteerManualController(page)
+    // initialize the axe Watcher controller
+    controller = new PuppeteerController(page)
+  })
+
+  afterEach(async () => {
+    // ensure that all the axe Watcher test results are flushed out
+    await controller.flush()
   })
 
   after(async () => {
@@ -59,21 +61,21 @@ describe('My Login Application', () => {
   describe('Manual Mode', function () {
     it('should login with valid credentials', async () => {
       // Stop automatic axe analysis
-      await manualController.stop()
+      await controller.stop()
 
       await page.goto('https://the-internet.herokuapp.com/login')
 
-      await manualController.analyze()
+      await controller.analyze()
 
       await page.type('#username', 'tomsmith')
       await page.type('#password', 'SuperSecretPassword!')
       await page.click('button[type="submit"]')
       await page.waitForSelector('#flash')
 
-      await manualController.analyze()
+      await controller.analyze()
 
       // Restart automatic axe analysis
-      await manualController.start()
+      await controller.start()
 
       // Assert that 'You logged into a secure area!' element exists
       expect(page.$('#flash')).to.be.exist
