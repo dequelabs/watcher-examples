@@ -5,7 +5,7 @@ require('dotenv').config({
   path: path.join(__dirname, '..', '..', '..', '.env')
 })
 
-const { wdioConfig, WdioManualController } = require('@axe-core/watcher')
+const { wdioConfig, WdioController } = require('@axe-core/watcher')
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
@@ -15,7 +15,7 @@ if (!AXE_WATCHER_API_KEY) {
 
 describe('My Login Application', () => {
   let browser
-  let manualController
+  let controller
 
   before(async () => {
     browser = await remote(
@@ -27,8 +27,13 @@ describe('My Login Application', () => {
       })
     )
 
-    // initialize the axe Watcher manual controller
-    manualController = new WdioManualController(browser)
+    // initialize the axe Watcher controller
+    controller = new WdioController(browser)
+  })
+
+  afterEach(async () => {
+    // ensure that all the axe Watcher test results are flushed out
+    await controller.flush()
   })
 
   after(async () => {
@@ -52,21 +57,21 @@ describe('My Login Application', () => {
   describe('Manual Mode', function () {
     it('should login with valid credentials', async () => {
       // Stop automatic axe analysis
-      await manualController.stop()
+      await controller.stop()
 
       await browser.url('https://the-internet.herokuapp.com/login')
 
-      await manualController.analyze()
+      await controller.analyze()
 
       await browser.$('#username').setValue('tomsmith')
       await browser.$('#password').setValue('SuperSecretPassword!')
       await browser.$('button[type="submit"]').click()
       await browser.$('#flash').waitForExist()
 
-      await manualController.analyze()
+      await controller.analyze()
 
       // Restart automatic axe analysis
-      await manualController.start()
+      await controller.start()
 
       // Assert that 'You logged into a secure area!' element exists
       expect(browser.$('#flash')).to.be.exist
