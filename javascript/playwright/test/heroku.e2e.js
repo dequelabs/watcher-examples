@@ -8,10 +8,6 @@ require('dotenv').config({
 
 const { AXE_SERVER_URL, AXE_WATCHER_API_KEY } = process.env
 
-if (!AXE_WATCHER_API_KEY) {
-  throw new Error('AXE_WATCHER_API_KEY is not defined')
-}
-
 describe('My Login Application', () => {
   let page
   let browser
