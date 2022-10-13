@@ -1,0 +1,14 @@
+{
+  "name": "axe-watcher-cypress-example",
+  "private": true,
+  "scripts": {
+    "test": "cypress run --browser chrome --headed"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^0.0.1-next.a19eeac3",
+    "cypress": "^10.10.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
