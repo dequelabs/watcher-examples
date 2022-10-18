@@ -2,6 +2,9 @@ const puppeteer = require('puppeteer')
 // Import the axe Watcher utilities.
 const { puppeteerConfig, PuppeteerController } = require('@axe-core/watcher')
 
+// Get your configuration from environment variables.
+const { API_KEY, SERVER_URL } = process.env
+
 describe('My Login Application', () => {
   let browser
   let page
@@ -12,8 +15,8 @@ describe('My Login Application', () => {
       puppeteerConfig({
         // Configure axe Watcher.
         axe: {
-          apiKey: '11dc1214-cd42-4882-b568-bfc7dc384c18', // 'YOUR_API_KEY'
-          serverURL: 'http://localhost:3000' // 'YOUR_SERVER_URL'
+          apiKey: API_KEY,
+          serverURL: SERVER_URL
         },
         // Configure Puppeteer.
         args: [

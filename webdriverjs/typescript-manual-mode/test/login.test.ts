@@ -2,6 +2,10 @@ import 'mocha'
 import { Builder, By, until, WebDriver } from 'selenium-webdriver'
 import { webdriverConfig, WebdriverController } from '@axe-core/watcher'
 
+// Get your configuration from environment variables.
+const { API_KEY, SERVER_URL } = process.env
+
+
 describe('My Login Application', () => {
   let browser: WebDriver
   let controller: WebdriverController
@@ -12,8 +16,8 @@ describe('My Login Application', () => {
       .setChromeOptions(
         webdriverConfig({
           axe: {
-            apiKey: '11dc1214-cd42-4882-b568-bfc7dc384c18', // 'YOUR_API_KEY'
-            serverURL: 'http://localhost:3000' // 'YOUR_SERVER_URL'
+            apiKey: API_KEY as string,
+            serverURL: SERVER_URL,
           }
         })
       )
