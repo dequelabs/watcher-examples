@@ -1,0 +1,12 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^0.0.1-next.0b4066a4",
+    "mocha": "^10.0.0",
+    "playwright": "^1.27.1"
+  }
+}

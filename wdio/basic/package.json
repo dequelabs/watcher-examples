@@ -1,0 +1,13 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 4000 --exit"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^0.0.1-next.0b4066a4",
+    "chromedriver": "latest",
+    "mocha": "^10.0.0",
+    "webdriverio": "^7.25.2"
+  }
+}
