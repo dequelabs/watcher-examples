@@ -1,6 +1,6 @@
 {
   "name": "typescript-manual-mode",
-  "private":true,
+  "private": true,
   "scripts": {
     "test": "mocha --require ts-node/register --timeout 4000 test/*.test.ts"
   },

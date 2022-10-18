@@ -5,7 +5,6 @@ import { wdioConfig, WdioController } from '@axe-core/watcher'
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL } = process.env
 
-
 describe('My Login Application', () => {
   let browser: Browser<'async'>
   let controller: WdioController
@@ -15,7 +14,7 @@ describe('My Login Application', () => {
       wdioConfig({
         axe: {
           apiKey: API_KEY as string,
-          serverURL: SERVER_URL,
+          serverURL: SERVER_URL
         },
         options: {
           capabilities: {

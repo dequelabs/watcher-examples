@@ -16,7 +16,7 @@ describe('My Login Application', () => {
       playwrightConfig({
         axe: {
           apiKey: API_KEY as string,
-          serverURL: SERVER_URL,
+          serverURL: SERVER_URL
         }
       })
     )

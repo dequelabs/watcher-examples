@@ -1,5 +1,5 @@
 describe('Login', () => {
-  it('should login with valid credentials',  () => {
+  it('should login with valid credentials', () => {
     cy.visit('https://the-internet.herokuapp.com/login')
       .get('#username')
       .type('tomsmith')

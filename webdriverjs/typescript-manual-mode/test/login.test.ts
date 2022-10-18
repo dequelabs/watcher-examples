@@ -5,7 +5,6 @@ import { webdriverConfig, WebdriverController } from '@axe-core/watcher'
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL } = process.env
 
-
 describe('My Login Application', () => {
   let browser: WebDriver
   let controller: WebdriverController
@@ -17,7 +16,7 @@ describe('My Login Application', () => {
         webdriverConfig({
           axe: {
             apiKey: API_KEY as string,
-            serverURL: SERVER_URL,
+            serverURL: SERVER_URL
           }
         })
       )

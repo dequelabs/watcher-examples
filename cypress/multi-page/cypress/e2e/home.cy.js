@@ -1,5 +1,5 @@
 describe('Home', () => {
-  it('should list several links',  () => {
+  it('should list several links', () => {
     cy.visit('https://the-internet.herokuapp.com')
       .get('ul li a[href="/login"]')
       .should('exist')

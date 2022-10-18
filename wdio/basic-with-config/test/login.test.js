@@ -1,6 +1,5 @@
 const { WdioController } = require('@axe-core/watcher')
 
-
 describe('My Login Application', () => {
   afterEach(async () => {
     // Initialize the axe Watcher controller.
