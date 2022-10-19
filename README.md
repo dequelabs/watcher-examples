@@ -1,4 +1,4 @@
-# axe Watcher examples
+# axe Watcher Examples
 
 ## Running an example
 
