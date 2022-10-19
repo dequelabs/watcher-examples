@@ -2,7 +2,7 @@
 
 ## Running an example
 
-1. [setup an axe Watcher API key](https://axe.deque.com/settings)
+1. [Set up an axe Watcher API key](https://axe.deque.com/settings)
 1. Select an example (eg `cypress/basic`)
 1. Install the example's dependencies
    ```sh
