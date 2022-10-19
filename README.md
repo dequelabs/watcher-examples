@@ -1,6 +1,6 @@
 # axe Watcher Examples
 
-## Running an example
+## Running an Example
 
 1. [Set up an axe Watcher API key](https://axe.deque.com/settings)
 1. Select an example (eg `cypress/basic`)
