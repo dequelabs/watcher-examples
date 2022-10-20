@@ -6,6 +6,7 @@ const { API_KEY, SERVER_URL } = process.env
 
 describe('My Login Application', () => {
   let browser
+
   before(async () => {
     browser = await new Builder()
       .forBrowser('chrome')
