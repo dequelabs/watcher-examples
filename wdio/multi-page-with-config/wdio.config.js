@@ -1,4 +1,4 @@
-const { wdioTestRunner, WdioController } = require('@axe-core/watcher')
+const { wdioTestRunner } = require('@axe-core/watcher')
 
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL } = process.env
@@ -10,7 +10,10 @@ const config = {
   services: ['chromedriver'],
   framework: 'mocha',
   reporters: ['spec'],
-  maxInstances: 5
+  maxInstances: 5,
+  mochaOpts: {
+    timeout: 10000
+  }
 }
 
 exports.config = wdioTestRunner(
