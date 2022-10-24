@@ -1,4 +1,10 @@
+const { WdioController } = require('@axe-core/watcher')
+
 describe('Login', () => {
+  afterEach(async () => {
+    await new WdioController(browser).flush()
+  })
+
   beforeEach(async () => {
     await browser.url('https://the-internet.herokuapp.com')
     await browser.$('ul a[href="/login"]').click()
