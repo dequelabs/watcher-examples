@@ -15,5 +15,5 @@
    ```
 1. If you are using an axe DevTools server other than [axe.deque.com](https://axe.deque.com), specify its URL as an environment variable as well
    ```sh
-   SERVER_URL="axe.yourcompany.com" API_KEY="YOUR API KEY" npm test
+   SERVER_URL="https://axe.yourcompany.com" API_KEY="YOUR API KEY" npm test
    ```
