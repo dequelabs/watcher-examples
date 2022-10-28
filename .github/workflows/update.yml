@@ -30,8 +30,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: Update @axe-core/watcher'
-          branch: auto-update-postgres-types
-          base: develop
+          branch: auto-update-watcher
+          base: main
           title: 'chore: Update @axe-core/watcher'
           body: |
             This patch updates version of [`@axe-core/watcher`](https://npmjs.org/@axe-core/watcher) to the latest `@next` version.
