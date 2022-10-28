@@ -1,0 +1,39 @@
+name: Update @axe-core/watcher
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: |
+          Packages=$(find . -name "package.json" -not -path "*/node_modules/*")
+          for Package in $Packages; do
+            Dir=$(dirname "$Package")
+            if [[ "$Dir" == "." ]]; then
+              continue
+            fi
+            echo "Updating $Dir"
+            cd "$Dir"
+            npm install --save-dev @axe-core/watcher@next
+            cd -
+          done
+      - name: Open PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: Update @axe-core/watcher'
+          branch: auto-update-postgres-types
+          base: develop
+          title: 'chore(server): Update Postgres types'
+          body: |
+            This patch updates version of [`@axe-core/watcher`](https://npmjs.org/@axe-core/watcher) to the latest `@next` version.
+
+            This PR was opened by a robot :robot: :tada:.
