@@ -32,7 +32,7 @@ jobs:
           commit-message: 'chore: Update @axe-core/watcher'
           branch: auto-update-postgres-types
           base: develop
-          title: 'chore(server): Update Postgres types'
+          title: 'chore: Update @axe-core/watcher'
           body: |
             This patch updates version of [`@axe-core/watcher`](https://npmjs.org/@axe-core/watcher) to the latest `@next` version.
 
