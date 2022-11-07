@@ -5,7 +5,7 @@
     "test": "mocha --timeout 4000"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.0.0-next.ec203c9c",
+    "@axe-core/watcher": "^1.0.0-next.ad55a477",
     "chromedriver": "latest",
     "mocha": "^10.0.0",
     "selenium-webdriver": "^4.5.0"
