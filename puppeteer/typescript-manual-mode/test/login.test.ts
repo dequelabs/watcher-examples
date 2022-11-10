@@ -18,7 +18,8 @@ describe('My Login Application', () => {
         // Configure axe Watcher.
         axe: {
           apiKey: API_KEY as string,
-          serverURL: SERVER_URL
+          serverURL: SERVER_URL,
+          autoAnalyze: false
         },
         // Configure Puppeteer.
         args: [
