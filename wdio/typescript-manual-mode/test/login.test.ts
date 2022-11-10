@@ -14,7 +14,8 @@ describe('My Login Application', () => {
       wdioConfig({
         axe: {
           apiKey: API_KEY as string,
-          serverURL: SERVER_URL
+          serverURL: SERVER_URL,
+          autoAnalyze: false
         },
         options: {
           capabilities: {

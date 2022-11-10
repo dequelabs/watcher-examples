@@ -8,7 +8,8 @@ module.exports = defineConfig(
   cypressConfig({
     axe: {
       apiKey: API_KEY,
-      serverURL: SERVER_URL
+      serverURL: SERVER_URL,
+      autoAnalyze: false
     }
   })
 )
