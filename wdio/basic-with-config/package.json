@@ -5,7 +5,7 @@
     "test": "wdio run wdio.config.js"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.0.0-next.ad55a477",
+    "@axe-core/watcher": "^1.0.0-next.f2b67d16",
     "@wdio/cli": "^7.25.2",
     "@wdio/local-runner": "^7.25.2",
     "@wdio/mocha-framework": "^7.25.2",
