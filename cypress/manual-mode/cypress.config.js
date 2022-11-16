@@ -10,6 +10,7 @@ module.exports = defineConfig(
       apiKey: API_KEY,
       serverURL: SERVER_URL,
       autoAnalyze: false
-    }
+    },
+    defaultCommandTimeout: 10000
   })
 )
