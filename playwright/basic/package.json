@@ -5,7 +5,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.0.0-next.73be0a7e",
+    "@axe-core/watcher": "^1.0.0-next.0dde8071",
     "mocha": "^10.0.0",
     "playwright": "^1.27.1"
   }
