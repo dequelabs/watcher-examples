@@ -5,7 +5,7 @@
     "test": "mocha --timeout 10000 --require ts-node/register test/*.test.ts"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.0.0-next.73be0a7e",
+    "@axe-core/watcher": "^1.0.0-next.0dde8071",
     "@tsconfig/node18": "^1.0.1",
     "@types/mocha": "^10.0.0",
     "mocha": "^10.0.0",
