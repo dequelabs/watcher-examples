@@ -17,6 +17,7 @@ describe('My Login Application', () => {
         axe: {
           apiKey: API_KEY as string,
           serverURL: SERVER_URL,
+          // Prevent automatic analysis.
           autoAnalyze: false
         }
       })
@@ -26,7 +27,6 @@ describe('My Login Application', () => {
     // Initialize the axe Watcher controller
     controller = new PlaywrightController(page)
 
-    // Prevent automatic analysis.
     await controller.stop()
   })
 

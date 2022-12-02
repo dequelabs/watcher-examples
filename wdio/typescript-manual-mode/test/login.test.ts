@@ -15,6 +15,7 @@ describe('My Login Application', () => {
         axe: {
           apiKey: API_KEY as string,
           serverURL: SERVER_URL,
+          // Prevent automatic analysis.
           autoAnalyze: false
         },
         options: {
@@ -27,9 +28,6 @@ describe('My Login Application', () => {
 
     // Initialize the axe Watcher controller
     controller = new WdioController(browser)
-
-    // Prevent automatic analysis.
-    await controller.stop()
   })
 
   afterEach(async () => {
