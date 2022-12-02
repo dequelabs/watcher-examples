@@ -2,7 +2,7 @@
   "name": "basic",
   "private": true,
   "scripts": {
-    "test": "mocha --timeout 4000 --exit"
+    "test": "mocha --timeout 10000 --exit"
   },
   "devDependencies": {
     "@axe-core/watcher": "^1.1.0-next.af069c1c",

@@ -2,7 +2,7 @@
   "name": "typescript-manual-mode",
   "private": true,
   "scripts": {
-    "test": "mocha --require ts-node/register --timeout 4000 test/*.test.ts"
+    "test": "mocha --require ts-node/register --timeout 10000 test/*.test.ts"
   },
   "devDependencies": {
     "@axe-core/watcher": "^1.1.0-next.af069c1c",
