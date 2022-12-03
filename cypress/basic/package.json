@@ -5,7 +5,7 @@
     "test": "cypress run --headed --browser=chrome"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.1.0-next.af069c1c",
+    "@axe-core/watcher": "^1.1.0-next.641944b1",
     "cypress": "^11.1.0"
   }
 }
