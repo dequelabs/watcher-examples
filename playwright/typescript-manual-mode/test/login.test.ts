@@ -26,8 +26,6 @@ describe('My Login Application', () => {
 
     // Initialize the axe Watcher controller
     controller = new PlaywrightController(page)
-
-    await controller.stop()
   })
 
   afterEach(async () => {
