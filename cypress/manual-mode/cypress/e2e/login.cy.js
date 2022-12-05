@@ -1,9 +1,6 @@
 describe('My Login Application', () => {
   it('should login with valid credentials', () => {
-    cy
-      // Stop automatic axe analysis.
-      .axeStop()
-      .visit('https://the-internet.herokuapp.com/login')
+    cy.visit('https://the-internet.herokuapp.com/login')
       // Analyze the page.
       .axeAnalyze()
       .get('#username')

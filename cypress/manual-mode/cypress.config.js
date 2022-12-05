@@ -9,6 +9,7 @@ module.exports = defineConfig(
     axe: {
       apiKey: API_KEY,
       serverURL: SERVER_URL,
+      // Prevent automatic analysis.
       autoAnalyze: false
     },
     defaultCommandTimeout: 10000
