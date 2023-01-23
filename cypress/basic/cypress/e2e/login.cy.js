@@ -11,4 +11,14 @@ describe('My Login Application', () => {
       .get('#flash')
       .should('exist')
   })
+  it('should login with valid credentials', () => {
+    cy.visit('https://broken-workshop.dequelabs.com/')
+      .wait(2000)
+      .should('exist')
+  })
+  it('should login with valid credentials', () => {
+    cy.visit('http://abcdcomputech.dequecloud.com/')
+      .wait(2000)
+      .should('exist')
+  })
 })

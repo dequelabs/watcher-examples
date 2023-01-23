@@ -7,8 +7,8 @@ const { API_KEY, SERVER_URL } = process.env
 module.exports = defineConfig(
   cypressConfig({
     axe: {
-      apiKey: API_KEY,
-      serverURL: SERVER_URL
+      apiKey: 'b2daae81-c751-43e7-a133-bcfcddd4c858',
+      serverURL: 'https://axe.dequelabs.com/'
     },
     defaultCommandTimeout: 10000
   })

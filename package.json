@@ -12,10 +12,14 @@
     "lint-staged": "yarn lint && yarn fmt"
   },
   "devDependencies": {
+    "@axe-core/watcher": "^1.3.0-next.814ca1ee",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "eslint": "^8.18.0",
     "husky": "^8.0.1",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "cypress": "^12.3.0"
   }
 }
