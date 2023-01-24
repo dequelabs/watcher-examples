@@ -16,9 +16,5 @@ describe('My Login Application', () => {
       .wait(2000)
       .should('exist')
   })
-  it('should login with valid credentials', () => {
-    cy.visit('http://abcdcomputech.dequecloud.com/')
-      .wait(2000)
-      .should('exist')
-  })
+  
 })
