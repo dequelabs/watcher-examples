@@ -16,5 +16,4 @@ describe('My Login Application', () => {
       .wait(2000)
       .should('exist')
   })
-  
 })
