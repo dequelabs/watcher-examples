@@ -1,9 +1,17 @@
-const { WdioController } = require('@axe-core/watcher')
+const { WdioController, wrapWdio } = require('@axe-core/watcher')
 
 describe('My Login Application', () => {
-  afterEach(async () => {
+  let controller
+
+  before(() => {
     // Initialize the axe Watcher controller.
-    const controller = new WdioController(browser)
+    controller = new WdioController(browser)
+
+    // Wrap the WDIO browser.
+    wrapWdio(browser, controller)
+  })
+
+  afterEach(async () => {
     // Ensure that all the axe Watcher test results are flushed out.
     await controller.flush()
   })
