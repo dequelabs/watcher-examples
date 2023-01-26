@@ -1,4 +1,4 @@
-const { WdioController,wrapWdio } = require('@axe-core/watcher')
+const { WdioController, wrapWdio } = require('@axe-core/watcher')
 
 describe('Home', () => {
   let controller
