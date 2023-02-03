@@ -1,6 +1,6 @@
 import 'mocha'
 import { remote, Browser } from 'webdriverio'
-import { wdioConfig, WdioController } from '@axe-core/watcher'
+import { wdioConfig, WdioController, wrapWdio } from '@axe-core/watcher'
 
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL } = process.env
@@ -26,12 +26,15 @@ describe('My Login Application', () => {
       })
     )
 
-    // Initialize the axe Watcher controller
+    // Initialize the axe Watcher controller.
     controller = new WdioController(browser)
+
+    // Wrap the WDIO browser.
+    wrapWdio(browser, controller)
   })
 
   afterEach(async () => {
-    // Ensure that all the axe Watcher test results are flushed out
+    // Ensure that all the axe Watcher test results are flushed out.
     await controller.flush()
   })
 

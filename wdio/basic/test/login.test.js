@@ -1,11 +1,12 @@
 const wdio = require('webdriverio')
-const { wdioConfig, WdioController } = require('@axe-core/watcher')
+const { wdioConfig, WdioController, wrapWdio } = require('@axe-core/watcher')
 
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL } = process.env
 
 describe('My Login Application', () => {
   let browser
+  let controller
 
   before(async () => {
     browser = await wdio.remote(
@@ -21,12 +22,16 @@ describe('My Login Application', () => {
         }
       })
     )
+
+    // Initialize the axe Watcher controller.
+    controller = new WdioController(browser)
+
+    // Wrap the WDIO browser.
+    wrapWdio(browser, controller)
   })
 
   afterEach(async () => {
-    // Initialize the axe Watcher controller
-    const controller = new WdioController(browser)
-    // Ensure that all the axe Watcher test results are flushed out
+    // Ensure that all the axe Watcher test results are flushed out.
     await controller.flush()
   })
 
