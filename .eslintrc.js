@@ -15,6 +15,27 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    es6: true
-  }
+    es6: true,
+    mocha: true
+  },
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off'
+      }
+    },
+    {
+      files: ['./cypress/**/*.js', './cypress/**/*.ts'],
+      plugins: ['cypress'],
+      env: {
+        'cypress/globals': true
+      }
+    },
+    {
+      files: ['./wdio/*-config/**/*.test.js', './wdio/*-config/**/*.test.ts'],
+      plugins: ['wdio'],
+      extends: ['plugin:wdio/recommended']
+    }
+  ]
 }
