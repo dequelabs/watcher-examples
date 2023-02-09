@@ -8,8 +8,8 @@
   "scripts": {
     "fmt": "prettier --write .",
     "prepare": "husky install",
-    "lint": "eslint --fix .",
-    "lint-staged": "yarn lint && yarn fmt"
+    "lint": "eslint .",
+    "lint-staged": "yarn lint --fix && yarn fmt"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.29.0",
