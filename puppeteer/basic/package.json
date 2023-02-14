@@ -5,7 +5,7 @@
     "test": "mocha --timeout 10000"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.4.0-next.7b032bdd",
+    "@axe-core/watcher": "^1.4.0-next.f2487453",
     "mocha": "^10.0.0",
     "puppeteer": "^19.0.0"
   }
