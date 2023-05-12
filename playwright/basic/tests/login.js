@@ -7,10 +7,7 @@ const {
 } = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
-const {
-  API_KEY = '900e0d86-b10a-445c-85a2-c8459178874c',
-  SERVER_URL = 'http://localhost:3000'
-} = process.env
+const { API_KEY, SERVER_URL } = process.env
 
 describe('My Login Application', () => {
   let browserContext
