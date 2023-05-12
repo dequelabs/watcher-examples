@@ -1,0 +1,13 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 5000 'tests/login.js'"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^1.8.2-next.41231a52",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "playwright": "^1.33.0"
+  }
+}
