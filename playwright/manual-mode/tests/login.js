@@ -24,8 +24,9 @@ describe('My Application', () => {
           /* Disable automatic analysis. */
           autoAnalyze: false
         },
-        /* Any other Playwright configuration options. */
-        headless: false
+        //@see: https://playwright.dev/docs/chrome-extensions#headless-mode
+        headless: false,
+        args: ['--headless=new']
       })
     )
 

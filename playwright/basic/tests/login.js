@@ -7,9 +7,12 @@ const {
 } = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
-const { API_KEY, SERVER_URL } = process.env
+const {
+  API_KEY = '900e0d86-b10a-445c-85a2-c8459178874c',
+  SERVER_URL = 'http://localhost:3000'
+} = process.env
 
-describe('My Application', () => {
+describe('My Login Application', () => {
   let browserContext
   let page
   let controller
@@ -22,8 +25,9 @@ describe('My Application', () => {
           apiKey: API_KEY,
           serverURL: SERVER_URL
         },
-        /* Any other Playwright configuration options. */
-        headless: false
+        //@see: https://playwright.dev/docs/chrome-extensions#headless-mode
+        headless: false,
+        args: ['--headless=new']
       })
     )
 
