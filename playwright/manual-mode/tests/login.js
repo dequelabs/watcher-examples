@@ -1,10 +1,6 @@
 const { assert } = require('chai')
 const playwright = require('playwright')
-const {
-  wrapPlaywright,
-  PlaywrightController,
-  playwrightConfig
-} = require('@axe-core/watcher')
+const { PlaywrightController, playwrightConfig } = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL } = process.env
@@ -32,9 +28,6 @@ describe('My Application', () => {
 
     page = await browserContext.newPage()
     controller = new PlaywrightController(page)
-
-    /* Wrap the Playwright browser context. */
-    wrapPlaywright(browserContext, controller)
   })
 
   after(async () => {
@@ -66,9 +59,6 @@ describe('My Application', () => {
         await controller.analyze()
 
         assert.isNotNull(element)
-
-        /* Restart automatic axe analysis. */
-        await controller.start()
       })
     })
   })
