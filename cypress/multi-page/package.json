@@ -5,7 +5,7 @@
     "test": "cypress run --headed --browser chrome"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^1.8.2-next.aaaf0ecc",
+    "@axe-core/watcher": "^1.8.2-next.6a75c4a3",
     "cypress": "^12.12.0"
   }
 }
