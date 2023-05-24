@@ -22,7 +22,7 @@ jobs:
             fi
             echo "Updating $Dir"
             cd "$Dir"
-            npm install --save-dev @axe-core/watcher@next
+            npm install --save-dev @axe-core/watcher@latest
             cd -
           done
       - name: Open PR
