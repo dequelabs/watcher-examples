@@ -34,6 +34,6 @@ jobs:
           base: main
           title: 'chore: Update @axe-core/watcher'
           body: |
-            This patch updates version of [`@axe-core/watcher`](https://npmjs.org/@axe-core/watcher) to the latest `@next` version.
+            This patch updates version of [`@axe-core/watcher`](https://npmjs.org/@axe-core/watcher) to the latest stable version.
 
             This PR was opened by a robot :robot: :tada:.
