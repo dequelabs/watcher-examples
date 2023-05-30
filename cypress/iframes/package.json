@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "cypress run --headed --browser=chrome"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^2.0.0",
+    "cypress": "^12.13.0"
+  }
+}
