@@ -6,7 +6,6 @@ import {
   wrapPlaywright
 } from '@axe-core/watcher'
 import assert from 'assert'
-import crypto from 'crypto'
 
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 assert(API_KEY, 'API_KEY is required')
@@ -21,10 +20,7 @@ before(async () => {
     playwrightConfig({
       axe: {
         apiKey: API_KEY,
-        serverURL: SERVER_URL,
-        // Because this browser context is shared between tests, we generate a single session ID for each to also share.
-        // Without this, axe DevHub will consider each test to be a separate run.
-        sessionId: crypto.randomUUID()
+        serverURL: SERVER_URL
       },
       headless: false,
       args: ['--headless=new']
