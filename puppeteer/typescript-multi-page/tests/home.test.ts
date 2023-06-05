@@ -7,7 +7,6 @@ describe('Home page', () => {
     await page.goto('https://the-internet.herokuapp.com')
   })
 
-
   it('should contain a list of links', async () => {
     const links = await page.$$('ul li a')
     assert.isAtLeast(links.length, 20)

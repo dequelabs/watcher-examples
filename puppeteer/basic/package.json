@@ -1,6 +1,6 @@
 {
   "name": "basic",
-  "private":true,
+  "private": true,
   "scripts": {
     "test": "mocha tests/*.js --timeout 10s"
   },
