@@ -40,7 +40,6 @@ beforeEach(async () => {
 
 afterEach(async () => {
   await controller.flush()
-  console.log('FLUSHHHHH')
   await page.close()
 })
 
