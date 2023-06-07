@@ -1,0 +1,14 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 10s tests/*.js"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^2.0.0-next.ebbadb72",
+    "chai": "^4.3.7",
+    "chromedriver": "^114.0.1",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.9.2"
+  }
+}
