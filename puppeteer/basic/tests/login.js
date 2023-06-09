@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const puppeteer = require('puppeteer')
 const {
-  wrapPlaywright,
+  wrapPuppeteer,
   PuppeteerController,
   puppeteerConfig
 } = require('@axe-core/watcher')
@@ -27,7 +27,7 @@ describe('My Login Application', () => {
     const browserContext = browser.browserContexts()[0]
     page = await browser.newPage()
     controller = new PuppeteerController(page)
-    wrapPlaywright(browserContext, controller)
+    wrapPuppeteer(browserContext, controller)
   })
 
   after(async () => {
