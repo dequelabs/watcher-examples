@@ -33,7 +33,7 @@ module.exports = {
       }
     },
     {
-      files: ['./wdio/*-config/**/*.test.js', './wdio/*-config/**/*.test.ts'],
+      files: ['./wdio/**/*.test.js', './wdio/**/*.test.ts'],
       plugins: ['wdio'],
       extends: ['plugin:wdio/recommended']
     }
