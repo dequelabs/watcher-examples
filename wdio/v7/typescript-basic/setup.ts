@@ -6,7 +6,8 @@ import { remote, type Browser } from 'webdriverio'
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 
 /**
- * As of V8, WebdriverIO removed the deprecated the @wdio/sync package. To use this on V7 of WebdriverIO
+ * As of V8, WebdriverIO removed the deprecated the @wdio/sync package.
+ * To use @axe-core/watcher on V7 of WebdriverIO
  * you'll need to use the type `Browser<'async'>` instead of `Browser`.
  *
  * @see https://webdriver.io/blog/2021/07/28/sync-api-deprecation/
@@ -47,4 +48,4 @@ after(async () => {
   browser.deleteSession()
 })
 
-export { browser, controller }
+export { browser }
