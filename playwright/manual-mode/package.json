@@ -5,7 +5,7 @@
     "test": "mocha --timeout 5000 'tests/login.js'"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^2.2.0",
+    "@axe-core/watcher": "^2.3.0",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
     "playwright": "^1.33.0"
