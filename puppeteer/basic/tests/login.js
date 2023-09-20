@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const puppeteer = require('puppeteer')
 const {
-  wrapPuppeteer,
+  wrapPuppeteerPage,
   PuppeteerController,
   puppeteerConfig
 } = require('@axe-core/watcher')
@@ -24,10 +24,14 @@ describe('My Login Application', () => {
         headless: false
       })
     )
-    const browserContext = browser.browserContexts()[0]
+    // Create a page instance, using your browser instance.
     page = await browser.newPage()
+
+    // Initialize the PuppeteerController by passing in the Puppeteer page.
     controller = new PuppeteerController(page)
-    wrapPuppeteer(browserContext, controller)
+
+    // Use the new wrapped Puppeteer page instance.
+    page = wrapPuppeteerPage(page, controller)
   })
 
   after(async () => {

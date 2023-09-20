@@ -1,13 +1,9 @@
 import 'mocha'
-import puppeteer, {
-  type Page,
-  type Browser,
-  type BrowserContext
-} from 'puppeteer'
+import puppeteer, { type Page, type Browser } from 'puppeteer'
 import {
   puppeteerConfig,
   PuppeteerController,
-  wrapPuppeteer
+  wrapPuppeteerPage
 } from '@axe-core/watcher'
 import assert from 'assert'
 
@@ -16,7 +12,6 @@ assert(API_KEY, 'API_KEY is required')
 
 let page: Page
 let browser: Browser
-let browserContext: BrowserContext
 let controller: PuppeteerController
 
 before(async () => {
@@ -29,13 +24,17 @@ before(async () => {
       headless: false
     })
   )
-  browserContext = browser.browserContexts()[0]
 })
 
 beforeEach(async () => {
+  // Create a page instance, using your browser instance.
   page = await browser.newPage()
+
+  // Initialize the PuppeteerController by passing in the Puppeteer page.
   controller = new PuppeteerController(page)
-  wrapPuppeteer(browserContext, controller)
+
+  // Use the new wrapped Puppeteer page instance.
+  page = wrapPuppeteerPage(page, controller)
 })
 
 afterEach(async () => {

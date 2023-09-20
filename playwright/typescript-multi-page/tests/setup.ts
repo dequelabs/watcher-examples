@@ -3,7 +3,7 @@ import playwright from 'playwright'
 import {
   playwrightConfig,
   PlaywrightController,
-  wrapPlaywright
+  wrapPlaywrightPage
 } from '@axe-core/watcher'
 import assert from 'assert'
 
@@ -29,9 +29,14 @@ before(async () => {
 })
 
 beforeEach(async () => {
+  // Create a page instance, using your browser context.
   page = await browserContext.newPage()
+
+  // Initialize the PlaywrightController by passing in the Playwright page.
   controller = new PlaywrightController(page)
-  wrapPlaywright(browserContext, controller)
+
+  // Use the new wrapped Playwright page instance.
+  page = wrapPlaywrightPage(page, controller)
 })
 
 afterEach(async () => {
