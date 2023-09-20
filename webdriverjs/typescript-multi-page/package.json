@@ -5,7 +5,7 @@
     "test": "mocha --require ts-node/register --timeout 10s tests/*.test.ts"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^2.4.0",
+    "@axe-core/watcher": "^3.1.0",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/selenium-webdriver": "^4.1.15",
