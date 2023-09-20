@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const playwright = require('playwright')
 const {
-  wrapPlaywright,
+  wrapPlaywrightPage,
   PlaywrightController,
   playwrightConfig
 } = require('@axe-core/watcher')
@@ -28,11 +28,14 @@ describe('My Login Application', () => {
       })
     )
 
+    // Create a page instance, using your browser context.
     page = await browserContext.newPage()
+
+    // Initialize the PlaywrightController by passing in the Playwright page.
     controller = new PlaywrightController(page)
 
-    /* Wrap the Playwright browser context. */
-    wrapPlaywright(browserContext, controller)
+    // Use the new wrapped Playwright page instance.
+    page = wrapPlaywrightPage(page, controller)
   })
 
   after(async () => {

@@ -26,7 +26,10 @@ describe('My Application', () => {
       })
     )
 
+    // Create a page instance, using your browser context.
     page = await browserContext.newPage()
+
+    // Initialize the PlaywrightController by passing in the Playwright page.
     controller = new PlaywrightController(page)
   })
 
