@@ -38,7 +38,7 @@ suite(env => {
     })
 
     after(async () => {
-      await browser.quit()
+      await browser?.quit()
     })
 
     describe('with valid credentials', () => {
