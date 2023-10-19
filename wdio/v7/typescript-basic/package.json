@@ -1,17 +1,19 @@
 {
-  "name": "typescript-multi-page",
+  "name": "typescript-basic",
   "private": true,
   "scripts": {
-    "test": "mocha --require ts-node/register --timeout 10s tests/*.test.ts"
+    "test": "mocha --require ts-node/register --timeout 10s '**/*.test.ts'"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.1.1",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
+    "@types/node": "^20.3.1",
     "chai": "^4.3.7",
+    "chromedriver": "^114.0.2",
     "mocha": "^10.2.0",
-    "playwright": "^1.34.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3",
+    "webdriverio": "7.32.1"
   }
 }
