@@ -1,5 +1,9 @@
 const { Builder, until } = require('selenium-webdriver')
-const { wrapWebdriver, webdriverConfig, WebdriverController } = require('@axe-core/watcher')
+const {
+  wrapWebdriver,
+  webdriverConfig,
+  WebdriverController
+} = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
