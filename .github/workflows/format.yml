@@ -3,15 +3,21 @@ name: Format
 on: [pull_request]
 
 jobs:
-  prettier:
+  autocorrect:
     runs-on: ubuntu-latest
+    # Only run on PRs from non-forks
+    if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
-      - name: Cloning the repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-      - name: Prettify the code
-        uses: creyD/prettier_action@v4.3
+      - uses: actions/setup-node@v3
         with:
-          prettier_options: '--write .'
+          node-version: 18
+      - run: yarn install --no-lockfile
+      - run: yarn fmt
+      - run: yarn lint --fix
+      - uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # tag=v5
+        with:
+          commit_message: ':robot: Automated formatting fixes'
