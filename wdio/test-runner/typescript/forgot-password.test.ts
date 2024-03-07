@@ -24,8 +24,9 @@ describe('forgot password', () => {
       await $('#email').setValue('person@place.biz')
       await $('button[type="submit"]').click()
       await browser.waitUntil(async () => {
-        // "Internal Server Error" header
-        return (await $('body > h1')).isDisplayed()
+        const h1 = await $('h1')
+        const h1text = await h1.getText()
+        return h1text.includes('Internal Server Error')
       })
     })
   })
