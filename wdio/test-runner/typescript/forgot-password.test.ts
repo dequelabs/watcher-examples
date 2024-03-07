@@ -23,8 +23,9 @@ describe('forgot password', () => {
       await expect($('button[type="submit"]')).toBeDisplayed()
       await $('#email').setValue('person@place.biz')
       await $('button[type="submit"]').click()
-      await browser.waitUntil(() => {
-        document.body.innerHTML.includes('Internal Server Error')
+      await browser.waitUntil(async () => {
+        // "Internal Server Error" header
+        return (await $('body > h1')).isDisplayed()
       })
     })
   })
