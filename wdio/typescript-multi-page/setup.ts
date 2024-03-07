@@ -1,15 +1,15 @@
 import 'mocha'
 import { wdioConfig, WdioController, wrapWdio } from '@axe-core/watcher'
-import { remote, type Browser } from 'webdriverio'
+import { remote } from 'webdriverio'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 
-let browser: Browser
+let browser: WebdriverIO.Browser
 let controller: WdioController
 
 before(async () => {
-  browser = (await remote(
+  browser = await remote(
     wdioConfig({
       axe: {
         apiKey: API_KEY as string,
@@ -19,7 +19,7 @@ before(async () => {
         browserName: 'chrome'
       }
     })
-  )) as Browser // Type assertion for better compatibility.
+  )
 
   controller = new WdioController(browser)
   wrapWdio(browser, controller)

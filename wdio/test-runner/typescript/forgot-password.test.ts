@@ -23,8 +23,10 @@ describe('forgot password', () => {
       await expect($('button[type="submit"]')).toBeDisplayed()
       await $('#email').setValue('person@place.biz')
       await $('button[type="submit"]').click()
-      await browser.waitUntil(() => {
-        document.body.innerHTML.includes('Internal Server Error')
+      await browser.waitUntil(async () => {
+        const h1 = await $('h1')
+        const h1text = await h1.getText()
+        return h1text.includes('Internal Server Error')
       })
     })
   })
