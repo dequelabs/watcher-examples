@@ -6,7 +6,7 @@ describe('My Login Application', () => {
       .get('#username')
       .type(loginCredentials.username)
       .get('#password')
-      .type(loginCredentials.password)
+      .type(Cypress.env('password'))
       .get('button[type="submit"]')
       .click()
       .wait(1000)

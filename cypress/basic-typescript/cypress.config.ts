@@ -9,6 +9,9 @@ export default defineConfig(
       apiKey: API_KEY,
       serverURL: SERVER_URL
     },
+    env: {
+      password: 'SuperSecretPassword!'
+    },
     defaultCommandTimeout: 10000
   })
 )
