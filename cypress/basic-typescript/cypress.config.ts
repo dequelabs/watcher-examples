@@ -1,10 +1,7 @@
 import { defineConfig } from 'cypress'
 import { cypressConfig } from '@axe-core/watcher'
 
-const {
-  API_KEY = '4771ba7b-3333-4f7b-9c98-07248f4be95f',
-  SERVER_URL = 'https://axe.dequelabs.com'
-} = process.env
+const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 
 export default defineConfig(
   cypressConfig({
