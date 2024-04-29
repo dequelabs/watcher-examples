@@ -13,3 +13,4 @@ videos/
 screenshots/
 downloads/
 .test-results/
+**/axe-watcher

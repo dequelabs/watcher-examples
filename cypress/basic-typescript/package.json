@@ -1,0 +1,15 @@
+{
+  "name": "basic-typescript",
+  "description": "A basic Cypress TypeScript project integrating with @axe-core/watcher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "cypress run --headed --browser=chrome"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^3.8.0",
+    "cypress": "^13.8.1",
+    "typescript": "^5.4.5"
+  }
+}
