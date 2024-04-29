@@ -1,1 +1,1 @@
-require('@axe-core/watcher/dist/cypressCommands')
+import '@axe-core/watcher/dist/cypressCommands'
