@@ -3,5 +3,5 @@ require('@axe-core/watcher/dist/cypressCommands')
 
 // Flush axe-watcher results after each test.
 afterEach(() => {
-  cy.axeFlush()
+  cy.axeWatcherFlush()
 })
