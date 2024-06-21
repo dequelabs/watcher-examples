@@ -31,7 +31,7 @@ describe('My Login Application', () => {
   after(async () => {
     await browser.quit()
   })
-  
+
   afterEach(async () => {
     await controller.flush()
   })
