@@ -31,6 +31,10 @@ describe('My Login Application', () => {
   after(async () => {
     await browser.quit()
   })
+  
+  afterEach(async () => {
+    await controller.flush()
+  })
 
   describe('with valid credentials', () => {
     it('should login', async () => {
