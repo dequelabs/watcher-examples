@@ -32,6 +32,10 @@ describe('My Login Application', () => {
     await browser.quit()
   })
 
+  afterEach(async () => {
+    await controller.flush()
+  })
+
   describe('with valid credentials', () => {
     it('should login', async () => {
       await browser.get('https://the-internet.herokuapp.com/login')
