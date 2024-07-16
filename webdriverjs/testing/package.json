@@ -2,7 +2,7 @@
   "name": "testing",
   "private": true,
   "scripts": {
-    "test": "mocha --timeout 10s tests/*.js"
+    "test": "SELENIUM_BROWSER=chrome mocha --timeout 10s tests/*.js"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.11.1",
