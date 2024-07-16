@@ -10,7 +10,7 @@
     "@types/mocha": "^10.0.1",
     "@types/selenium-webdriver": "^4.1.15",
     "chai": "^4.3.7",
-    "chromedriver": "^114.0.1",
+    "chromedriver": "^126.0.4",
     "mocha": "^10.2.0",
     "selenium-webdriver": "^4.9.2",
     "ts-node": "^10.9.1",

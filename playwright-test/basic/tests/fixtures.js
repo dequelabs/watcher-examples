@@ -9,5 +9,6 @@ module.exports = playwrightTest({
     apiKey: API_KEY,
     serverURL: SERVER_URL
   },
-  headless: false
+  headless: false,
+  args: ['--headless=new']
 })
