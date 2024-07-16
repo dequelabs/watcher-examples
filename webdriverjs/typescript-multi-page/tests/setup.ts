@@ -5,6 +5,7 @@ import {
   webdriverConfig,
   WebdriverController
 } from '@axe-core/watcher'
+import { Options } from 'selenium-webdriver/chrome'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -20,7 +21,8 @@ before(async () => {
         axe: {
           apiKey: API_KEY as string,
           serverURL: SERVER_URL
-        }
+        },
+        ...new Options().addArguments('--headless=new')
       })
     )
     .build()

@@ -4,6 +4,7 @@ const {
   webdriverConfig,
   WebdriverController
 } = require('@axe-core/watcher')
+const { Options } = require('selenium-webdriver/chrome')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -16,12 +17,15 @@ describe('My Login Application', () => {
     browser = await new Builder()
       .forBrowser('chrome')
       .setChromeOptions(
-        webdriverConfig({
-          axe: {
-            apiKey: API_KEY,
-            serverURL: SERVER_URL
-          }
-        })
+        webdriverConfig(
+          {
+            axe: {
+              apiKey: API_KEY,
+              serverURL: SERVER_URL
+            }
+          },
+          ...new Options().addArguments('--headless=new')
+        )
       )
       .build()
     controller = new WebdriverController(browser)

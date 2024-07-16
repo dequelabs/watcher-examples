@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: cd cypress/iframes && npm install
+      - run: cd cypress/iframes && node server.js &
       - run: cd cypress/iframes && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -51,6 +53,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: npx playwright install
       - run: cd playwright/basic && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -61,6 +64,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: npx playwright install
       - run: cd playwright/manual-mode && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -71,6 +75,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: npx playwright install
       - run: cd playwright/typescript-multi-page && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -81,6 +86,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: npx playwright install
       - run: cd playwright-test/basic && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -91,6 +97,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: npx playwright install
       - run: cd playwright-test/multi-page && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
@@ -103,6 +110,8 @@ jobs:
         with:
           node-version: 18
       - run: cd puppeteer/basic && npm install && npm test
+        env:
+          API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
   puppeteer-typescript-multi-page:
     runs-on: ubuntu-latest
     steps:
