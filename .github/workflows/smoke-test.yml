@@ -163,7 +163,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
+          node-version: 16
       - run: cd wdio/v7/typescript-basic && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
