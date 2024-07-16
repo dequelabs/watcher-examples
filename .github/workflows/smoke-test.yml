@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd cypress/basic && npm ci && npm test
+      - run: cd cypress/basic && npm install && npm test
   cypress-iframes:
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd cypress/iframes && npm ci && npm test
+      - run: cd cypress/iframes && npm install && npm test
   cypress-manual-mode:
     runs-on: ubuntu-latest
     steps:
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd cypress/manual-mode && npm ci && npm test
+      - run: cd cypress/manual-mode && npm install && npm test
   cypress-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd cypress/multi-page && npm ci && npm test
+      - run: cd cypress/multi-page && npm install && npm test
 
   playwright-basic:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd playwright/basic && npm ci && npm test
+      - run: cd playwright/basic && npm install && npm test
   playwright-manual-mode:
     runs-on: ubuntu-latest
     steps:
@@ -51,7 +51,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd playwright/manual-mode && npm ci && npm test
+      - run: cd playwright/manual-mode && npm install && npm test
   playwright-typescript-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd playwright/typescript-multi-page && npm ci && npm test
+      - run: cd playwright/typescript-multi-page && npm install && npm test
 
   playwright-test-basic:
     runs-on: ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd playwright-test/basic && npm ci && npm test
+      - run: cd playwright-test/basic && npm install && npm test
   playwright-test-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -76,7 +76,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd playwright-test/multi-page && npm ci && npm test
+      - run: cd playwright-test/multi-page && npm install && npm test
 
   puppeteer-basic:
     runs-on: ubuntu-latest
@@ -85,7 +85,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd puppeteer/basic && npm ci && npm test
+      - run: cd puppeteer/basic && npm install && npm test
   puppeteer-typescript-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd puppeteer/typescript-multi-page && npm ci && npm test
+      - run: cd puppeteer/typescript-multi-page && npm install && npm test
 
   wdio-test-runner-typescript:
     runs-on: ubuntu-latest
@@ -102,7 +102,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-test-runner/typescript && npm ci && npm test
+      - run: cd wdio-test-runner/typescript && npm install && npm test
   wdio-test-runner-typescript-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -110,7 +110,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-test-runner/typescript-multi-page && npm ci && npm test
+      - run: cd wdio-test-runner/typescript-multi-page && npm install && npm test
   wdio-v7-typescript-basic:
     runs-on: ubuntu-latest
     steps:
@@ -118,7 +118,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-v7/typescript-basic && npm ci && npm test
+      - run: cd wdio-v7/typescript-basic && npm install && npm test
 
   webdriverjs-basic:
     runs-on: ubuntu-latest
@@ -127,7 +127,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd webdriverjs/basic && npm ci && npm test
+      - run: cd webdriverjs/basic && npm install && npm test
   webdriverjs-testing:
     runs-on: ubuntu-latest
     steps:
@@ -135,7 +135,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd webdriverjs/testing && npm ci && npm test
+      - run: cd webdriverjs/testing && npm install && npm test
   webdriverjs-typescript-multi-page:
     runs-on: ubuntu-latest
     steps:
@@ -143,4 +143,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd webdriverjs/typescript-multi-page && npm ci && npm test
+      - run: cd webdriverjs/typescript-multi-page && npm install && npm test
