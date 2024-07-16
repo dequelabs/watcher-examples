@@ -16,6 +16,8 @@ suite(env => {
     let controller
 
     before(async () => {
+      const options = new Options()
+      options.addArguments('--headless=new')
       const builder = env.builder()
 
       // axe Watcher only supports Chrome.
@@ -24,15 +26,13 @@ suite(env => {
       } else {
         browser = await builder
           .setChromeOptions(
-            webdriverConfig(
-              {
-                axe: {
-                  apiKey: API_KEY,
-                  serverURL: SERVER_URL
-                }
+            webdriverConfig({
+              axe: {
+                apiKey: API_KEY,
+                serverURL: SERVER_URL
               },
-              ...new Options().addArguments('--headless=new')
-            )
+              options
+            })
           )
           .build()
 

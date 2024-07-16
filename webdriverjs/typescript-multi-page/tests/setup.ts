@@ -14,6 +14,8 @@ let browser: WebDriver
 let controller: WebdriverController
 
 before(async () => {
+  const options = new Options()
+  options.addArguments('--headless=new')
   browser = await new Builder()
     .forBrowser('chrome')
     .setChromeOptions(
@@ -22,7 +24,7 @@ before(async () => {
           apiKey: API_KEY as string,
           serverURL: SERVER_URL
         },
-        ...new Options().addArguments('--headless=new')
+        options
       })
     )
     .build()

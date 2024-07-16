@@ -130,7 +130,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-test-runner/typescript && npm install && npm test
+      - run: cd wdio/test-runner/typescript && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
   wdio-test-runner-typescript-multi-page:
@@ -140,7 +140,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-test-runner/typescript-multi-page && npm install && npm test
+      - run: cd wdio/typescript-multi-page && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
   wdio-v7-typescript-basic:
@@ -150,7 +150,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd wdio-v7/typescript-basic && npm install && npm test
+      - run: cd wdio/v7/typescript-basic && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
 

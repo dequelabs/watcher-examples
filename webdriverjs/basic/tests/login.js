@@ -14,18 +14,18 @@ describe('My Login Application', () => {
   let controller
 
   before(async () => {
+    const options = new Options()
+    options.addArguments('--headless=new')
     browser = await new Builder()
       .forBrowser('chrome')
       .setChromeOptions(
-        webdriverConfig(
-          {
-            axe: {
-              apiKey: API_KEY,
-              serverURL: SERVER_URL
-            }
+        webdriverConfig({
+          axe: {
+            apiKey: API_KEY,
+            serverURL: SERVER_URL
           },
-          ...new Options().addArguments('--headless=new')
-        )
+          options
+        })
       )
       .build()
     controller = new WebdriverController(browser)
