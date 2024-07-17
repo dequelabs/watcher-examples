@@ -21,48 +21,31 @@ jobs:
     strategy:
       matrix:
         include:
-          - test-suite: cypress-basic
-            directory: cypress/basic
-          - test-suite: cypress-iframes
-            directory: cypress/iframes
+          - directory: cypress/basic
+          - directory: cypress/iframes
             additional-steps: cd cypress/iframes && node server.js &
-          - test-suite: cypress-manual-mode
-            directory: cypress/manual-mode
-          - test-suite: cypress-multi-page
-            directory: cypress/multi-page
-          - test-suite: playwright-basic
-            directory: playwright/basic
+          - directory: cypress/manual-mode
+          - directory: cypress/multi-page
+          - directory: playwright/basic
             playwright: true
-          - test-suite: playwright-manual-mode
-            directory: playwright/manual-mode
+          - directory: playwright/manual-mode
             playwright: true
-          - test-suite: playwright-typescript-multi-page
-            directory: playwright/typescript-multi-page
+          - directory: playwright/typescript-multi-page
             playwright: true
-          - test-suite: playwright-test-basic
-            directory: playwright-test/basic
+          - directory: playwright-test/basic
             playwright: true
-          - test-suite: playwright-test-multi-page
-            directory: playwright-test/multi-page
+          - directory: playwright-test/multi-page
             playwright: true
-          - test-suite: puppeteer-basic
-            directory: puppeteer/basic
-          - test-suite: puppeteer-typescript-multi-page
-            directory: puppeteer/typescript-multi-page
-          - test-suite: wdio-test-runner-typescript
-            directory: wdio/test-runner/typescript
-          - test-suite: wdio-test-runner-typescript-multi-page
-            directory: wdio/typescript-multi-page
-          - test-suite: wdio-v7-typescript-basic
-            directory: wdio/v7/typescript-basic
+          - directory: puppeteer/basic
+          - directory: puppeteer/typescript-multi-page
+          - directory: wdio/test-runner/typescript
+          - directory: wdio/typescript-multi-page
+          - directory: wdio/v7/typescript-basic
             # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
             node-version: 16
-          - test-suite: webdriverjs-basic
-            directory: webdriverjs/basic
-          - test-suite: webdriverjs-testing
-            directory: webdriverjs/testing
-          - test-suite: webdriverjs-typescript-multi-page
-            directory: webdriverjs/typescript-multi-page
+          - directory: webdriverjs/basic
+          - directory: webdriverjs/testing
+          - directory: webdriverjs/typescript-multi-page
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -71,9 +54,10 @@ jobs:
       - name: Install Playwright
         if: ${{ matrix.playwright }}
         run: npx playwright install
-      - name: Start server
+      - name: Additional steps
         if: ${{ matrix.additional-steps }}
         run: ${{ matrix.additional-steps }}
-      - run: cd ${{ matrix.directory }} && npm install && npm test
+      - name: Run tests
+        run: cd ${{ matrix.directory }} && npm install && npm test --timeout 60s
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
