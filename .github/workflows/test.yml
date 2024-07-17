@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
+      # We don't want to fail the whole matrix if one job fails
+      # Makes it harder to debug what went wrong if it ends early
+      fail-fast: false
       matrix:
         include:
           - directory: cypress/basic
