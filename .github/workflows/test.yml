@@ -23,8 +23,7 @@ jobs:
             directory: cypress/basic
           - test-suite: cypress-iframes
             directory: cypress/iframes
-            additional-steps:
-              - run: cd cypress/iframes && node server.js &
+            additional-steps: cd cypress/iframes && node server.js &
           - test-suite: cypress-manual-mode
             directory: cypress/manual-mode
           - test-suite: cypress-multi-page
@@ -71,6 +70,9 @@ jobs:
       - name: Install Playwright
         if: ${{ matrix.playwright }}
         run: npx playwright install
+      - name: Start server
+        if: ${{ matrix.additional-steps }}
+        run: ${{ matrix.additional-steps }}
       - run: cd ${{ matrix.directory }} && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
