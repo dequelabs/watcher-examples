@@ -15,7 +15,9 @@ jobs:
       - run: npm run lint
 
   smoke-tests:
+    needs: lint
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       matrix:
         include:
@@ -61,7 +63,6 @@ jobs:
             directory: webdriverjs/testing
           - test-suite: webdriverjs-typescript-multi-page
             directory: webdriverjs/typescript-multi-page
-    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
