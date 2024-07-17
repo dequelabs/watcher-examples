@@ -58,6 +58,6 @@ jobs:
         if: ${{ matrix.additional-steps }}
         run: ${{ matrix.additional-steps }}
       - name: Run tests
-        run: cd ${{ matrix.directory }} && npm install && npm test --timeout 60s
+        run: cd ${{ matrix.directory }} && npm install && npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
