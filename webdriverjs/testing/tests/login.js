@@ -5,6 +5,7 @@ const {
   webdriverConfig,
   WebdriverController
 } = require('@axe-core/watcher')
+const { Options } = require('selenium-webdriver/chrome')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -15,6 +16,8 @@ suite(env => {
     let controller
 
     before(async () => {
+      const options = new Options()
+      options.addArguments('--headless=new')
       const builder = env.builder()
 
       // axe Watcher only supports Chrome.
@@ -27,7 +30,8 @@ suite(env => {
               axe: {
                 apiKey: API_KEY,
                 serverURL: SERVER_URL
-              }
+              },
+              options
             })
           )
           .build()

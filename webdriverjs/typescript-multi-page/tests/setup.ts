@@ -5,6 +5,7 @@ import {
   webdriverConfig,
   WebdriverController
 } from '@axe-core/watcher'
+import { Options } from 'selenium-webdriver/chrome'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -13,6 +14,8 @@ let browser: WebDriver
 let controller: WebdriverController
 
 before(async () => {
+  const options = new Options()
+  options.addArguments('--headless=new')
   browser = await new Builder()
     .forBrowser('chrome')
     .setChromeOptions(
@@ -20,7 +23,8 @@ before(async () => {
         axe: {
           apiKey: API_KEY as string,
           serverURL: SERVER_URL
-        }
+        },
+        options
       })
     )
     .build()
