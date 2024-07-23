@@ -9,7 +9,8 @@ const { test, expect } = playwrightTest({
     apiKey: API_KEY,
     serverURL: SERVER_URL
   },
-  headless: false
+  headless: false,
+  args: ['--headless=new']
 })
 
 export { test, expect }

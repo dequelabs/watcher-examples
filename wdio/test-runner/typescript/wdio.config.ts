@@ -6,7 +6,12 @@ const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 export const config = wdioTestRunner({
   axe: { apiKey: API_KEY as string, serverURL: SERVER_URL },
   specs: ['forgot-password.test.ts', 'login.test.ts', 'home.test.ts'],
-  capabilities: [{ browserName: 'chrome' }],
+  capabilities: [
+    {
+      browserName: 'chrome',
+      'goog:chromeOptions': { args: ['--headless=new'] }
+    }
+  ],
   baseUrl: 'https://the-internet.herokuapp.com',
   services: ['chromedriver'],
   framework: 'mocha',
