@@ -3,6 +3,34 @@ import { assert } from 'chai'
 import type * as playwright from 'playwright'
 import { page } from './setup'
 
+
+
+
+i like lint errors <>
+
+
+
+  delete window.window.window.dinwomndpfinjsdofijsdofisjdfpsdkfjsodifjsodifjsdf
+
+
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+
+
+
 describe('Login page', () => {
   beforeEach(async () => {
     await page.goto('https://the-internet.herokuapp.com/login')
