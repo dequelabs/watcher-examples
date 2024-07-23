@@ -32,15 +32,15 @@ jobs:
           - directory: cypress/manual-mode
           - directory: cypress/multi-page
           - directory: playwright/basic
-            playwright: true
+            additional-steps: npx playwright install
           - directory: playwright/manual-mode
-            playwright: true
+            additional-steps: npx playwright install
           - directory: playwright/typescript-multi-page
-            playwright: true
+            additional-steps: npx playwright install
           - directory: playwright-test/basic
-            playwright: true
+            additional-steps: npx playwright install
           - directory: playwright-test/multi-page
-            playwright: true
+            additional-steps: npx playwright install
           - directory: puppeteer/basic
           - directory: puppeteer/typescript-multi-page
           - directory: wdio/test-runner/typescript
@@ -56,13 +56,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version || '20' }}
-      - name: Install Playwright
-        if: ${{ matrix.playwright }}
-        run: npx playwright install
       - name: Additional steps
         if: ${{ matrix.additional-steps }}
         run: ${{ matrix.additional-steps }}
+      - run: npm install
+        working-directory: ${{ matrix.directory }}
       - name: Run tests
-        run: cd ${{ matrix.directory }} && npm install && npm test
+        run: npm test
+        working-directory: ${{ matrix.directory }}
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
