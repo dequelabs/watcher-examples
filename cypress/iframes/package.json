@@ -3,7 +3,7 @@
     "test": "cypress run --headed --browser=chrome"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.11.1",
+    "@axe-core/watcher": "^3.13.1",
     "cypress": "^12.13.0"
   }
 }
