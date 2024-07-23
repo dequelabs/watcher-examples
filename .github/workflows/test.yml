@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
@@ -15,6 +16,7 @@ jobs:
       - run: npm run lint
 
   smoke-tests:
+    name: Smoke Tests
     needs: lint
     runs-on: ubuntu-latest
     timeout-minutes: 10
