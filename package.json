@@ -1,8 +1,11 @@
 {
-  "name": "axe-watcher-example",
+  "name": "axe-watcher-examples",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:dequelabs/axe-watcher-example",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dequelabs/watcher-examples.git"
+  },
   "author": "michael-siek <michaelsiek094@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -12,13 +15,13 @@
     "lint-staged": "yarn lint --fix && yarn fmt"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-wdio": "^8.0.14",
-    "husky": "^8.0.1",
-    "prettier": "^3.0.3",
-    "typescript": "^5.0.4"
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^3.3.0",
+    "eslint-plugin-wdio": "^8.37.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3"
   }
 }
