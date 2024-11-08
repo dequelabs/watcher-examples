@@ -2,7 +2,7 @@ describe('My Login Application', () => {
   it('should login with valid credentials', () => {
     cy.visit('https://the-internet.herokuapp.com/login')
       // Analyze the page.
-      .axeAnalyze()
+      .axeWatcherAnalyze()
       .get('#username')
       .type('tomsmith')
       .get('#password')
@@ -11,9 +11,9 @@ describe('My Login Application', () => {
       .click()
       .wait(1000)
       // Analyze the page.
-      .axeAnalyze()
+      .axeWatcherAnalyze()
       // Restart automatic axe analysis.
-      .axeStart()
+      .axeWatcherStart()
       .get('#flash')
       .should('exist')
   })
