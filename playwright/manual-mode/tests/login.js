@@ -43,6 +43,20 @@ describe('My Application', () => {
     await page.close()
   })
 
+
+  /*
+    Lets see the number of page state calculation
+    As the auto-analyze is false, it will not analyze automatically
+
+    We first navigate to the page.
+    Then we analyze the page. (+1)
+    Then we fill the form.
+    Then Turn on auto-analyze.
+    Then we click the submit button (+1)
+    Then we wait for the element to appear.
+    Then we analyze the page. (+1)
+    So, the total number of page state calculation should be 3.
+  */
   describe('Login', () => {
     describe('with valid credentials', () => {
       it('should login', async () => {
@@ -54,9 +68,16 @@ describe('My Application', () => {
         await page.locator('#username').fill('tomsmith')
         await page.locator('#password').fill('SuperSecretPassword!')
 
+        /* starts auto-analyze to true */
+        await controller.start()
+
+        /* analyze automatically as auto-analyze it true*/
         await page.locator('button[type="submit"]').click()
 
         const element = await page.waitForSelector('#flash')
+
+        /* stops auto-analyze */
+        await controller.stop()
 
         /* Analyze after logging in. */
         await controller.analyze()
