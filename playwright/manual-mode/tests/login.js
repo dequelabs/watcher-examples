@@ -43,7 +43,6 @@ describe('My Application', () => {
     await page.close()
   })
 
-
   /*
     Lets see the number of page state calculation
     As the auto-analyze is false, it will not analyze automatically

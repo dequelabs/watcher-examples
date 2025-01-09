@@ -34,7 +34,6 @@ describe('My Login Application', () => {
     browser = wrapWebdriver(browser, controller)
   })
 
-
   /*
     Lets see the number of page state calculation
 
@@ -62,7 +61,6 @@ describe('My Login Application', () => {
 
       await username.sendKeys('tomsmith')
       await password.sendKeys('SuperSecretPassword!')
-
 
       /* Start automatic axe analysis. */
       await controller.start()

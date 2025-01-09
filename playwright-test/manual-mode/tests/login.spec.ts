@@ -16,27 +16,27 @@ import { test, expect } from './fixtures'
 */
 
 test.describe('Login page', () => {
-    test('should login', async ({ page }) => {
-      await page.goto('https://the-internet.herokuapp.com/login')
+  test('should login', async ({ page }) => {
+    await page.goto('https://the-internet.herokuapp.com/login')
 
-      /* Analyze after navigation to the page */
-      await page.axeWatcher.analyze();
+    /* Analyze after navigation to the page */
+    await page.axeWatcher.analyze()
 
-      await page.locator('#username').fill('tomsmith')
-      await page.locator('#password').fill('SuperSecretPassword!')
+    await page.locator('#username').fill('tomsmith')
+    await page.locator('#password').fill('SuperSecretPassword!')
 
-      /* starts auto-analyze to true */
-      await page.axeWatcher.start();
+    /* starts auto-analyze to true */
+    await page.axeWatcher.start()
 
-      await page.locator('button[type="submit"]').click()
-      const flash = await page.waitForSelector('#flash')
+    await page.locator('button[type="submit"]').click()
+    const flash = await page.waitForSelector('#flash')
 
-      /* stops auto-analyze */
-      await page.axeWatcher.stop();
+    /* stops auto-analyze */
+    await page.axeWatcher.stop()
 
-      /* Analyze after form submission */
-      await page.axeWatcher.analyze();
+    /* Analyze after form submission */
+    await page.axeWatcher.analyze()
 
-      await expect(flash).not.toBeNull()
-    })
+    await expect(flash).not.toBeNull()
+  })
 })
