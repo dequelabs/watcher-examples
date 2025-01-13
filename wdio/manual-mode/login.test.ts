@@ -17,7 +17,6 @@ import { browser, controller } from './setup'
   So, the total number of page state calculation should be 3.
 */
 
-
 describe('login', () => {
   describe('with valid credentials', () => {
     it('should login', async () => {
@@ -41,7 +40,7 @@ describe('login', () => {
       /* Analyze after form submission */
       await controller.analyze()
 
-      assert.isNotNull(flash);
+      assert.isNotNull(flash)
     })
-  });
+  })
 })
