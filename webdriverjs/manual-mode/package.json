@@ -1,11 +1,11 @@
 {
-  "name": "basic",
+  "name": "manual-mode",
   "private": true,
   "scripts": {
     "test": "mocha --timeout 20s tests/*.js"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.16.1",
+    "@axe-core/watcher": "^3.18.0",
     "chai": "^4",
     "chromedriver": "^126.0.4",
     "mocha": "^10.6.0",
