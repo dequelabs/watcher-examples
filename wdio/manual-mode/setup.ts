@@ -13,8 +13,9 @@ before(async () => {
     wdioConfig({
       axe: {
         apiKey: API_KEY as string,
-        serverURL: SERVER_URL
+        serverURL: SERVER_URL,
         /* Disable automatic analysis */
+        autoAnalyze: false
       },
       capabilities: {
         browserName: 'chrome',
