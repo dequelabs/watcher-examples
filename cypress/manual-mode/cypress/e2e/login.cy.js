@@ -1,6 +1,6 @@
 /*
-  Lets see the number of page state calculation
-  As the auto-analyze is false, it will not analyze automatically
+  Let's see the number of page states calculation.
+  As auto-analyze is false, it will not analyze automatically.
 
   We first navigate to the page.
   Then we analyze the page. (+1)
@@ -9,7 +9,7 @@
   Then we click the submit button (+1)
   Then we wait for the element to appear.
   Then we analyze the page. (+1)
-  So, the total number of page state calculation should be 3.
+  So, the total number of page states calculation should be 3.
 */
 describe('My Login Application', () => {
   it('should login with valid credentials', () => {
