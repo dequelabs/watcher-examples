@@ -2,10 +2,11 @@
   "name": "manual-mode",
   "private": true,
   "scripts": {
-    "test": "cypress run --headed --browser=chrome"
+    "test": "playwright test"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.18.0",
-    "cypress": "^13.13.0"
+    "@playwright/test": "^1.45.1",
+    "typescript": "^5.5.3"
   }
 }
