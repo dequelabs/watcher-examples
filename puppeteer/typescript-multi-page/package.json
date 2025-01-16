@@ -5,7 +5,7 @@
     "test": "mocha --require ts-node/register --timeout 10s tests/*.test.ts"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.16.1",
+    "@axe-core/watcher": "^3.18.0",
     "@types/chai": "^4.3.16",
     "@types/mocha": "^10.0.7",
     "chai": "^4",
