@@ -1,6 +1,18 @@
 import 'mocha'
 import { assert } from 'chai'
 import { browser } from './setup'
+import { WdioController, wrapWdio } from '@axe-core/watcher'
+
+let controller: WdioController
+
+before(() => {
+  controller = new WdioController(browser)
+  wrapWdio(browser, controller)
+})
+
+afterEach(async () => {
+  await controller.flush()
+})
 
 describe('home', () => {
   it('should contain a list of links', async () => {
