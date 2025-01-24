@@ -34,6 +34,14 @@ describe('My Login Application', () => {
     browser = wrapWebdriver(browser, controller)
   })
 
+  after(async () => {
+    await browser.quit()
+  })
+
+  afterEach(async () => {
+    await controller.flush()
+  })
+
   /*
     Let's see the number of page states calculation.
 
