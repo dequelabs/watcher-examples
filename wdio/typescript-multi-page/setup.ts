@@ -1,12 +1,11 @@
 import 'mocha'
-import { wdioConfig, WdioController, wrapWdio } from '@axe-core/watcher'
-import { remote } from 'webdriverio'
+import { wdioConfig } from '@axe-core/watcher'
+import { remote, RemoteOptions } from 'webdriverio'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
 
 let browser: WebdriverIO.Browser
-let controller: WdioController
 
 before(async () => {
   browser = await remote(
@@ -19,19 +18,12 @@ before(async () => {
         browserName: 'chrome',
         'goog:chromeOptions': { args: ['--headless=new'] }
       }
-    })
+    }) as RemoteOptions
   )
-
-  controller = new WdioController(browser)
-  wrapWdio(browser, controller)
-})
-
-afterEach(async () => {
-  await controller.flush()
 })
 
 after(async () => {
   browser.deleteSession()
 })
 
-export { browser, controller }
+export { browser }
