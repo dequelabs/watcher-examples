@@ -22,7 +22,7 @@ describe('My Login Application', () => {
           serverURL: SERVER_URL
         },
         headless: false,
-        args: ['--headless=new']
+        args: ['--headless=new', '--no-sandbox', '--disable-setuid-sandbox']
       })
     )
     // Create a page instance, using your browser instance.
