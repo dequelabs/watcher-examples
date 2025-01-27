@@ -14,43 +14,43 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run lint
-# TODO: https://github.com/dequelabs/watcher-examples/issues/216
-smoke-tests:
-  name: Smoke Tests
-  needs: lint
-  runs-on: ubuntu-latest
-  timeout-minutes: 10
-  strategy:
-    # We don't want to fail the whole matrix if one job fails
-    # Makes it harder to debug what went wrong if it ends early
-    fail-fast: false
-    matrix:
-      include:
-        - directory: cypress/basic
-        - directory: cypress/iframes
-          additional-steps: cd cypress/iframes && node server.js &
-        - directory: cypress/manual-mode
-        - directory: cypress/multi-page
-        - directory: playwright/basic
-          playwright: true
-        - directory: playwright/manual-mode
-          playwright: true
-        - directory: playwright/typescript-multi-page
-          playwright: true
-        - directory: playwright-test/basic
-          playwright: true
-        - directory: playwright-test/multi-page
-          playwright: true
-        - directory: puppeteer/basic
-        - directory: puppeteer/typescript-multi-page
-        - directory: wdio/test-runner/typescript
-        - directory: wdio/typescript-multi-page
-        - directory: wdio/v7/typescript-basic
-          # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
-          node-version: 16
-        - directory: webdriverjs/basic
-        - directory: webdriverjs/testing
-        - directory: webdriverjs/typescript-multi-page
+
+  smoke-tests:
+    name: Smoke Tests
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      # We don't want to fail the whole matrix if one job fails
+      # Makes it harder to debug what went wrong if it ends early
+      fail-fast: false
+      matrix:
+        include:
+          - directory: cypress/basic
+          - directory: cypress/iframes
+            additional-steps: cd cypress/iframes && node server.js &
+          - directory: cypress/manual-mode
+          - directory: cypress/multi-page
+          - directory: playwright/basic
+            playwright: true
+          - directory: playwright/manual-mode
+            playwright: true
+          - directory: playwright/typescript-multi-page
+            playwright: true
+          - directory: playwright-test/basic
+            playwright: true
+          - directory: playwright-test/multi-page
+            playwright: true
+          - directory: puppeteer/basic
+          - directory: puppeteer/typescript-multi-page
+          - directory: wdio/test-runner/typescript
+          - directory: wdio/typescript-multi-page
+          - directory: wdio/v7/typescript-basic
+            # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
+            node-version: 16
+          - directory: webdriverjs/basic
+          - directory: webdriverjs/testing
+          - directory: webdriverjs/typescript-multi-page
   steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
