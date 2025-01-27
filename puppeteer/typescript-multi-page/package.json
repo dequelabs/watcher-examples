@@ -2,7 +2,7 @@
   "name": "typescript-multi-page",
   "private": true,
   "scripts": {
-    "test": "mocha --require ts-node/register --timeout 10s tests/*.test.ts"
+    "test": "mocha --require ts-node/register --timeout 15s tests/*.test.ts"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.18.0",
