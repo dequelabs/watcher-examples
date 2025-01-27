@@ -51,18 +51,18 @@ jobs:
           - directory: webdriverjs/basic
           - directory: webdriverjs/testing
           - directory: webdriverjs/typescript-multi-page
-  steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version || '20' }}
-    - name: Install Playwright
-      if: ${{ matrix.playwright }}
-      run: npx playwright install
-    - name: Additional steps
-      if: ${{ matrix.additional-steps }}
-      run: ${{ matrix.additional-steps }}
-    - name: Run tests
-      run: cd ${{ matrix.directory }} && npm install && npm test
-      env:
-        API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version || '20' }}
+      - name: Install Playwright
+        if: ${{ matrix.playwright }}
+        run: npx playwright install
+      - name: Additional steps
+        if: ${{ matrix.additional-steps }}
+        run: ${{ matrix.additional-steps }}
+      - name: Run tests
+        run: cd ${{ matrix.directory }} && npm install && npm test
+        env:
+          API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
