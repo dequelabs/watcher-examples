@@ -24,7 +24,7 @@ describe('My Login Application', () => {
           autoAnalyze: false
         },
         headless: false,
-        args: ['--headless=new']
+        args: ['--headless=new', '--no-sandbox', '--disable-setuid-sandbox']
       })
     )
     // Create a page instance, using your browser instance.

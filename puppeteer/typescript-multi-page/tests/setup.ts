@@ -22,7 +22,7 @@ before(async () => {
         serverURL: SERVER_URL
       },
       headless: false,
-      args: ['--headless=new']
+      args: ['--headless=new', '--no-sandbox', '--disable-setuid-sandbox']
     })
   )
 })

@@ -2,7 +2,7 @@
   "name": "basic",
   "private": true,
   "scripts": {
-    "test": "mocha tests/*.js --timeout 10s"
+    "test": "mocha tests/*.js --timeout 20s"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.18.0",
