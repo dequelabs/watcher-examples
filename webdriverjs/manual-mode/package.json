@@ -5,7 +5,7 @@
     "test": "mocha --timeout 20s tests/*.js"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.18.0",
+    "@axe-core/watcher": "^3.19.0",
     "chai": "^4",
     "chromedriver": "^132.0.0",
     "mocha": "^10.6.0",
