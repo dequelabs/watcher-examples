@@ -19,10 +19,11 @@ export const config = wdioTestRunner({
   maxInstances: 10,
   capabilities: [
     {
-      browserName: 'chrome'
+      browserName: 'chrome',
+      'goog:chromeOptions': { args: ['--headless=new'] }
     }
   ],
-  logLevel: 'silent',
+  logLevel: 'debug',
   bail: 0,
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
