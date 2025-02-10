@@ -3,7 +3,7 @@
   "description": "WDIO Testrunner Cucumber @axe-core/watcher example",
   "private": true,
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "test": "wdio run ./wdio.conf.ts"
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.19.0",
