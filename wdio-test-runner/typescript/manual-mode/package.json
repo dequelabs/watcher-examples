@@ -5,7 +5,7 @@
     "test": "wdio run wdio.config.ts"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.19.0",
+    "@axe-core/watcher": "^3.19.1",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.3.1",
