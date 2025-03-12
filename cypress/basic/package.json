@@ -2,10 +2,10 @@
   "name": "basic",
   "private": true,
   "scripts": {
-    "test": "cypress run --headed --browser=chrome"
+    "test": "cypress run --headed --no-exit --browser=chrome"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.19.1",
+    "@axe-core/watcher": "../../../jazzband/integrations/javascript/dist",
     "cypress": "^13.13.0"
   }
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimental Rules Test</title>
+</head>
+
+<!--label-content-name-mismatch-->
+
+<!-- Fail -->
+<div id="fail1" role="link" aria-label="OK">Next</div>
+<button id="fail2" name="link" aria-label="the full">The full label</button>
+<div id="fail3" role="link" aria-label="OK">Next</div>
+<button id="fail4" name="link" aria-label="the full">The full label</button>
+<div id="labelForFail5">123</div>
+<div role="button" id="fail5" aria-labelledby="labelForFail5">some content</div>
+
+<!--p-as-heading-->
+<!-- Failures -->
+<div>
+  <p id="failed1" style="font-weight: bold; font-size: 120%">Some text</p>
+  <p>A paragraph, A paragraph!</p>
+</div>
+
+<div>
+  <p id="failed2" style="font-size: 150%">Some text</p>
+  <p>A paragraph, A paragraph!</p>
+</div>
+
+<div>
+  <p id="failed3">
+    <b><i>Some text</i></b>
+  </p>
+  <p>A paragraph, A paragraph!</p>
+</div>
+
+<!--table-fake-caption-->
+<table id="fail1" role="grid">
+  <tr>
+    <th colspan="2">AXE</th>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr></tr>
+</table>
+
+<table id="fail2" role="grid">
+  <tr>
+    <td colspan="2">AXE</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr></tr>
+</table>
+
+<table id="ignored1" role="presentation">
+  <tr>
+    <td colspan="2">AXE</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr></tr>
+</table>
+
+<!--td-has-header-->
+<!--fails-->
+<table id="fail1">
+  <tr>
+    <th>AXE</th>
+    <th>AXE</th>
+    <th>AXE</th>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+</table>
+
+<table id="fail2">
+  <tr>
+    <th>AXE</th>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <th>AXE</th>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <th>AXE</th>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+  <tr>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+    <td>axe</td>
+  </tr>
+</table>
+
+</html>

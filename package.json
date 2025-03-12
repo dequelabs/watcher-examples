@@ -23,5 +23,8 @@
     "husky": "^9.0.11",
     "prettier": "^3.3.2",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@axe-core/watcher": "^3.19.1-next.e67a2849"
   }
 }
