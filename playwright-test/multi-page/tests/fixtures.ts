@@ -43,11 +43,11 @@ const configurationOverrides =
   experimentalRules !== undefined ||
   axeCoreVersion !== undefined
     ? {
-      accessibilityStandard,
-      axeCoreVersion,
-      bestPractices,
-      experimentalRules
-    }
+        accessibilityStandard,
+        axeCoreVersion,
+        bestPractices,
+        experimentalRules
+      }
     : undefined
 
 const { test, expect } = playwrightTest({
