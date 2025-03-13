@@ -27,7 +27,7 @@ const bestPractices: boolean | undefined = undefined // Set to true or false
 /**
  * Enable experimental axe core rules
  */
-const experimental: boolean | undefined = undefined // Set to true or false
+const experimentalRules: boolean | undefined = undefined // Set to true or false
 
 /**
  * Version of axe core to use
@@ -37,16 +37,16 @@ const axeCoreVersion: string | undefined = undefined // Set your value here
 
 // Build configuration overrides object only if at least one setting is defined
 const configurationOverrides =
-  accessibilityStandard ||
+  accessibilityStandard !== undefined ||
   bestPractices !== undefined ||
-  experimental !== undefined ||
-  axeCoreVersion
+  experimentalRules !== undefined ||
+  axeCoreVersion !== undefined
     ? {
-        ...(accessibilityStandard !== undefined && { accessibilityStandard }),
-        ...(axeCoreVersion !== undefined && { axeCoreVersion }),
-        ...(bestPractices !== undefined && { bestPractices }),
-        ...(experimental !== undefined && { experimental })
-      }
+      accessibilityStandard,
+      axeCoreVersion,
+      bestPractices,
+      experimentalRules
+    }
     : undefined
 
 export const config = wdioTestRunner({

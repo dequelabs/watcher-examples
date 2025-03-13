@@ -31,7 +31,7 @@ const bestPractices = undefined // Set to true or false
  * Enable experimental axe core rules
  * @type {boolean|undefined}
  */
-const experimental = undefined // Set to true or false
+const experimentalRules = undefined // Set to true or false
 
 /**
  * Version of axe core to use
@@ -42,16 +42,16 @@ const axeCoreVersion = undefined // Set your value here
 
 // Build configuration overrides object only if at least one setting is defined
 const configurationOverrides =
-  accessibilityStandard ||
+  accessibilityStandard !== undefined ||
   bestPractices !== undefined ||
-  experimental !== undefined ||
-  axeCoreVersion
+  experimentalRules !== undefined ||
+  axeCoreVersion !== undefined
     ? {
-        ...(accessibilityStandard && { accessibilityStandard }),
-        ...(axeCoreVersion && { axeCoreVersion }),
-        ...(bestPractices !== undefined && { bestPractices }),
-        ...(experimental !== undefined && { experimental })
-      }
+      accessibilityStandard,
+      axeCoreVersion,
+      bestPractices,
+      experimentalRules
+    }
     : undefined
 
 module.exports = defineConfig(
