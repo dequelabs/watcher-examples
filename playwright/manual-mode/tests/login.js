@@ -1,9 +1,9 @@
 const { assert } = require('chai')
 const playwright = require('playwright')
-const { 
+const {
   wrapPlaywrightPage,
-  PlaywrightController, 
-  playwrightConfig 
+  PlaywrightController,
+  playwrightConfig
 } = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
@@ -35,7 +35,7 @@ describe('My Application', () => {
 
     // Initialize the PlaywrightController by passing in the Playwright page.
     controller = new PlaywrightController(page)
-    
+
     // Use the new wrapped Playwright page instance.
     page = wrapPlaywrightPage(page, controller)
   })
