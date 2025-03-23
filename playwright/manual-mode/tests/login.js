@@ -1,6 +1,10 @@
 const { assert } = require('chai')
 const playwright = require('playwright')
-const { PlaywrightController, playwrightConfig } = require('@axe-core/watcher')
+const {
+  wrapPlaywrightPage,
+  PlaywrightController,
+  playwrightConfig
+} = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -31,6 +35,9 @@ describe('My Application', () => {
 
     // Initialize the PlaywrightController by passing in the Playwright page.
     controller = new PlaywrightController(page)
+
+    // Use the new wrapped Playwright page instance.
+    page = wrapPlaywrightPage(page, controller)
   })
 
   after(async () => {
