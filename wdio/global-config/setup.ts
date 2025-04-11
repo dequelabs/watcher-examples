@@ -23,7 +23,7 @@ before(async () => {
          *  3. For more details on using global configurations, visit:
          *     https://docs.deque.com/developer-hub/2/en/dh-global-configuration
          *  4. For more information on the configurationOverrides object, see:
-         *     https://docs.deque.com/developer-hub/2/en/dh-global-configuration
+         *     https://docs.deque.com/developer-hub/2/en/dh-api-reference#configurationoverrides-interface
          */
         configurationOverrides: {
           accessibilityStandard: 'WCAG 2.2 AAA', // Defines the accessibility standard to apply during axe-core scans
