@@ -12,4 +12,4 @@ yarn.lock
 videos/
 screenshots/
 downloads/
-.test-results/
+test-results/

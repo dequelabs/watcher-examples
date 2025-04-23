@@ -8,5 +8,6 @@ Feature: The Internet Guinea Pig Website
 
     Examples:
       | username | password             | message                        |
+      | badname  | badpass!             | Your username is invalid!      |
       | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+
