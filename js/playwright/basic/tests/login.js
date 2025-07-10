@@ -22,9 +22,7 @@ describe('My Login Application', () => {
           apiKey: API_KEY,
           serverURL: SERVER_URL
         },
-        //@see: https://playwright.dev/docs/chrome-extensions#headless-mode
         headless: false,
-        args: ['--headless=new']
       })
     )
 
