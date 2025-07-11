@@ -27,7 +27,7 @@ jobs:
       matrix:
         include:
           - directory: js/cypress/basic
-          - directory: js/iframes
+          - directory: js/cypress/iframes
             additional-steps: cd js/cypress/iframes && node server.js &
           - directory: js/cypress/manual-mode
           - directory: js/cypress/multi-page
