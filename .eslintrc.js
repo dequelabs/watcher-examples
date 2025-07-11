@@ -26,14 +26,14 @@ module.exports = {
       }
     },
     {
-      files: ['./cypress/**/*.js', './cypress/**/*.ts'],
+      files: ['./js/cypress/**/*.js', './js/cypress/**/*.ts'],
       plugins: ['cypress'],
       env: {
         'cypress/globals': true
       }
     },
     {
-      files: ['./wdio/**/*.test.js', './wdio/**/*.test.ts'],
+      files: ['./js/wdio/**/*.test.js', './js/wdio/**/*.test.ts'],
       plugins: ['wdio'],
       extends: ['plugin:wdio/recommended']
     }
