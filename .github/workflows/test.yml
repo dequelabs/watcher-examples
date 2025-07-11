@@ -26,34 +26,34 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - directory: cypress/basic
-          - directory: cypress/iframes
-            additional-steps: cd cypress/iframes && node server.js &
-          - directory: cypress/manual-mode
-          - directory: cypress/multi-page
-          - directory: playwright/basic
+          - directory: js/cypress/basic
+          - directory: js/iframes
+            additional-steps: cd js/cypress/iframes && node server.js &
+          - directory: js/cypress/manual-mode
+          - directory: js/cypress/multi-page
+          - directory: js/playwright/basic
             playwright: true
-          - directory: playwright/manual-mode
+          - directory: js/playwright/manual-mode
             playwright: true
-          - directory: playwright/typescript-multi-page
+          - directory: js/playwright/typescript-multi-page
             playwright: true
-          - directory: playwright-test/basic
+          - directory: js/playwright-test/basic
             playwright: true
-          - directory: playwright-test/multi-page
+          - directory: js/playwright-test/multi-page
             playwright: true
-          - directory: puppeteer/basic
-          - directory: puppeteer/typescript-multi-page
-          - directory: wdio-test-runner/typescript/basic
-          - directory: wdio-test-runner/typescript/manual-mode
-          - directory: wdio-test-runner/typescript/typescript-multi-page
-          - directory: wdio-test-runner/cucumber
-          - directory: wdio/typescript-multi-page
-          - directory: wdio/v7/typescript-basic
+          - directory: js/puppeteer/basic
+          - directory: js/puppeteer/typescript-multi-page
+          - directory: js/wdio-test-runner/typescript/basic
+          - directory: js/wdio-test-runner/typescript/manual-mode
+          - directory: js/wdio-test-runner/typescript/typescript-multi-page
+          - directory: js/wdio-test-runner/cucumber
+          - directory: js/wdio/typescript-multi-page
+          - directory: js/wdio/v7/typescript-basic
             # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
             node-version: 16
-          - directory: webdriverjs/basic
-          - directory: webdriverjs/testing
-          - directory: webdriverjs/typescript-multi-page
+          - directory: js/webdriverjs/basic
+          - directory: js/webdriverjs/testing
+          - directory: js/webdriverjs/typescript-multi-page
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
