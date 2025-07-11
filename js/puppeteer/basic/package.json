@@ -5,6 +5,7 @@
     "test": "mocha tests/*.js --timeout 20s"
   },
   "devDependencies": {
+    "@axe-core/watcher": "^3.21.1",
     "chai": "^4",
     "mocha": "^10.6.0",
     "puppeteer": "^22.13.0"
