@@ -8,8 +8,7 @@ module.exports = defineConfig(
   cypressConfig({
     axe: {
       apiKey: API_KEY,
-      serverURL: SERVER_URL,
-      excludeUrlPatterns: ['https://google.com']
+      serverURL: SERVER_URL
     },
     defaultCommandTimeout: 10000
   })
