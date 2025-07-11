@@ -13,12 +13,9 @@
 
 import { defineConfig } from "cypress";
 import { cypressConfig } from "@axe-core/watcher";
-import path from "path";
 
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
-
-
 
 export default defineConfig({
   // Spread in the axe-core watcher Cypress config
@@ -29,7 +26,6 @@ export default defineConfig({
       testingTypes: ['component', 'e2e'],
       // Prevent automatic analysis.
       autoAnalyze: false
-      
     },
     defaultCommandTimeout: 30000, // Increase default command timeout to 30 seconds
 
@@ -42,9 +38,7 @@ export default defineConfig({
       specPattern: "**/*.cy.{ts,tsx}", // Pattern for component test files
       supportFile: "cypress/support/component.ts", // Support file for component tests
     },
-
-  
-  }),
+}),
 });
 
 
