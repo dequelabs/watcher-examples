@@ -22,7 +22,8 @@ describe('My Login Application', () => {
           apiKey: API_KEY,
           serverURL: SERVER_URL
         },
-        headless: false
+        headless: false,
+        args: ['--headless=new']
       })
     )
 
