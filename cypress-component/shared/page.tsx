@@ -17,18 +17,7 @@ export default function Home(): React.ReactNode {
                 </div>
             </div>
 
-            <div className="mb-10">
-                <h2 className="text-2xl mb-4">Counter Component</h2>
-                <Counter initialValue={0} label="My Counter" />
-            </div>
-
-            <div className="mb-10">
-                <h2 className="text-2xl mb-4">Iframe Component</h2>
-    {/*            <IframeComponent*/}
-    {/*                title="Test iframe"*/}
-    {/*                content='<div id="test-content"><h2>Testing Cypress Detection</h2><p>This content is in an isolated iframe context. Cypress detection might not work here as expected.</p><button onclick=\"alert(\"Button inside iframe clicked!\")\">Click Me (Inside Iframe)</button></div>'*/}
-    {/*/>*/}
-    </div>
+            
 </main>
 );
 }

@@ -1,8 +1,6 @@
 // Cypress support file for component testing setup
 
 import { mount } from '@cypress/react';
-// Import custom Cypress commands
-import './commands';
 // Import axe-core watcher Cypress commands for accessibility testing
 import '@axe-core/watcher/dist/cypressCommands';
 

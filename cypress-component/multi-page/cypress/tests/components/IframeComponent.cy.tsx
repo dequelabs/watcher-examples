@@ -32,7 +32,7 @@ describe('IframeComponent Tests', () => {
     });
 
     // Test: Loads iframe, checks content, and runs axe accessibility analysis
-    it('loads iframe and runs axe analysis (no suppression)', () => {
+    it('loads iframe (no suppressioandn)', () => {
         cy.mount(<IframeComponent title="Test Iframe" />);
 
         cy.get('[data-testid="test-iframe"]')
@@ -41,7 +41,7 @@ describe('IframeComponent Tests', () => {
                 const iframe = $iframe[0] as HTMLIFrameElement;
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
 
-                // Ensure iframe content loaded
+                // Linsten to iframe content loaded
                 cy.wrap(iframeDoc?.body).should('contain.text', 'Hello from iframe');
             });
 

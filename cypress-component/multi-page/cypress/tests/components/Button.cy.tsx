@@ -15,16 +15,16 @@ describe('Button Component', () => {
         cy.get('[data-testid="button-component"]').should('have.css', 'color', 'rgb(156, 163, 175)'); // Equivalent to text-gray-400
     });
 
-    // C130013: Verify Scan results when autoAnalyse is true and start() API invoked, expected double the page states
-    it('C130013 Verify Scan results when autoAnalyse is true and start() API invoked, expected double the page states', () => {
+    // Verify Scan results when autoAnalyse is true and start() API invoked, expected double the page states
+    it('Verify Scan results when autoAnalyse is true and start() API invoked, expected double the page states', () => {
         cy.axeWatcherStart();
         cy.mount(<Button label="Click me" />);
         cy.axeWatcherAnalyze();
         
     });
 
-    // C130014: Verify Scan results when autoAnalyse is true and stop() API invoked, expected single page state
-    it('C130014 Verify Scan results when autoAnalyse is true and stop() API invoked, expected single page state', () => {
+    //Verify Scan results when autoAnalyse is true and stop() API invoked, expected single page state
+    it('Verify Scan results when autoAnalyse is true and stop() API invoked, expected single page state', () => {
         cy.axeWatcherStart();
         cy.mount(<Button label="Click me" />);
         cy.axeWatcherStop();

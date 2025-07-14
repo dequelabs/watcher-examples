@@ -13,7 +13,7 @@ const IframeComponent: React.FC<IframeComponentProps> = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
     useEffect(() => {
-        // Cuando el iframe esté cargado, escribimos contenido en él
+         // When the iframe is loaded, write content into it
         if (iframeRef.current) {
             const iframeDoc = iframeRef.current.contentDocument ||
                 (iframeRef.current.contentWindow?.document);
@@ -29,7 +29,7 @@ const IframeComponent: React.FC<IframeComponentProps> = ({
                 body { font-family: Arial, sans-serif; padding: 20px; background-color: #e5e7eb, color: #9ca3af}
               </style>
               <script>
-                // Este código se ejecuta en el contexto del iframe
+                // Execute on load
                 function checkCypress() {
                   const isCypressDetected = 
                     typeof window.Cypress !== 'undefined' || 
@@ -37,14 +37,14 @@ const IframeComponent: React.FC<IframeComponentProps> = ({
                     document.querySelector('#cypress-root') !== null ||
                     document.querySelector('[data-cy-root]') !== null;
                   
-                  // Comunicar el resultado al padre
+                   // Post the result to the parent
                   window.parent.postMessage({
                     type: 'CYPRESS_DETECTION_RESULT',
                     detected: isCypressDetected
                   }, '*');
                 }
                 
-                // Ejecutar después de cargar
+                // Execute on load
                 window.onload = checkCypress;
               </script>
             </head>
@@ -60,7 +60,7 @@ const IframeComponent: React.FC<IframeComponentProps> = ({
     }, [content, title]);
 
     useEffect(() => {
-        // Escuchar mensajes desde el iframe
+        // Listen to messages from the iframe
         const handleMessage = (event: MessageEvent) => {
             if (event.data.type === 'CYPRESS_DETECTION_RESULT') {
                 console.log('Cypress detection in iframe:', event.data.detected);
