@@ -1,5 +1,5 @@
-import React from 'react';
-import Counter from './Counter';
+import Counter from '../../../../shared/Counter';
+import { describe, it } from 'node:test';
 
 // Cypress test suite for the Counter component
 describe('Counter Component', () => {
@@ -11,7 +11,7 @@ describe('Counter Component', () => {
     });
 
     // Test: Counter renders with custom initial value and label
-    it('C130141 - renders with custom initial value and label', () => {
+    it('renders with custom initial value and label', () => {
         cy.mount(<Counter initialValue={10} label="Custom Counter" />);
         cy.contains('Custom Counter').should('exist'); // Assert the custom label is rendered
         cy.get('[data-testid="counter-value"]').should('have.text', '10'); // Assert the initial value is 10

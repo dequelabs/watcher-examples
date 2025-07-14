@@ -1,6 +1,6 @@
 import React from 'react';
-import InteractiveForm from '../../src/components/InteractiveForm';
-
+import InteractiveForm from '../../../../shared/InteractiveForm';
+import { describe, it } from 'node:test';
 // Test suite for type & Clear action on InteractiveFormEvents component
 describe('InteractiveForm Component Tests', () => {
   it('C130146 - should type and clear required input', () => {
@@ -19,18 +19,18 @@ describe('InteractiveForm Component Tests', () => {
       .should('have.value', 'banana');
   });
 // Test suite for double-click action on InteractiveFormEvents component
-  it('C130143 - should fire double-click event', () => {
+  it('should fire double-click event', () => {
     cy.mount(<InteractiveForm />);
     cy.get('[data-testid="scroll-target"]').dblclick();
     cy.get('[data-testid="dblclick-message"]').should('contain', 'Double-clicked!');
   });
 // Test suite for scrollToView action on InteractiveFormEvents component
-  it('C130144 - should scroll element into view', () => {
+  it('should scroll element into view', () => {
     cy.mount(<InteractiveForm />);
     cy.get('[data-testid="scroll-target"]').scrollIntoView().should('be.visible');
   });
  // Test suite for rerendering action on InteractiveFormEvents component
-  it('C130142 - should support rerendering with new content', () => {
+  it('should support rerendering with new content', () => {
     const RerenderWrapper = () => {
       const [show, setShow] = React.useState(true);
       return (
@@ -51,7 +51,7 @@ describe('InteractiveForm Component Tests', () => {
     cy.get('[data-testid="form-container"]').should('exist');
   });
  // Test suite for unmount the InteractiveFormEvents component
-  it('C130145 - should unmount successfully', () => {
+  it('should unmount successfully', () => {
     const Wrapper = ({ visible }: { visible: boolean }) => (
       <div>{visible ? <InteractiveForm /> : null}</div>
     );

@@ -13,6 +13,7 @@
 
 import { defineConfig } from "cypress";
 import { cypressConfig } from "@axe-core/watcher";
+import webpackConfig from "../webpack.config.js";
 
 // Get your configuration from environment variables.
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -32,8 +33,9 @@ export default defineConfig({
       devServer: {
         framework: "next", // Use Next.js as the framework
         bundler: "webpack", // Use webpack as the bundler
+        webpackConfig
       },
-      specPattern: "**/*.cy.{ts,tsx}", // Pattern for component test files
+      specPattern: "**/Button.cy.{ts,tsx}", // Pattern for component test files
       supportFile: "cypress/support/component.ts", // Support file for component tests
     },
  

@@ -1,10 +1,11 @@
-import React from 'react';
-import Button from './Button';
+import Button from '../../../../shared/Button'
 import '@axe-core/watcher/dist/cypressCommands'
 import { mount } from '@cypress/react';
+import { describe, it } from 'node:test';
 
 describe('Button Component', () => {
     // Test: Button renders correctly with default props and passes accessibility analysis
+ 
     it('renders correctly with default props', () => {
         cy.axeWatcherStart();
         mount(<Button label="Click me" />); // Mount the Button component
@@ -19,5 +20,4 @@ describe('Button Component', () => {
         cy.axeWatcherStop();
     });
 
-
-});
+});  

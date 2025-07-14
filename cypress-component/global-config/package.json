@@ -1,20 +1,21 @@
 {
-  "name": "component-cypress-global-config",
+  "name": "component-cypress-basic",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "cypress run --component --browser=chrome"
+    "test": "export DEBUG=axe-watcher* && cypress run --component --browser=chrome"
   },
   "dependencies": {
     "@cypress/react": "^9.0.1",
     "@cypress/webpack-dev-server": "^4.0.2",
+    "@types/cypress": "^0.1.6",
     "next": "15.3.0",
     "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.21.1-next.c1d61ede",
+    "@axe-core/watcher": "^3.21.1",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

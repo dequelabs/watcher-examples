@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import Button from '../components/Button';
-import Counter from '../components/Counter';
-// import IframeComponent from '../components/IframeComponent';
+import Button from './Button';
+import Counter from './Counter';
 
 export default function Home(): React.ReactNode {
     return (

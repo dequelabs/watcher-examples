@@ -1,7 +1,6 @@
-// Cypress tests for the IframeComponent
-import React from 'react';
-import IframeComponent from './IframeComponent';
+import IframeComponent from '../../../../shared/IframeComponent';
 import '@axe-core/watcher/dist/cypressCommands';
+import { describe, it } from 'node:test';
 
 describe('IframeComponent Tests', () => {
     // Test: Renders with default props and checks iframe existence and content

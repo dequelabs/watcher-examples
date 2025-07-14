@@ -1,6 +1,6 @@
-import React from 'react';
-import Button from './Button';
+import Button from '../../../../shared/Button';
 import '@axe-core/watcher/dist/cypressCommands'
+import { describe, it } from 'node:test';
 
 // Cypress test suite for the Button component
 describe('Button Component', () => {
