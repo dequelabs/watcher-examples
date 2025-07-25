@@ -1,9 +1,9 @@
 {
-  "name": "component-cypress-basic",
+  "name": "component-cypress-globalConfig",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "export DEBUG=axe-watcher* && cypress run --component --browser=chrome"
+    "test": "cypress run --component --browser=chrome"
   },
   "dependencies": {
     "@cypress/react": "^9.0.1",
