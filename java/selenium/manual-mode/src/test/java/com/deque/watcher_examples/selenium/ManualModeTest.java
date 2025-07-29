@@ -24,7 +24,7 @@ import com.deque.axe_core.selenium.AxeWatcherDriver;
 class ManualModeTest {
 
     WebDriver driver;
-    String apiKey = "10366b4a-80f2-4dcf-90b0-d9c226e27db7";
+    String apiKey = "test-api-key";
     String serverUrl = "https://axe.dequelabs.com";
 
     @BeforeEach
