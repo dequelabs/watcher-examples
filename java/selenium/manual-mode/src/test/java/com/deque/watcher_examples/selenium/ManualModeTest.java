@@ -25,7 +25,7 @@ class ManualModeTest {
 
     WebDriver driver;
     String apiKey = "test-api-key";
-    String serverUrl = "https://axe.dequelabs.com";
+    String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
     void setUp() {
