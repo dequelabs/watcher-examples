@@ -85,7 +85,7 @@ class ManualModeTest {
 
                 usernameInput.sendKeys("tomsmith");
                 passwordInput.sendKeys("SuperSecretPassword!");
-                // Stop automatic axe analysis.
+                // Start automatic axe analysis.
                 ((AxeWatcherDriver) driver).axeWatcher().start();
 
                 submitButton.click();
