@@ -20,8 +20,8 @@ describe('forgot password', () => {
       await browser.url('https://the-internet.herokuapp.com/forgot_password')
       await expect(browser).toHaveTitle('The Internet')
       await expect($('#email')).toBeDisplayed()
-      await expect($('button[type="submit"]')).toBeDisplayed()
       await $('#email').setValue('person@place.biz')
+      await expect($('button[type="submit"]')).toBeDisplayed()
       await $('button[type="submit"]').click()
       await browser.waitUntil(async () => {
         const h1 = await $('h1')
