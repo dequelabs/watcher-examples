@@ -26,10 +26,10 @@ describe('login', () => {
       await browser.url('https://the-internet.herokuapp.com/login')
       await expect(browser).toHaveTitle('The Internet')
       await expect($('#username')).toBeDisplayed()
-      await expect($('#password')).toBeDisplayed()
-      await expect($('button[type="submit"]')).toBeDisplayed()
       await $('#username').setValue('tomsmith')
+      await expect($('#password')).toBeDisplayed()
       await $('#password').setValue('SuperSecretPassword!')
+      await expect($('button[type="submit"]')).toBeDisplayed()
       await $('button[type="submit"]').click()
       await expect($('#flash')).toHaveText(
         expect.stringContaining('You logged into a secure area!')
