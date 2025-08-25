@@ -17,7 +17,7 @@ describe('IframeComponent Tests', () => {
     });
 
     // Test: Mounts with custom content and checks for that content inside the iframe
-    it('Valdiate the page whether able to scan iframes', () => {
+    it('Validate the page whether able to scan iframes', () => {
         cy.mount(<IframeComponent content="<div id='test-content'>Content in iframe</div>" />);
 
         // Assert the custom content exists inside the iframe

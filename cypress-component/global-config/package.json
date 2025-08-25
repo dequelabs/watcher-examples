@@ -1,5 +1,5 @@
 {
-  "name": "component-cypress-globalConfig",
+  "name": "component-cypress-globalconfig",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.21.1",
+    "@axe-core/watcher": "^3.22.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
