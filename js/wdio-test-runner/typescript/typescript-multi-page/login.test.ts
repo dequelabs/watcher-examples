@@ -31,8 +31,8 @@ describe('login', () => {
       await $('#username').setValue('tomsmith')
       await $('#password').setValue('SuperSecretPassword!')
       await $('button[type="submit"]').click()
-      await expect($('#flash')).toHaveTextContaining(
-        'You logged into a secure area!'
+      await expect($('#flash')).toHaveText(
+        expect.stringContaining('You logged into a secure area!')
       )
     })
   })
