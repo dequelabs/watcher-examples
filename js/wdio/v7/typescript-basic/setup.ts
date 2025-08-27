@@ -31,7 +31,7 @@ before(async () => {
         serverURL: SERVER_URL
       },
       capabilities: {
-        browserName: 'chrome',
+        browserName: 'chromium',
         'goog:chromeOptions': { args: ['--headless=new'] }
       }
     })
