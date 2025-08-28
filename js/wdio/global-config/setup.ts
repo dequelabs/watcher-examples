@@ -35,7 +35,7 @@ before(async () => {
       capabilities: {
         browserName: 'chrome',
         browserVersion: '138',
-        'goog:chromeOptions': { args: ['--headless=new'] }
+        'goog:chromeOptions': { args: ['--headless=new', '--no-sandbox'] }
       }
     }) as RemoteOptions
   )
