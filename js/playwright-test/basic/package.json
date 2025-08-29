@@ -5,7 +5,7 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.22.0",
+    "@axe-core/watcher": "^3.23.0",
     "@playwright/test": "^1.45.1"
   }
 }
