@@ -32,7 +32,8 @@ before(async () => {
       },
       capabilities: {
         browserName: 'chrome',
-        'goog:chromeOptions': { args: ['--headless=new'] }
+        browserVersion: '138',
+        'goog:chromeOptions': { args: ['--headless=new', '--no-sandbox'] }
       }
     })
   )

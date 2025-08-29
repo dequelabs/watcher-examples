@@ -47,6 +47,8 @@ jobs:
           - directory: js/wdio-test-runner/typescript/manual-mode
           - directory: js/wdio-test-runner/typescript/typescript-multi-page
           - directory: js/wdio-test-runner/cucumber
+          - directory: js/wdio/global-config
+          - directory: js/wdio/manual-mode
           - directory: js/wdio/typescript-multi-page
           - directory: js/wdio/v7/typescript-basic
             # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
