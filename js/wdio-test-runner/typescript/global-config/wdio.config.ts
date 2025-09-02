@@ -34,7 +34,6 @@ export const config = wdioTestRunner({
     }
   ],
   baseUrl: 'https://the-internet.herokuapp.com',
-  services: ['chromedriver'],
   framework: 'mocha',
   reporters: ['spec'],
   maxInstances: 5,
