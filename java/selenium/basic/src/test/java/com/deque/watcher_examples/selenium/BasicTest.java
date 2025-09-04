@@ -19,23 +19,30 @@ import com.deque.axe_core.commons.AxeWatcherOptions;
 import com.deque.axe_core.selenium.AxeWatcher;
 import com.deque.axe_core.selenium.AxeWatcherDriver;
 
+import com.deque.watcher_examples.utils.TestConfigLoader;
 
 @DisplayName("My Login Application")
 class BasicTest {
 
     WebDriver driver;
-    String apiKey = "test-api-key";
+    String apiKey = System.getenv("AW_JAVA_SELENIUM_BASIC");
     String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
     void setUp() {
-        AxeWatcher axeWatcher =
-            new AxeWatcher(
-                    new AxeWatcherOptions().setApiKey(apiKey).setServerUrl(serverUrl))
+        AxeWatcher axeWatcher = new AxeWatcher(
+                new AxeWatcherOptions().setApiKey(apiKey).setServerUrl(serverUrl))
                 .enableDebugLogger();
 
-        ChromeOptions chromeOptions =
-            axeWatcher.configure(new ChromeOptions().addArguments("--headless=new", "--no-sandbox"));
+        String chromeBinaryPath = TestConfigLoader.getChromeBinaryPath();
+        String chromeDriverPath = TestConfigLoader.getChromeDriverPath();
+
+        ChromeOptions chromeOptions = axeWatcher.configure(new ChromeOptions());
+        chromeOptions.setBinary(chromeBinaryPath);
+
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+
+        // Force Chrome to use the closest available CDP version
         driver = axeWatcher.wrapDriver(new ChromeDriver(chromeOptions));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
