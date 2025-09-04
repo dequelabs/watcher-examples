@@ -1,0 +1,17 @@
+{
+  "name": "typescript-multi-page",
+  "private": true,
+  "scripts": {
+    "test": "mocha --require ts-node/register --timeout 10s tests/*.test.ts"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^3.23.0",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.7",
+    "chai": "^4",
+    "mocha": "^10.6.0",
+    "playwright": "^1.45.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
+}

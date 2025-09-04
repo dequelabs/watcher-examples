@@ -1,0 +1,11 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "test": "cypress run --headed --browser=chrome"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^3.23.0",
+    "cypress": "^13.13.0"
+  }
+}
