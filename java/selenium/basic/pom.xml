@@ -15,9 +15,6 @@
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <skipTests>false</skipTests>
-        <skipITs>false</skipITs>
-        <testng.test.classes>com.deque.watcher_examples.selenium.BasicTestNG</testng.test.classes>
     </properties>
 
     <dependencyManagement>
@@ -64,12 +61,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.9.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.deque.axe_core</groupId>
             <artifactId>watcher</artifactId>
             <version>3.23.0</version>
@@ -94,18 +85,7 @@
                         <artifactId>surefire-junit-platform</artifactId>
                         <version>3.1.2</version>
                     </dependency>
-                    <!-- TestNG provider -->
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-testng</artifactId>
-                        <version>3.1.2</version>
-                    </dependency>
                 </dependencies>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
             </plugin>
         </plugins>
     </build>

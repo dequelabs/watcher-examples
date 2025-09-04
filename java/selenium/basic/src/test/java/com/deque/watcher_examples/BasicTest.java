@@ -1,4 +1,4 @@
-package com.deque.watcher_examples.selenium;
+package com.deque.watcher_examples;
 
 import java.time.Duration;
 
@@ -25,7 +25,7 @@ import com.deque.watcher_examples.utils.TestConfigLoader;
 class BasicTest {
 
     WebDriver driver;
-    String apiKey = System.getenv("AW_JAVA_SELENIUM_BASIC");
+    String apiKey = System.getenv("JAVA_SELENIUM_BASIC");
     String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
