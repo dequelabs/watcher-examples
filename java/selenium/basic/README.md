@@ -1,4 +1,4 @@
-## 🧪 Watcher Examples: Selenium + TestNG
+## 🧪 Watcher Examples: Selenium JUnit
 
 This project demonstrates how to run accessibility tests using [axe DevTools](https://axe.deque.com/) with Selenium and TestNG. It supports dynamic configuration of Chrome and ChromeDriver versions and paths for cross-platform compatibility (macOS, Windows, Linux).
 
@@ -12,8 +12,8 @@ src/
 │   └── java/                # Application code (if any)
 ├── test/
 │   ├── java/                # Test classes
-│   │   └── com.deque.watcher_examples.selenium/
-│   │       └── BasicTestNG.java
+│   │   └── com.deque.watcher_examples/
+│   │       └── BasicTest.java
 │   └── resources/
 │       └── test-config.properties
 ```
@@ -60,7 +60,6 @@ Make sure your `pom.xml` includes the correct TestNG and Surefire plugin configu
 ### 🧰 Dependencies
 
 - [Selenium WebDriver](https://www.selenium.dev/)
-- [TestNG](https://testng.org/)
 - [axe DevTools for Java](https://docs.deque.com/devtools-java/)
 - SLF4J (for logging)
 
@@ -70,5 +69,4 @@ Make sure your `pom.xml` includes the correct TestNG and Surefire plugin configu
 
 - [axe DevTools for Web](https://docs.deque.com/devtools-web/)
 - [axe DevTools for Java](https://docs.deque.com/devtools-java/)
-- [TestNG Docs](https://testng.org/doc/)
 - [Selenium Troubleshooting](https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location/)
