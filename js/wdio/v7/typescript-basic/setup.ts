@@ -32,7 +32,15 @@ before(async () => {
       },
       capabilities: {
         browserName: 'chrome',
-        'goog:chromeOptions': { args: ['--headless=new'] }
+        'goog:chromeOptions': {
+          args: ['--headless=new']
+          /* 
+          If the version of Chrome wdio will use is Google Chrome >= 139,
+          you must specify the path to a Chromium or Google Chrome for Testing binary instead. 
+          Chrome versions can be installed and managed using @puppeteer/browsers.
+          */
+          // binary: '/path/to/Chromium/or/Google Chrome for Testing'
+        }
       }
     })
   )
