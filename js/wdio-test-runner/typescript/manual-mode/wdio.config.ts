@@ -14,7 +14,7 @@ export const config = wdioTestRunner({
     {
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--headless=new'],
+        args: ['--headless=new', '--no-sandbox'],
         /*
          * You can use the utility to get the Chrome binary path, including installing Chrome, if needed.
          * This can be overridden by setting CHROME_BIN in the environment variables.
