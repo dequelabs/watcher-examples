@@ -1,0 +1,30 @@
+name: 'Install Chrome and Chromedriver'
+description: 'Install Chrome and Chromedriver for testing.'
+inputs:
+  working-directory:
+    description: 'The working directory for the install command.'
+    required: false
+    default: '.'
+outputs:
+  chrome-path:
+    description: 'The path to the Chrome binary.'
+    value: '${{ steps.setup-chrome.outputs.chrome-path }}'
+  chromedriver-path:
+    description: 'The path to the ChromeDriver binary.'
+    value: '${{ steps.setup-chrome.outputs.chromedriver-path }}'
+  chrome-version:
+    description: 'The version of Chrome that was installed.'
+    value: '${{ steps.setup-chrome.outputs.chrome-version }}'
+  chromedriver-version:
+    description: 'The version of ChromeDriver that was installed.'
+    value: '${{ steps.setup-chrome.outputs.chromedriver-version }}'
+
+runs:
+  using: composite
+  steps:
+    - name: Install Google Chrome for Testing
+      id: setup-chrome
+      uses: browser-actions/setup-chrome@b94431e051d1c52dcbe9a7092a4f10f827795416 # v2.1.0
+      with:
+        chrome-version: 140
+        install-chromedriver: true

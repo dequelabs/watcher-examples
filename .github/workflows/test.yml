@@ -59,6 +59,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version || '20' }}
+      - run: mkdir -p ./tmp/browsers
+      - uses: ./.github/actions/install-chrome
+        id: install-chrome
+        with:
+          working-directory: ./tmp/browsers
       - name: Install Playwright
         if: ${{ matrix.playwright }}
         run: npx playwright install
@@ -66,6 +71,11 @@ jobs:
         if: ${{ matrix.additional-steps }}
         run: ${{ matrix.additional-steps }}
       - name: Run tests
-        run: cd ${{ matrix.directory }} && npm install && npm test
+        run: |
+          cd ${{ matrix.directory }} &&
+          npm install &&
+          npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
+          CHROME_BIN: ${{ steps.install-chrome.outputs.chrome-path }}
+          CHROMEDRIVER_BIN: ${{ steps.install-chrome.outputs.chromedriver-path }}
