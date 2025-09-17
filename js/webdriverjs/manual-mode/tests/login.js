@@ -7,7 +7,7 @@ const {
 const { Options } = require('selenium-webdriver/chrome')
 const {
   getChromeBinaryPath
-} = require('../../../../utils/setup-chrome-chromedriver')
+} = require('../../../utils/setup-chrome-chromedriver')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
