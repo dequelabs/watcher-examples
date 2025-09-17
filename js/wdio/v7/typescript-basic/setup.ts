@@ -1,7 +1,7 @@
 import 'mocha'
 import { wdioConfig, WdioController, wrapWdio } from '@axe-core/watcher'
 import { remote, type Browser } from 'webdriverio'
-import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver'
+import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver.js'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
