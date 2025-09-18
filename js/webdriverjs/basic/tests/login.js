@@ -28,6 +28,7 @@ describe('My Login Application', () => {
      * This may cause issues, as Watcher does not support branded Chrome >= 139.
      */
     options.setBinaryPath(getChromeBinaryPath())
+    options.setChromedriverPath(getChromedriverBinaryPath())
     browser = await new Builder()
       .forBrowser('chrome')
       .setChromeOptions(
@@ -37,14 +38,6 @@ describe('My Login Application', () => {
             serverURL: SERVER_URL
           },
           options,
-          services: [
-            [
-              'chromedriver',
-              {
-                chromedriverCustomPath: getChromedriverBinaryPath()
-              }
-            ]
-          ]
         })
       )
       .build()
