@@ -6,8 +6,7 @@ const {
 } = require('@axe-core/watcher')
 const { Options } = require('selenium-webdriver/chrome')
 const {
-  getChromeBinaryPath,
-  getChromedriverBinaryPath
+  getChromeBinaryPath
 } = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
