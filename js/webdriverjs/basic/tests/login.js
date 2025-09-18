@@ -44,7 +44,7 @@ describe('My Login Application', () => {
                 chromedriverCustomPath: getChromedriverBinaryPath()
               }
             ]
-          ],
+          ]
         })
       )
       .build()
