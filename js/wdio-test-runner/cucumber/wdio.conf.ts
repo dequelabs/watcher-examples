@@ -1,6 +1,6 @@
 import { wdioTestRunner } from '@axe-core/watcher'
 import assert from 'assert'
-import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver.js'
+import { getChromeBinaryPath, getChromedriverBinaryPath } from '../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -32,6 +32,14 @@ export const config = wdioTestRunner({
         binary: getChromeBinaryPath()
       }
     }
+  ],
+  services: [
+    [
+      'chromedriver',
+      {
+        chromedriverCustomPath: getChromedriverBinaryPath()
+      }
+    ]
   ],
   logLevel: 'debug',
   bail: 0,
