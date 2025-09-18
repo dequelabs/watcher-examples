@@ -37,7 +37,7 @@ describe('My Login Application', () => {
             apiKey: API_KEY,
             serverURL: SERVER_URL
           },
-          options,
+          options
         })
       )
       .build()
