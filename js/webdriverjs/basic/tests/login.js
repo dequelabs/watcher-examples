@@ -6,7 +6,8 @@ const {
 } = require('@axe-core/watcher')
 const { Options } = require('selenium-webdriver/chrome')
 const {
-  getChromeBinaryPath
+  getChromeBinaryPath,
+  getChromedriverBinaryPath
 } = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
@@ -35,7 +36,15 @@ describe('My Login Application', () => {
             apiKey: API_KEY,
             serverURL: SERVER_URL
           },
-          options
+          options,
+          services: [
+            [
+              'chromedriver',
+              {
+                chromedriverCustomPath: getChromedriverBinaryPath()
+              }
+            ]
+          ],
         })
       )
       .build()
