@@ -24,6 +24,7 @@ export const config = wdioTestRunner({
   capabilities: [
     {
       browserName: 'chrome',
+      browserVersion: 'stable',
       'goog:chromeOptions': {
         args: ['--headless=new', '--no-sandbox'],
         /*
