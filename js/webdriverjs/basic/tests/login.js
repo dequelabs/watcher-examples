@@ -19,6 +19,7 @@ describe('My Login Application', () => {
   before(async () => {
     const options = new Options()
     options.addArguments('--headless=new')
+    options.addArguments('--no-sandbox')
     /*
      * You can use the utility to get the Chrome binary path, including installing Chrome, if needed.
      * This can be overridden by setting CHROME_BIN in the environment variables.
