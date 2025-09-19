@@ -41,7 +41,7 @@ before(async () => {
            * If you do not specify a binary, the default Chrome installation will be used.
            * This may cause issues, as Watcher does not support branded Chrome >= 139.
            */
-          binary: getChromeBinaryPath('138')
+          binary: getChromeBinaryPath()
         }
       }
     })
