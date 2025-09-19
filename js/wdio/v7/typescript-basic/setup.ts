@@ -25,6 +25,7 @@ let browser: Browser<'async'>
 let controller: WdioController
 
 before(async () => {
+  console.log('Starting browser session...')
   browser = await remote(
     wdioConfig({
       axe: {
@@ -46,17 +47,20 @@ before(async () => {
       }
     })
   )
-
+  console.log('Browser session started')
   controller = new WdioController(browser)
+  console.log('Wrapping browser with Watcher...')
   wrapWdio(browser, controller)
+  console.log('Browser wrapped with Watcher')
 })
 
 afterEach(async () => {
+  console.log('Flushing results to Axe DevHub...')
   await controller.flush()
 })
 
 after(async () => {
-  browser.deleteSession()
+  await browser.deleteSession()
 })
 
 export { browser }
