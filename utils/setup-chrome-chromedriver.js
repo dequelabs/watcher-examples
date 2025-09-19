@@ -4,7 +4,11 @@ export const getChromeBinaryPath = (version = null) => {
   if (process.env.CHROME_BIN) {
     return process.env.CHROME_BIN
   }
-  return spawnSync('npx', ['@puppeteer/browsers', 'install', `chrome@${version || 'stable'}`])
+  return spawnSync('npx', [
+    '@puppeteer/browsers',
+    'install',
+    `chrome@${version || 'stable'}`
+  ])
     .stdout.toString()
     .trim()
     .split(' ')
