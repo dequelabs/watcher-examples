@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
-  primary?: boolean;
+  label: string
+  primary?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,26 +18,26 @@ const Button: React.FC<ButtonProps> = ({
     outline: 'none',
     transition: 'colors 0.3s ease',
     cursor: 'pointer',
-    display: 'inline-block',
-  };
+    display: 'inline-block'
+  }
 
   // Intentionally low contrast to fail WCAG AAA
   const colorStyles = primary
     ? {
         backgroundColor: '#93c5fd', // bg-blue-300
-        color: '#ffffff',           // white
-        border: 'none',
+        color: '#ffffff', // white
+        border: 'none'
       }
     : {
         backgroundColor: '#e5e7eb', // bg-gray-200
-        color: '#9ca3af',           // gray on gray
-        border: 'none',
-      };
+        color: '#9ca3af', // gray on gray
+        border: 'none'
+      }
 
   const combinedStyles = {
     ...baseStyles,
-    ...colorStyles,
-  };
+    ...colorStyles
+  }
 
   return (
     <div>
@@ -83,7 +83,7 @@ const Button: React.FC<ButtonProps> = ({
 
         {/*  Button with presentation role */}
         <button role="presentation">Continue</button>
-         <div role="textbox">Name</div>
+        <div role="textbox">Name</div>
         {/*  Role misuse */}
         <div role="button">
           Settings
@@ -91,7 +91,7 @@ const Button: React.FC<ButtonProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
