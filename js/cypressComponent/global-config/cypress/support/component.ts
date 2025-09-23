@@ -7,7 +7,7 @@ import './commands';
 import '@axe-core/watcher/dist/cypressCommands';
 
 // Extend Cypress types to include the custom mount command
-// eslint-disable-next-line @typescript-eslint/no-namespace
+ // eslint-disable-next-line @typescript-eslint/no-namespace
 declare global {
     namespace Cypress {
         interface Chainable {
@@ -15,6 +15,7 @@ declare global {
         }
     }
 }
+/* eslint-enable @typescript-eslint/no-namespace */
 
 // Add the custom mount command to Cypress
 Cypress.Commands.add('mount', mount);
