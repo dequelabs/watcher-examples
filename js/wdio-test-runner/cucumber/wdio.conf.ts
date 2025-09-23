@@ -48,6 +48,7 @@ export const config = wdioTestRunner({
     dryRun: false,
     failFast: false,
     name: [],
+    retry: 10,
     snippets: true,
     source: true,
     strict: false,
