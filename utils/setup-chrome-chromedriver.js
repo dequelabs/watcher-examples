@@ -28,7 +28,3 @@ export const getChromedriverBinaryPath = () => {
     .slice(1)
     .join(' ')
 }
-
-export const logPaths = () => {
-  console.log([getChromeBinaryPath(), getChromedriverBinaryPath()])
-}

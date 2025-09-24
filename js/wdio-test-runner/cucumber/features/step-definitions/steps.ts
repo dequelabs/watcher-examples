@@ -31,29 +31,13 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
 })
 
 Then(/^I should see a flash message saying (.*)$/, async message => {
-  try {
-    await SecurePage.flashAlert.waitForExist({ timeout: 60000 })
-  } catch (error) {
-    console.error(`Error waiting for flash alert to exist: ${error}`)
-  }
-  try {
-    await SecurePage.flashAlert.waitForDisplayed({ timeout: 60000 })
-  } catch (error) {
-    console.error(`Error waiting for flash alert to be displayed: ${error}`)
-  }
+  await SecurePage.flashAlert.waitForExist({ timeout: 60000 })
+  await SecurePage.flashAlert.waitForDisplayed({ timeout: 60000 })
 
-  try {
-    await expect(SecurePage.flashAlert).toBeExisting()
-  } catch (error) {
-    console.error(`Error waiting for flash alert to be existing: ${error}`)
-  }
-  try {
-    await expect(SecurePage.flashAlert).toHaveText(
-      expect.stringContaining(message)
-    )
-  } catch (error) {
-    console.error(`Error waiting for flash alert to have text: ${error}`)
-  }
+  await expect(SecurePage.flashAlert).toBeExisting()
+  await expect(SecurePage.flashAlert).toHaveText(
+    expect.stringContaining(message)
+  )
 })
 
 AfterStep(async () => {
