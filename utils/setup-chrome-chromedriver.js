@@ -5,26 +5,38 @@ export const getChromeBinaryPath = () => {
     return process.env.CHROME_BIN
   }
 
-  return spawnSync('npx', ['@puppeteer/browsers', 'install', 'chrome@stable'])
-    .stdout.toString()
+  const result = spawnSync('npx', ['@puppeteer/browsers', 'install', 'chrome@stable']);
+  if (result.error || result.status !== 0 || !result.stdout) {
+    throw new Error(
+      `Failed to install Chrome: ${result.error ? result.error.message : 'Unknown error'}`
+    );
+  }
+  return result.stdout
+    .toString()
     .trim()
     .split(' ')
     .slice(1)
-    .join(' ')
+    .join(' ');
 }
 
 export const getChromedriverBinaryPath = () => {
   if (process.env.CHROMEDRIVER_BIN) {
     return process.env.CHROMEDRIVER_BIN
   }
-  return spawnSync('npx', [
+  const result = spawnSync('npx', [
     '@puppeteer/browsers',
     'install',
     'chromedriver@stable'
-  ])
-    .stdout.toString()
+  ]);
+  if (result.error || result.status !== 0 || !result.stdout) {
+    throw new Error(
+      `Failed to install Chromedriver: ${result.error ? result.error.message : 'Unknown error'}`
+    );
+  }
+  return result.stdout
+    .toString()
     .trim()
     .split(' ')
     .slice(1)
-    .join(' ')
+    .join(' ');
 }
