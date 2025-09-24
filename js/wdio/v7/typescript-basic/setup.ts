@@ -56,7 +56,11 @@ afterEach(async () => {
 })
 
 after(async () => {
-  await browser.deleteSession()
+  try {
+    await browser.deleteSession()
+  } catch (err) {
+    console.error('Error deleting browser session:', err)
+  }
 })
 
 export { browser }
