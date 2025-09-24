@@ -34,9 +34,9 @@ export const config = wdioTestRunner({
       }
     }
   ],
-  // logLevel: 'debug',
+  logLevel: 'debug',
   bail: 0,
-  waitforTimeout: 60000,
+  waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
   framework: 'cucumber',
