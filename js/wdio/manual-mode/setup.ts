@@ -39,7 +39,6 @@ before(async () => {
 })
 
 afterEach(async () => {
-  // times out
   await controller.flush()
 })
 
