@@ -16,3 +16,4 @@ test-results/
 target/
 .github/tmp
 **/chrome/**
+.next
