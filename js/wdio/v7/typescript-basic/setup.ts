@@ -32,6 +32,7 @@ before(async () => {
         apiKey: API_KEY as string,
         serverURL: SERVER_URL
       },
+      
       capabilities: {
         browserName: 'chrome',
         'goog:chromeOptions': {
