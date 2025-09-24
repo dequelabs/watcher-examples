@@ -31,8 +31,8 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
 })
 
 Then(/^I should see a flash message saying (.*)$/, async message => {
-  await SecurePage.flashAlert.waitForExist({ timeout: 60000 })
-  await SecurePage.flashAlert.waitForDisplayed({ timeout: 60000 })
+  await SecurePage.flashAlert.waitForExist({ timeout: 10000 })
+  await SecurePage.flashAlert.waitForDisplayed({ timeout: 10000 })
 
   await expect(SecurePage.flashAlert).toBeExisting()
   await expect(SecurePage.flashAlert).toHaveText(
