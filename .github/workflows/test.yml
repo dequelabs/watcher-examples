@@ -74,7 +74,7 @@ jobs:
         run: |
           cd ${{ matrix.directory }} &&
           npm install &&
-          DEBUG=* npm test
+          npm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
           CHROME_BIN: ${{ steps.install-chrome.outputs.chrome-path }}
