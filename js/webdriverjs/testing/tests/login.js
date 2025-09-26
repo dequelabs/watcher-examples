@@ -6,6 +6,9 @@ const {
   WebdriverController
 } = require('@axe-core/watcher')
 const { Options } = require('selenium-webdriver/chrome')
+const {
+  getChromeBinaryPath
+} = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -18,6 +21,14 @@ suite(env => {
     before(async () => {
       const options = new Options()
       options.addArguments('--headless=new')
+      options.addArguments('--no-sandbox')
+      /*
+       * You can use the utility to get the Chrome binary path, including installing Chrome, if needed.
+       * This can be overridden by setting CHROME_BIN in the environment variables.
+       * If you do not specify a binary, the default Chrome installation will be used.
+       * This may cause issues, as Watcher does not support branded Chrome >= 139.
+       */
+      options.setBinaryPath(getChromeBinaryPath())
       const builder = env.builder()
 
       // axe Watcher only supports Chrome.

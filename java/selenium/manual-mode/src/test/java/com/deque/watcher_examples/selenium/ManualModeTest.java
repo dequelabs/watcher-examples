@@ -39,7 +39,15 @@ class ManualModeTest {
                 .enableDebugLogger();
 
         ChromeOptions chromeOptions =
-            axeWatcher.configure(new ChromeOptions().addArguments("--headless=new", "--no-sandbox"));
+            axeWatcher.configure(new ChromeOptions().addArguments(
+                "--headless=new", 
+                "--no-sandbox"));
+        /* 
+          If the version of Chrome that Selenium will use is Google Chrome >= 139,
+          you must specify the path to a Chromium or Google Chrome for Testing binary instead. 
+          Chrome versions can be installed and managed using @puppeteer/browsers.
+          */
+        // chromeOptions.setBinary("/path/to/Chromium/or/Google Chrome for Testing");
         driver = axeWatcher.wrapDriver(new ChromeDriver(chromeOptions));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }

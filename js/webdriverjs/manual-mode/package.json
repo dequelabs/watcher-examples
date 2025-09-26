@@ -7,7 +7,7 @@
   "devDependencies": {
     "@axe-core/watcher": "^3.23.0",
     "chai": "^4",
-    "chromedriver": "^138.0.0",
+    "chromedriver": "^140.0.0",
     "mocha": "^10.6.0",
     "selenium-webdriver": "^4.22.0"
   }

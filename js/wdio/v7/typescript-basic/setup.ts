@@ -1,6 +1,7 @@
 import 'mocha'
 import { wdioConfig, WdioController, wrapWdio } from '@axe-core/watcher'
 import { remote, type Browser } from 'webdriverio'
+import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver.js'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -30,13 +31,22 @@ before(async () => {
         apiKey: API_KEY as string,
         serverURL: SERVER_URL
       },
+
       capabilities: {
         browserName: 'chrome',
-        'goog:chromeOptions': { args: ['--headless=new'] }
+        'goog:chromeOptions': {
+          args: ['--headless=new', '--no-sandbox'],
+          /*
+           * You can use the utility to get the Chrome binary path, including installing Chrome, if needed.
+           * This can be overridden by setting CHROME_BIN in the environment variables.
+           * If you do not specify a binary, the default Chrome installation will be used.
+           * This may cause issues, as Watcher does not support branded Chrome >= 139.
+           */
+          binary: getChromeBinaryPath()
+        }
       }
     })
   )
-
   controller = new WdioController(browser)
   wrapWdio(browser, controller)
 })
@@ -46,7 +56,11 @@ afterEach(async () => {
 })
 
 after(async () => {
-  browser.deleteSession()
+  try {
+    await browser.deleteSession()
+  } catch (err) {
+    console.error('Error deleting browser session:', err)
+  }
 })
 
 export { browser }

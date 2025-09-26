@@ -1,5 +1,6 @@
 import { wdioTestRunner } from '@axe-core/watcher'
 import assert from 'assert'
+import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
@@ -20,7 +21,17 @@ export const config = wdioTestRunner({
   capabilities: [
     {
       browserName: 'chrome',
-      'goog:chromeOptions': { args: ['--headless=new'] }
+      browserVersion: 'stable',
+      'goog:chromeOptions': {
+        args: ['--headless=new', '--no-sandbox'],
+        /*
+         * You can use the utility to get the Chrome binary path, including installing Chrome, if needed.
+         * This can be overridden by setting CHROME_BIN in the environment variables.
+         * If you do not specify a binary, the default Chrome installation will be used.
+         * This may cause issues, as Watcher does not support branded Chrome >= 139.
+         */
+        binary: getChromeBinaryPath()
+      }
     }
   ],
   logLevel: 'debug',
@@ -37,6 +48,7 @@ export const config = wdioTestRunner({
     dryRun: false,
     failFast: false,
     name: [],
+    retry: 10,
     snippets: true,
     source: true,
     strict: false,
