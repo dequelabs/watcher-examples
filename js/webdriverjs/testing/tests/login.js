@@ -4,7 +4,7 @@ const {
   wrapWebdriver,
   webdriverConfig,
   WebdriverController
-} = require('@axe-core/watcher')
+} = require('@axe-core/watcher/selenium-webdriver')
 const { Options } = require('selenium-webdriver/chrome')
 const {
   getChromeBinaryPath
