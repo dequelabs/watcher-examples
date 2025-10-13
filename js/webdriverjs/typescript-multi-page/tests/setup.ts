@@ -4,7 +4,7 @@ import {
   wrapWebdriver,
   webdriverConfig,
   WebdriverController
-} from '@axe-core/watcher'
+} from '@axe-core/watcher/selenium-webdriver'
 import { Options } from 'selenium-webdriver/chrome'
 import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver'
 
