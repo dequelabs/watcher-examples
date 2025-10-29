@@ -1,4 +1,4 @@
-const { playwrightTest } = require('@axe-core/watcher')
+const { playwrightTest } = require('@axe-core/watcher/playwright-test')
 const assert = require('assert')
 
 const { SERVER_URL = 'https://axe.deque.com', API_KEY } = process.env

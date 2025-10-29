@@ -4,7 +4,7 @@ import {
   playwrightConfig,
   PlaywrightController,
   wrapPlaywrightPage
-} from '@axe-core/watcher'
+} from '@axe-core/watcher/playwright'
 import assert from 'assert'
 
 const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
