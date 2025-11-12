@@ -7,7 +7,7 @@ const {
 } = require('@axe-core/watcher')
 
 /* Get your configuration from environment variables. */
-const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
+const { API_KEY, PROJECT_ID, SERVER_URL = 'https://axe.deque.com' } = process.env
 
 describe('My Login Application', () => {
   let browser
@@ -19,6 +19,7 @@ describe('My Login Application', () => {
       puppeteerConfig({
         axe: {
           apiKey: API_KEY,
+          projectId: PROJECT_ID,
           serverURL: SERVER_URL,
           /**
            * configurationOverrides allows users to override the org-wide settings

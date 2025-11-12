@@ -25,13 +25,14 @@ class BasicTest {
 
     WebDriver driver;
     String apiKey = "test-api-key";
+    String projectId = "test-project_id";
     String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
     void setUp() {
         AxeWatcher axeWatcher =
             new AxeWatcher(
-                    new AxeWatcherOptions().setApiKey(apiKey).setServerUrl(serverUrl))
+                    new AxeWatcherOptions().setApiKey(apiKey).setProjectId(projectId).setServerUrl(serverUrl))
                 .enableDebugLogger();
 
         ChromeOptions chromeOptions =
