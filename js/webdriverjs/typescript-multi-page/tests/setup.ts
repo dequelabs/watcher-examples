@@ -9,7 +9,11 @@ import { Options } from 'selenium-webdriver/chrome'
 import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
-const { API_KEY, PROJECT_ID, SERVER_URL = 'https://axe.deque.com' } = process.env
+const {
+  API_KEY,
+  PROJECT_ID,
+  SERVER_URL = 'https://axe.deque.com'
+} = process.env
 
 let browser: WebDriver
 let controller: WebdriverController

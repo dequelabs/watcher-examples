@@ -7,7 +7,11 @@ import {
 } from '@axe-core/watcher'
 import assert from 'assert'
 
-const { API_KEY, PROJECT_ID, SERVER_URL = 'https://axe.deque.com' } = process.env
+const {
+  API_KEY,
+  PROJECT_ID,
+  SERVER_URL = 'https://axe.deque.com'
+} = process.env
 assert(API_KEY, 'API_KEY is required')
 
 let page: Page

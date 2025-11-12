@@ -5,10 +5,19 @@ import {
 } from '../../../../utils/setup-chrome-chromedriver.js'
 
 /* Get your configuration from environment variables. */
-const { API_KEY, PROJECT_ID, SERVER_URL = 'https://axe.deque.com' } = process.env
+const {
+  API_KEY,
+  PROJECT_ID,
+  SERVER_URL = 'https://axe.deque.com'
+} = process.env
 
 export const config = wdioTestRunner({
-  axe: { apiKey: API_KEY as string, projectId: PROJECT_ID as string, serverURL: SERVER_URL, autoAnalyze: false },
+  axe: {
+    apiKey: API_KEY as string,
+    projectId: PROJECT_ID as string,
+    serverURL: SERVER_URL,
+    autoAnalyze: false
+  },
   specs: ['login.test.ts'],
   capabilities: [
     {
