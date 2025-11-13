@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "@axe-core/watcher": "^3.23.0",
-    "cypress": "^13.13.0"
+    "cypress": "^15.6.0"
   }
 }

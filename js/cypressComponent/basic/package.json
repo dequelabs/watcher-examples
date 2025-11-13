@@ -19,14 +19,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@axe-core/watcher": "3.23.0",
+    "@axe-core/watcher": "^3.23.0-next.82e433c2",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "axe-core": "^4.10.3",
-    "cypress": "^14.3.0",
+    "cypress": "^15.6.0",
     "cypress-axe": "^1.6.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
