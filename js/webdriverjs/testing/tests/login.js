@@ -11,7 +11,11 @@ const {
 } = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
-const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
+const {
+  API_KEY,
+  PROJECT_ID,
+  SERVER_URL = 'https://axe.deque.com'
+} = process.env
 
 suite(env => {
   describe('My Login Application', () => {
@@ -40,6 +44,7 @@ suite(env => {
             webdriverConfig({
               axe: {
                 apiKey: API_KEY,
+                projectId: PROJECT_ID,
                 serverURL: SERVER_URL
               },
               options
