@@ -1,4 +1,4 @@
-import { wdioTestRunner } from '@axe-core/watcher'
+import { wdioTestRunner } from '@axe-core/watcher/webdriverio'
 import assert from 'assert'
 import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver'
 
