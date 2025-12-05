@@ -30,12 +30,14 @@ class MultiPageTest {
     @BeforeAll
     static void setup() {
         String apiKey = "test-api-key";
+        String projectId = "test-project_id";
         String serverUrl = "https://axe.deque.com";
 
         AxeWatcher axeWatcher =
             new AxeWatcher(
                     new AxeWatcherOptions()
                         .setApiKey(apiKey)
+                        .setProjectId(projectId)
                         .setServerUrl(serverUrl)
                 );
 
