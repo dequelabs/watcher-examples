@@ -5,12 +5,12 @@
     "test": "mocha --require ts-node/register --timeout 20s tests/*.test.ts"
   },
   "devDependencies": {
-    "@axe-core/watcher": "3.23.0-next.82e433c2",
+    "@axe-core/watcher": "^4.0.0",
     "@types/chai": "^4.3.16",
     "@types/mocha": "^10.0.7",
     "chai": "^4",
     "mocha": "^10.6.0",
-    "puppeteer": "^24.30.0",
+    "puppeteer": "^24.33.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }

@@ -5,9 +5,9 @@
     "test": "mocha --timeout 20s tests/*.js"
   },
   "devDependencies": {
-    "@axe-core/watcher": "3.23.0-next.82e433c2",
+    "@axe-core/watcher": "^4.0.0",
     "chai": "^4",
-    "chromedriver": "^140.0.0",
+    "chromedriver": "^143.0.0",
     "mocha": "^10.6.0",
     "selenium-webdriver": "^4.22.0"
   }

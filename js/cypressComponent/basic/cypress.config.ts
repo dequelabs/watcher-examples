@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress'
-import { cypressConfig } from '@axe-core/watcher'
+import { cypressConfig } from '@axe-core/watcher/cypress/config'
 
 // Read API key, project ID, and server URL from environment variables for security and flexibility
 const axeApiKey = process.env.AXE_API_KEY || ''

@@ -1,5 +1,5 @@
 const { defineConfig } = require('cypress')
-const { cypressConfig } = require('@axe-core/watcher')
+const { cypressConfig } = require('@axe-core/watcher/cypress/config')
 
 // Get your configuration from environment variables.
 const {

@@ -4,7 +4,7 @@ const {
   wrapPlaywrightPage,
   PlaywrightController,
   playwrightConfig
-} = require('@axe-core/watcher')
+} = require('@axe-core/watcher/playwright')
 
 /* Get your configuration from environment variables. */
 const {

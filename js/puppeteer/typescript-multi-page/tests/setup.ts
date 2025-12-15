@@ -4,7 +4,7 @@ import {
   puppeteerConfig,
   PuppeteerController,
   wrapPuppeteerPage
-} from '@axe-core/watcher'
+} from '@axe-core/watcher/puppeteer'
 import assert from 'assert'
 
 const {

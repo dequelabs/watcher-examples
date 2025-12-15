@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "lib": ["es2016", "dom"],
-    "types": ["webdriverio/async"],
-    "allowJs": true
-  }
-}

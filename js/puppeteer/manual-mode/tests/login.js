@@ -4,7 +4,7 @@ const {
   wrapPuppeteerPage,
   PuppeteerController,
   puppeteerConfig
-} = require('@axe-core/watcher')
+} = require('@axe-core/watcher/puppeteer')
 
 /* Get your configuration from environment variables. */
 const {

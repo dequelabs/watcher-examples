@@ -1,4 +1,4 @@
-import { playwrightTest } from '@axe-core/watcher'
+import { playwrightTest } from '@axe-core/watcher/playwright-test'
 import assert from 'assert'
 
 const {
