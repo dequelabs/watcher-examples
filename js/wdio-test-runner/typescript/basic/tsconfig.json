@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["node", "@wdio/globals/types"]
+    "types": ["node", "@wdio/globals/types"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   }
 }
