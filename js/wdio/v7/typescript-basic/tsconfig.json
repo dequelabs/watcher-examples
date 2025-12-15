@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "lib": ["es2016", "dom"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "types": ["webdriverio/async"],
-    "allowJs": true
-  }
-}
