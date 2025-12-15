@@ -10,5 +10,5 @@ node server.js
 In the second, do:
 
 ```shell
-API_KEY=... npm test
+API_KEY=... PROJECT_ID=... npm test
 ```
