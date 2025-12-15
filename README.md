@@ -10,7 +10,7 @@
    cd cypress/basic
    npm install
    ```
-1. Set your API key and project ID as an environment variables, and run `npm test`
+1. Set your API key and project ID as environment variables, and run `npm test`
    ```sh
    API_KEY="YOUR API KEY" PROJECT_ID="YOUR PROJECT ID" npm test
    ```

@@ -25,7 +25,7 @@ class BasicTest {
 
     WebDriver driver;
     String apiKey = "test-api-key";
-    String projectId = "test-project_id";
+    String projectId = "test-project-id";
     String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
