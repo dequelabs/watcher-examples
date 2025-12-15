@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress:open": "cypress open --browser=chrome",
-    "cypress:component": "cypress run --component --browser=chrome"
+    "cypress:open": "cypress open --browser=chrome-for-testing",
+    "cypress:component": "cypress run --component --browser=chrome-for-testing"
   },
   "dependencies": {
     "@cypress/react": "^9.0.1",
@@ -19,7 +19,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@axe-core/watcher": "3.23.0",
+    "@axe-core/watcher": "^4.0.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

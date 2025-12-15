@@ -2,10 +2,10 @@
   "name": "multi-page",
   "private": true,
   "scripts": {
-    "test": "cypress run --headed --browser chrome"
+    "test": "cypress run --headed --browser chrome-for-testing"
   },
   "devDependencies": {
-    "@axe-core/watcher": "^3.23.0",
-    "cypress": "^13.13.0"
+    "@axe-core/watcher": "^4.0.0",
+    "cypress": "^15.7.1"
   }
 }

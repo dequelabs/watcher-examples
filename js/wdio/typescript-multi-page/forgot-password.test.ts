@@ -1,7 +1,7 @@
 import 'mocha'
 import { assert } from 'chai'
 import { browser } from './setup'
-import { WdioController, wrapWdio } from '@axe-core/watcher'
+import { WdioController, wrapWdio } from '@axe-core/watcher/webdriverio'
 
 let controller: WdioController
 
