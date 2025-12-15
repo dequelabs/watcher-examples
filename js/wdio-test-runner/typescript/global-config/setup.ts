@@ -1,6 +1,6 @@
 import 'mocha'
 import '@wdio/globals'
-import { WdioController, wrapWdio } from '@axe-core/watcher'
+import { WdioController, wrapWdio } from '@axe-core/watcher/webdriverio'
 
 let controller: WdioController
 

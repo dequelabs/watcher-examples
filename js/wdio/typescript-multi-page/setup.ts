@@ -1,5 +1,5 @@
 import 'mocha'
-import { wdioConfig } from '@axe-core/watcher'
+import { wdioConfig } from '@axe-core/watcher/webdriverio'
 import { remote, RemoteOptions } from 'webdriverio'
 import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver'
 
