@@ -1,8 +1,9 @@
 import { defineConfig } from 'cypress'
 import { cypressConfig } from '@axe-core/watcher/cypress/config'
 
-// Read API key and server URL from environment variables for security and flexibility
+// Read API key, project ID, and server URL from environment variables for security and flexibility
 const axeApiKey = process.env.AXE_API_KEY || ''
+const projectId = process.env.AXE_PROJECT_ID || ''
 const axeServerURL = process.env.AXE_SERVER_URL || 'https://axe.deque.com/'
 
 export default defineConfig({
@@ -10,6 +11,7 @@ export default defineConfig({
   ...cypressConfig({
     axe: {
       apiKey: axeApiKey, // API key for axe-core cloud integration
+      projectId: projectId, // Project ID for DevHub
       testingTypes: ['component', 'e2e'], // Enable both component and e2e testing
       serverURL: axeServerURL, // axe-core cloud server URL
       autoAnalyze: false

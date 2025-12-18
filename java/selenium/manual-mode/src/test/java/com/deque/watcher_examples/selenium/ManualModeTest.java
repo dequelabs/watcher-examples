@@ -25,6 +25,7 @@ class ManualModeTest {
 
     WebDriver driver;
     String apiKey = "test-api-key";
+    String projectId = "test-project-id";
     String serverUrl = "https://axe.deque.com";
 
     @BeforeEach
@@ -33,6 +34,7 @@ class ManualModeTest {
             new AxeWatcher(
                     new AxeWatcherOptions()
                         .setApiKey(apiKey)
+                        .setProjectId(projectId)
                         .setServerUrl(serverUrl)
                         .setAutoAnalyze(false)
                 )

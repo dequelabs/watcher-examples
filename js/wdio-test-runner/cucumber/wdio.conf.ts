@@ -3,14 +3,22 @@ import assert from 'assert'
 import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
-const { API_KEY, SERVER_URL = 'https://axe.deque.com' } = process.env
+const {
+  API_KEY,
+  PROJECT_ID,
+  SERVER_URL = 'https://axe.deque.com'
+} = process.env
 assert(
   API_KEY,
   'Ensure your axe Developer API key is set via the `AXE_API_KEY` environment variable.'
 )
 
 export const config = wdioTestRunner({
-  axe: { apiKey: API_KEY as string, serverURL: SERVER_URL },
+  axe: {
+    apiKey: API_KEY as string,
+    projectId: PROJECT_ID as string,
+    serverURL: SERVER_URL
+  },
 
   // Remaining WDIO configuration options
   runner: 'local',
