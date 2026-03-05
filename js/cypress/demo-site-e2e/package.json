@@ -1,0 +1,12 @@
+{
+  "name": "cypress-demo-site-e2e",
+  "private": true,
+  "scripts": {
+    "test": "npx cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "file:../../../../axe-watcher/packages/js",
+    "cypress": "^15.7.1",
+    "typescript": "^5.5.3"
+  }
+}

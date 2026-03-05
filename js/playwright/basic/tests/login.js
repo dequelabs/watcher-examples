@@ -8,9 +8,9 @@ const {
 
 /* Get your configuration from environment variables. */
 const {
-  API_KEY,
-  PROJECT_ID,
-  SERVER_URL = 'https://axe.deque.com'
+  API_KEY='045d4472-ee0d-4107-a2d6-44f7fc1c1907',
+  PROJECT_ID='038b432a-1805-4a6b-993b-dc2299832e82',
+  SERVER_URL = 'https://axe.dequelabs.com'
 } = process.env
 
 describe('My Login Application', () => {

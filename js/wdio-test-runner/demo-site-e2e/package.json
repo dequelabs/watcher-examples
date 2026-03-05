@@ -1,0 +1,21 @@
+{
+  "name": "wdio-test-runner-demo-site-e2e",
+  "private": true,
+  "scripts": {
+    "test": "wdio run wdio.config.ts"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "file:../../../../axe-watcher/packages/js",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.3.1",
+    "@wdio/cli": "^8.11.2",
+    "@wdio/globals": "^8.11.2",
+    "@wdio/local-runner": "^8.11.2",
+    "@wdio/mocha-framework": "^8.11.0",
+    "@wdio/spec-reporter": "^8.11.2",
+    "chromedriver": "^143.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}

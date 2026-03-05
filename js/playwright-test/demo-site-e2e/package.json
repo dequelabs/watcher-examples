@@ -1,0 +1,12 @@
+{
+  "name": "playwright-test-demo-site-e2e",
+  "private": true,
+  "scripts": {
+    "test": "BUILD_ID=$(node -p \"crypto.randomUUID()\") npx playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "file:../../../../axe-watcher/packages/js",
+    "@playwright/test": "^1.45.1",
+    "typescript": "^5.5.3"
+  }
+}

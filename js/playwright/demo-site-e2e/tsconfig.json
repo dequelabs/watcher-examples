@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "nodenext",
+    "target": "ES2020",
+    "lib": ["dom", "es2020"],
+    "strict": true,
+    "moduleResolution": "nodenext",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  }
+}
