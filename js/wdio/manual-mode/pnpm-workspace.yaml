@@ -1,0 +1,4 @@
+allowBuilds:
+  chromedriver: true
+  edgedriver: true
+  geckodriver: true
