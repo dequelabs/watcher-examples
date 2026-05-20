@@ -5,8 +5,11 @@ import {
   webdriverConfig,
   WebdriverController
 } from '@axe-core/watcher/selenium-webdriver'
-import { Options } from 'selenium-webdriver/chrome'
-import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver'
+import { Options, ServiceBuilder } from 'selenium-webdriver/chrome'
+import {
+  getChromeBinaryPath,
+  getChromedriverBinaryPath
+} from '../../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
 const {
@@ -29,8 +32,16 @@ before(async () => {
    * This may cause issues, as Watcher does not support branded Chrome >= 139.
    */
   options.setBinaryPath(getChromeBinaryPath())
+  /*
+   * Pin chromedriver to the binary installed alongside Chrome
+   * (overridable via CHROMEDRIVER_BIN). Without this, selenium
+   * uses whatever chromedriver is on PATH, which may not match
+   * the Chrome binary above.
+   */
+  const service = new ServiceBuilder(getChromedriverBinaryPath())
   browser = await new Builder()
     .forBrowser('chrome')
+    .setChromeService(service)
     .setChromeOptions(
       webdriverConfig({
         axe: {

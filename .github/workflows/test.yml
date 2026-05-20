@@ -63,6 +63,7 @@ jobs:
         id: install-chrome
         with:
           working-directory: ./tmp/browsers
+          chrome-version: ${{ vars.CHROME_VERSION || 'stable' }}
       - name: Install Playwright
         if: ${{ matrix.playwright }}
         run: npx playwright install

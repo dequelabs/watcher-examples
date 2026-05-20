@@ -5,6 +5,10 @@ inputs:
     description: 'The working directory for the install command.'
     required: false
     default: '.'
+  chrome-version:
+    description: 'Chrome / Chromedriver version to install (passed through to browser-actions/setup-chrome). Default: stable.'
+    required: false
+    default: 'stable'
 outputs:
   chrome-path:
     description: 'The path to the Chrome binary.'
@@ -26,5 +30,5 @@ runs:
       id: setup-chrome
       uses: browser-actions/setup-chrome@2e1d749697dd1612b833dba4a722266286fbefcd # v2.1.2
       with:
-        chrome-version: 143
+        chrome-version: ${{ inputs.chrome-version }}
         install-chromedriver: true
