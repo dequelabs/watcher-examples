@@ -1,4 +1,5 @@
 import { playwrightTest } from '@axe-core/watcher/playwright-test'
+import { getChromeBinaryPath } from '../../../../utils/setup-chrome-chromedriver'
 import assert from 'assert'
 
 const {
@@ -16,6 +17,12 @@ const { test, expect } = playwrightTest({
     /* Disable auto-analyze */
     autoAnalyze: false
   },
+  /*
+   * Use the same Chrome binary as the rest of the CI matrix
+   * (overridable via CHROME_BIN); falls back to installing
+   * Chrome stable locally when the env var is not set.
+   */
+  executablePath: getChromeBinaryPath(),
   headless: false,
   args: ['--headless=new']
 })

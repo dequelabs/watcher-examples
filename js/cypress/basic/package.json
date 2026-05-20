@@ -2,7 +2,7 @@
   "name": "basic",
   "private": true,
   "scripts": {
-    "test": "cypress run --headed --browser=chrome-for-testing"
+    "test": "cypress run --headed --browser \"${CHROME_BIN:-chrome-for-testing}\""
   },
   "devDependencies": {
     "@axe-core/watcher": "^4.0.0",
