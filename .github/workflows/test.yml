@@ -9,11 +9,12 @@ jobs:
     timeout-minutes: 1
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm install
-      - run: npm run lint
+      - run: pnpm install
+      - run: pnpm lint
 
   smoke-tests:
     name: Smoke Tests
@@ -53,6 +54,7 @@ jobs:
           - directory: js/webdriverjs/typescript-multi-page
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version || '20' }}
@@ -70,8 +72,8 @@ jobs:
       - name: Run tests
         run: |
           cd ${{ matrix.directory }} &&
-          npm install &&
-          npm test
+          pnpm install &&
+          pnpm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
           CHROME_BIN: ${{ steps.install-chrome.outputs.chrome-path }}
