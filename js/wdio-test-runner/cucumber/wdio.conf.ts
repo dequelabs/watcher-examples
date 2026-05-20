@@ -1,6 +1,9 @@
 import { wdioTestRunner } from '@axe-core/watcher/webdriverio'
 import assert from 'assert'
-import { getChromeBinaryPath } from '../../../utils/setup-chrome-chromedriver'
+import {
+  getChromeBinaryPath,
+  getChromedriverBinaryPath
+} from '../../../utils/setup-chrome-chromedriver'
 
 /* Get your configuration from environment variables. */
 const {
@@ -29,7 +32,6 @@ export const config = wdioTestRunner({
   capabilities: [
     {
       browserName: 'chrome',
-      browserVersion: 'stable',
       'goog:chromeOptions': {
         args: ['--headless=new', '--no-sandbox'],
         /*
@@ -39,6 +41,16 @@ export const config = wdioTestRunner({
          * This may cause issues, as Watcher does not support branded Chrome >= 139.
          */
         binary: getChromeBinaryPath()
+      },
+      /*
+       * Pin chromedriver to the binary installed alongside Chrome.
+       * Without this, wdio v9's Selenium Manager auto-downloads a
+       * chromedriver matching the current Chrome stable channel, which
+       * will mismatch the older `goog:chromeOptions.binary` above and
+       * fail with "session not created". Override via CHROMEDRIVER_BIN.
+       */
+      'wdio:chromedriverOptions': {
+        binary: getChromedriverBinaryPath()
       }
     }
   ],
