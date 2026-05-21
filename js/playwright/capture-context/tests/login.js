@@ -5,6 +5,9 @@ const {
   PlaywrightController,
   playwrightConfig
 } = require('@axe-core/watcher/playwright')
+const {
+  getChromeBinaryPath
+} = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
 const {
@@ -27,6 +30,12 @@ describe('My Login Application', () => {
           projectId: PROJECT_ID,
           serverURL: SERVER_URL
         },
+        /*
+         * Use the same Chrome binary as the rest of the CI matrix
+         * (overridable via CHROME_BIN); falls back to installing
+         * Chrome stable locally when the env var is not set.
+         */
+        executablePath: getChromeBinaryPath(),
         //@see: https://playwright.dev/docs/chrome-extensions#headless-mode
         headless: false,
         args: ['--headless=new']

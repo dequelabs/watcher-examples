@@ -5,6 +5,9 @@ const {
   PuppeteerController,
   puppeteerConfig
 } = require('@axe-core/watcher/puppeteer')
+const {
+  getChromeBinaryPath
+} = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
 const {
@@ -44,6 +47,12 @@ describe('My Login Application', () => {
             experimentalRules: true // Enables or disables experimental axe-core rules
           }
         },
+        /*
+         * Use the same Chrome binary as the rest of the CI matrix
+         * (overridable via CHROME_BIN); falls back to installing
+         * Chrome stable locally when the env var is not set.
+         */
+        executablePath: getChromeBinaryPath(),
         headless: false,
         args: ['--headless=new', '--no-sandbox', '--disable-setuid-sandbox']
       })

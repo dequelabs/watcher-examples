@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 18
-      - run: npm install
-      - run: npm run lint
+          node-version: 24
+      - run: pnpm install
+      - run: pnpm lint
 
   smoke-tests:
     name: Smoke Tests
@@ -52,15 +53,17 @@ jobs:
           - directory: js/webdriverjs/testing
           - directory: js/webdriverjs/typescript-multi-page
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: ${{ matrix.node-version || '20' }}
+          node-version: ${{ matrix.node-version || '24' }}
       - run: mkdir -p ./tmp/browsers
       - uses: ./.github/actions/install-chrome
         id: install-chrome
         with:
           working-directory: ./tmp/browsers
+          chrome-version: ${{ vars.CHROME_VERSION || 'stable' }}
       - name: Install Playwright
         if: ${{ matrix.playwright }}
         run: npx playwright install
@@ -70,8 +73,8 @@ jobs:
       - name: Run tests
         run: |
           cd ${{ matrix.directory }} &&
-          npm install &&
-          npm test
+          pnpm install &&
+          pnpm test
         env:
           API_KEY: ${{ secrets.AXE_DEVHUB_API_KEY }}
           CHROME_BIN: ${{ steps.install-chrome.outputs.chrome-path }}

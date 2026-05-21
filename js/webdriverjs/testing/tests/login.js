@@ -5,9 +5,10 @@ const {
   webdriverConfig,
   WebdriverController
 } = require('@axe-core/watcher/selenium-webdriver')
-const { Options } = require('selenium-webdriver/chrome')
+const { Options, ServiceBuilder } = require('selenium-webdriver/chrome')
 const {
-  getChromeBinaryPath
+  getChromeBinaryPath,
+  getChromedriverBinaryPath
 } = require('../../../../utils/setup-chrome-chromedriver.js')
 
 /* Get your configuration from environment variables. */
@@ -39,7 +40,15 @@ suite(env => {
       if (env.browser.name !== 'chrome') {
         browser = await env.builder().build()
       } else {
+        /*
+         * Pin chromedriver to the binary installed alongside Chrome
+         * (overridable via CHROMEDRIVER_BIN). Without this, selenium
+         * uses whatever chromedriver is on PATH, which may not match
+         * the Chrome binary above.
+         */
+        const service = new ServiceBuilder(getChromedriverBinaryPath())
         browser = await builder
+          .setChromeService(service)
           .setChromeOptions(
             webdriverConfig({
               axe: {

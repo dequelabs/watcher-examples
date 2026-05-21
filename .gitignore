@@ -9,6 +9,7 @@ package-lock.json
 .yarn
 .env
 yarn.lock
+pnpm-lock.yaml
 videos/
 screenshots/
 downloads/

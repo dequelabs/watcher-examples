@@ -1,0 +1,34 @@
+version: 2
+
+# NOTE: the `npm` ecosystem is intentionally omitted from this config.
+# This repo is a collection of consumer-facing examples and intentionally
+# does NOT commit lockfiles — every example resolves to the latest
+# published deps on a fresh checkout so users see real-world behavior.
+# With no lockfile to pin, Dependabot npm PRs would either be noise
+# (bumping a range that already resolves to the new version) or actively
+# misleading (suggesting we "upgrade" something we resolve fresh every
+# install). The same property also means CI catches incompatible
+# upstream changes without Dependabot's help.
+# We still want Dependabot to manage GitHub Actions pins below.
+
+updates:
+  - package-ecosystem: 'github-actions'
+    rebase-strategy: disabled
+    directories:
+      - '/'
+      - '.github/actions/**/*'
+    schedule:
+      interval: 'weekly'
+      day: 'wednesday'
+      time: '06:37'
+      timezone: 'America/New_York'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore'
+    groups:
+      gha-low-risk:
+        update-types:
+          - 'minor'
+          - 'patch'
+    cooldown:
+      default-days: 7

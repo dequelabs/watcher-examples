@@ -12,8 +12,9 @@
     "fmt": "prettier --write .",
     "prepare": "husky install",
     "lint": "eslint .",
-    "lint-staged": "yarn lint --fix && yarn fmt"
+    "lint-staged": "pnpm lint --fix && pnpm fmt"
   },
+  "packageManager": "pnpm@11.2.0",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",

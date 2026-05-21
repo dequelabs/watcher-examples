@@ -8,6 +8,7 @@
     "@axe-core/watcher": "^4.0.0",
     "@types/chai": "^4.3.16",
     "@types/mocha": "^10.0.7",
+    "@types/node": "^24",
     "@types/selenium-webdriver": "^4.1.24",
     "chai": "^4",
     "chromedriver": "^143.0.0",
