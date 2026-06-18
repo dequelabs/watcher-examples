@@ -10,7 +10,10 @@ on:
 
 jobs:
   semantic-pr-footer:
+    if: ${{ github.event.pull_request.body != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 1
+    permissions:
+      pull-requests: read
     steps:
       - uses: dequelabs/axe-api-team-public/.github/actions/semantic-pr-footer-v1@main
