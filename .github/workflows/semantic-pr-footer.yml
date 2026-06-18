@@ -10,6 +10,7 @@ on:
 
 jobs:
   semantic-pr-footer:
+    if: ${{ github.event.pull_request.body != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
