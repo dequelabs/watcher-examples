@@ -67,6 +67,8 @@ class ContextWrappingTest {
         // Pages from a wrapped context are already instrumented — no per-page wrapPage() call.
         AxeWatcherPage homePage = (AxeWatcherPage) context.newPage();
         homePage.navigate("https://the-internet.herokuapp.com");
+        // count() does not auto-wait, so wait for the link list to render before counting.
+        homePage.locator("ul li a").first().waitFor();
         int linkCount = homePage.locator("ul li a").count();
         assertTrue(linkCount >= 20, "expected the home page link list to load, got " + linkCount);
 

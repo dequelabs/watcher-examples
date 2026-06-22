@@ -16,7 +16,7 @@ end-to-end tests drive the browser, then uploads the results to
 ## Prerequisites
 
 - **Java 11 or newer.** The axe Watcher integration itself supports Java 8+; these example projects
-  build with Java 11.
+  target Java 11 source compatibility and are tested on Java 17 in CI.
 - **[Maven](https://maven.apache.org/).** Each example is a standalone Maven project.
 - **A Chromium-based browser.** axe Watcher loads a browser extension, which Chromium only supports
   when launched via a persistent context using [Chrome for
@@ -49,7 +49,7 @@ end-to-end tests drive the browser, then uploads the results to
    is how they run in CI.
 
    ```sh
-   mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+   mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
    ```
 
 4. Run the tests:
