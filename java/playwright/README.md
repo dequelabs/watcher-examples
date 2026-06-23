@@ -12,7 +12,7 @@ end-to-end tests drive the browser, then uploads the results to
 | [`basic`](./basic)                       | Auto analysis    | The default mode — wrap the page and every interaction is analyzed automatically. |
 | [`manual-mode`](./manual-mode)           | Manual mode      | `setAutoAnalyze(false)` plus `analyze()` / `start()` / `stop()` to control scans. |
 | [`context-wrapping`](./context-wrapping) | Context wrapping | `wrapContext()` so every page opened from one `BrowserContext` is instrumented.   |
-| [`multi-page`](./multi-page)             | Multi-page       | Reuse one wrapped page across several pages, flushing after each test.             |
+| [`multi-page`](./multi-page)             | Multi-page       | Reuse one wrapped page across several pages, flushing after each test.            |
 
 ## Prerequisites
 
