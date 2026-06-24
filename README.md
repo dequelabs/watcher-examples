@@ -18,3 +18,10 @@
    ```sh
    SERVER_URL="https://axe.yourcompany.com" API_KEY="YOUR API KEY" PROJECT_ID="YOUR PROJECT ID" npm test
    ```
+
+## Java examples
+
+The [`java`](./java) directory holds Maven projects built and run with `mvn test` instead of npm.
+See [`java/playwright`](./java/playwright) for the Playwright Java examples (auto analysis, manual
+mode, and context wrapping) and its [README](./java/playwright/README.md) for prerequisites and run
+instructions.
